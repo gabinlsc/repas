@@ -1,0 +1,525 @@
+// Recettes rédigées pour le projet Mise (licence du dépôt).
+// Format : « # Titre », puis une ligne d'attributs :
+//   p<portions> t<préparation>+<cuisson> [créneaux] (cuisine) {matériel} #tags r<jours de restes> f<se congèle 0/1> d<difficulté>
+// puis « - » ingrédients (« {id} » force la correspondance) et « > » étapes.
+
+# Spaghetti carbonara
+p4 t10+12 [lunch,dinner] (italienne) {plaques} #rapide r0 f0 d1
+- 400 g de spaghetti
+- 150 g de lardons
+- 3 œufs
+- 60 g de parmesan
+- poivre
+> Cuire les spaghetti al dente dans une grande casserole d'eau salée.
+> Faire dorer les lardons à la poêle sans matière grasse.
+> Battre les œufs avec le parmesan et du poivre.
+> Hors du feu, mélanger pâtes, lardons et œufs en ajoutant un peu d'eau de cuisson.
+
+# Bœuf bourguignon
+p6 t30+180 [lunch,dinner] (française) {plaques} #mijote #batch r3 f1 d2
+- 1,2 kg de bœuf à braiser {boeuf_braiser}
+- 150 g de lardons
+- 3 carottes
+- 2 oignons
+- 250 g de champignons de Paris
+- 75 cl de vin rouge
+- 2 gousses d'ail
+- 2 c. à soupe de farine
+- 1 cube de bouillon de bœuf
+- 2 c. à soupe d'huile de tournesol
+- thym
+- laurier
+> Faire revenir la viande en morceaux dans l'huile, puis les lardons et les oignons.
+> Saupoudrer de farine, mouiller avec le vin et le bouillon, ajouter carottes, ail et herbes.
+> Laisser mijoter 2 h 30 à couvert, ajouter les champignons 30 min avant la fin.
+
+# Hachis parmentier
+p6 t25+30 [lunch,dinner] (française) {four,plaques} #familial r2 f1 d1
+- 1,2 kg de pommes de terre
+- 600 g de bœuf haché
+- 2 oignons
+- 25 cl de lait
+- 40 g de beurre
+- 80 g d'emmental râpé
+- muscade
+- sel, poivre
+> Cuire les pommes de terre et les écraser en purée avec le lait et le beurre.
+> Faire revenir les oignons puis la viande hachée.
+> Monter en couches viande puis purée dans un plat, parsemer d'emmental.
+> Gratiner 25 min à 200 °C.
+
+# Poulet basquaise
+p4 t20+40 [lunch,dinner] (française) {plaques} #mijote r2 f1 d1
+- 4 cuisses de poulet
+- 2 poivrons
+- 1 oignon
+- 400 g de tomates pelées
+- 2 gousses d'ail
+- 2 c. à soupe d'huile d'olive
+- 1 c. à café de piment d'Espelette
+> Dorer les cuisses de poulet dans l'huile, réserver.
+> Faire fondre oignon et poivrons en lanières, ajouter ail et tomates.
+> Remettre le poulet, assaisonner et mijoter 35 min.
+
+# Blanquette de veau
+p6 t30+120 [lunch,dinner] (française) {plaques} #mijote #batch r3 f1 d2
+- 1,2 kg de veau à blanquette {veau}
+- 3 carottes
+- 1 oignon
+- 250 g de champignons de Paris
+- 20 cl de crème fraîche
+- 1 jaune d'œuf
+- 40 g de beurre
+- 40 g de farine
+- 1 cube de bouillon de volaille
+- laurier
+> Couvrir la viande d'eau froide avec le bouillon, l'oignon, les carottes et le laurier ; cuire 1 h 30.
+> Préparer un roux avec le beurre et la farine, mouiller avec le bouillon filtré.
+> Ajouter les champignons, la viande, puis lier avec la crème et le jaune hors du feu.
+
+# Chili con carne
+p6 t20+60 [lunch,dinner] (mexicaine) {plaques} #batch r3 f1 d1
+- 600 g de bœuf haché
+- 500 g de haricots rouges
+- 800 g de tomates concassées
+- 2 oignons
+- 1 poivron
+- 2 gousses d'ail
+- 2 c. à café de cumin
+- 1 c. à café de piment en poudre
+- 2 c. à soupe d'huile de tournesol
+> Faire revenir oignons, poivron et ail dans l'huile.
+> Ajouter la viande et les épices, puis les tomates.
+> Mijoter 45 min, ajouter les haricots égouttés 10 min avant la fin.
+
+# Lasagnes à la bolognaise
+p6 t40+45 [lunch,dinner] (italienne) {four,plaques} #familial r2 f1 d2
+- 250 g de feuilles de lasagne
+- 500 g de bœuf haché
+- 700 g de coulis de tomate
+- 1 oignon
+- 1 carotte
+- 2 gousses d'ail
+- 60 cl de lait
+- 50 g de beurre
+- 50 g de farine
+- 100 g d'emmental râpé
+- muscade
+> Préparer la bolognaise : oignon, carotte, viande puis coulis ; mijoter 20 min.
+> Préparer une béchamel avec beurre, farine et lait, muscader.
+> Alterner pâtes, sauce et béchamel, terminer par l'emmental.
+> Cuire 40 min à 180 °C.
+
+# Poulet rôti et pommes de terre
+p4 t15+75 [lunch,dinner] (française) {four} #dimanche r2 f0 d1
+- 1 poulet entier {poulet_entier}
+- 1 kg de pommes de terre grenaille
+- 4 gousses d'ail
+- 30 g de beurre
+- 2 c. à soupe d'huile d'olive
+- thym
+- sel, poivre
+> Badigeonner le poulet de beurre, saler, poivrer.
+> Disposer les pommes de terre et l'ail autour avec l'huile et le thym.
+> Rôtir 1 h 15 à 200 °C en arrosant régulièrement.
+
+# Escalopes de dinde à la crème et champignons
+p4 t10+20 [lunch,dinner] (française) {plaques} #rapide r0 f0 d1
+- 4 escalopes de dinde {dinde}
+- 250 g de champignons de Paris
+- 20 cl de crème liquide
+- 1 échalote
+- 20 g de beurre
+- persil
+> Dorer les escalopes au beurre, réserver.
+> Faire revenir échalote et champignons, ajouter la crème.
+> Remettre la dinde 5 min dans la sauce, parsemer de persil.
+
+# Saucisses lentilles
+p4 t15+40 [lunch,dinner] (française) {plaques} #hiver r2 f1 d1
+- 4 saucisses de Toulouse
+- 300 g de lentilles vertes
+- 2 carottes
+- 1 oignon
+- 1 cube de bouillon
+- laurier
+> Cuire les lentilles 25 min avec carottes, oignon, bouillon et laurier.
+> Dorer les saucisses à la poêle puis les ajouter aux lentilles 10 min.
+
+# Steak haché, purée maison
+p4 t15+25 [lunch,dinner] (française) {plaques} #rapide #enfants r0 f0 d1
+- 4 steaks hachés {boeuf_hache}
+- 1 kg de pommes de terre
+- 20 cl de lait
+- 40 g de beurre
+- sel, poivre
+> Cuire les pommes de terre épluchées 20 min à l'eau salée.
+> Les écraser avec le lait chaud et le beurre.
+> Cuire les steaks à la poêle selon la cuisson désirée.
+
+# Filet mignon à la moutarde
+p4 t10+30 [lunch,dinner] (française) {plaques} #rapide r1 f0 d1
+- 600 g de filet mignon de porc
+- 2 c. à soupe de moutarde à l'ancienne
+- 20 cl de crème liquide
+- 1 échalote
+- 20 g de beurre
+> Dorer le filet mignon sur toutes ses faces dans le beurre.
+> Ajouter l'échalote, couvrir et cuire 20 min à feu doux.
+> Déglacer avec la crème et la moutarde, laisser réduire.
+
+# Curry de poulet au lait de coco
+p4 t15+25 [lunch,dinner] (asiatique) {plaques} #epice r2 f1 d1
+- 600 g de blancs de poulet
+- 40 cl de lait de coco
+- 1 oignon
+- 2 c. à soupe de curry
+- 1 morceau de gingembre {gingembre}
+- 2 gousses d'ail
+- 250 g de riz basmati
+- 1 c. à soupe d'huile de tournesol
+- coriandre
+> Faire revenir oignon, ail et gingembre dans l'huile, ajouter le curry.
+> Ajouter le poulet en dés, puis le lait de coco ; mijoter 15 min.
+> Servir avec le riz cuit et la coriandre.
+
+# Tajine de poulet aux citrons et olives
+p4 t20+60 [lunch,dinner] (orientale) {plaques} #mijote r2 f1 d2
+- 4 cuisses de poulet
+- 2 oignons
+- 1 citron
+- 100 g d'olives vertes
+- 2 c. à café de ras el hanout
+- 1 c. à café de curcuma
+- 2 gousses d'ail
+- 2 c. à soupe d'huile d'olive
+- coriandre
+> Dorer le poulet dans l'huile avec les oignons et les épices.
+> Couvrir d'eau à mi-hauteur, ajouter ail et citron en quartiers ; mijoter 45 min.
+> Ajouter les olives 10 min avant la fin, parsemer de coriandre.
+
+# Couscous royal simplifié
+p6 t30+60 [lunch,dinner] (orientale) {plaques} #batch r2 f1 d2
+- 6 cuisses de poulet
+- 4 saucisses {saucisse}
+- 500 g de semoule
+- 3 carottes
+- 3 courgettes
+- 2 navets
+- 265 g de pois chiches
+- 2 oignons
+- 400 g de tomates pelées
+- 2 c. à soupe de ras el hanout
+- 3 c. à soupe d'huile d'olive
+> Dorer le poulet et les oignons dans une grande cocotte, ajouter épices et tomates.
+> Couvrir d'eau, ajouter carottes et navets ; cuire 30 min, puis courgettes et pois chiches 20 min.
+> Griller les saucisses et préparer la semoule à part.
+
+# Bœuf aux carottes
+p6 t20+150 [lunch,dinner] (française) {plaques} #mijote #batch r3 f1 d1
+- 1 kg de bœuf à braiser {boeuf_braiser}
+- 1 kg de carottes
+- 2 oignons
+- 20 cl de vin blanc
+- 1 cube de bouillon de bœuf
+- 2 c. à soupe d'huile de tournesol
+- thym
+- laurier
+> Saisir la viande dans l'huile, ajouter les oignons.
+> Mouiller avec le vin et le bouillon, ajouter herbes et carottes en rondelles.
+> Mijoter 2 h 30 à couvert.
+
+# Pot-au-feu
+p6 t30+180 [lunch,dinner] (française) {plaques} #hiver #batch r3 f1 d1
+- 1,5 kg de plat de côtes {boeuf_braiser}
+- 6 carottes
+- 3 poireaux
+- 4 navets
+- 6 pommes de terre
+- 1 oignon
+- 1 branche de céleri
+- 2 cubes de bouillon
+- laurier
+- gros sel
+> Couvrir la viande d'eau froide, porter à ébullition et écumer.
+> Ajouter oignon, bouillon, laurier ; cuire 2 h à frémissement.
+> Ajouter les légumes et cuire encore 45 min.
+
+# Rôti de porc aux pommes
+p6 t15+70 [lunch,dinner] (française) {four} #automne r2 f0 d1
+- 900 g de filet de porc
+- 4 pommes
+- 2 oignons
+- 20 cl de cidre
+- 20 g de beurre
+- thym
+> Dorer le rôti au beurre dans un plat allant au four.
+> Ajouter oignons et pommes en quartiers, arroser de cidre.
+> Cuire 1 h à 180 °C en arrosant.
+
+# Croque-monsieur
+p4 t10+10 [lunch,dinner] (française) {four} #rapide #enfants r0 f0 d1
+- 8 tranches de pain de mie
+- 4 tranches de jambon
+- 120 g d'emmental râpé
+- 20 g de beurre
+> Beurrer le pain, garnir de jambon et d'emmental, refermer.
+> Parsemer le dessus de fromage et cuire 10 min à 200 °C.
+
+# Burgers maison
+p4 t15+10 [lunch,dinner] (américaine) {plaques} #enfants r0 f0 d1
+- 4 pains à burger
+- 4 steaks hachés {boeuf_hache}
+- 4 tranches de fromage à raclette {fromage_raclette}
+- 1 tomate
+- 1 oignon rouge
+- 4 feuilles de salade {salade}
+- ketchup
+> Cuire les steaks à la poêle, poser le fromage en fin de cuisson.
+> Toaster les pains, garnir de salade, tomate, oignon, steak et sauce.
+
+# Tartiflette
+p6 t20+30 [lunch,dinner] (française) {four,plaques} #hiver #montagne r1 f0 d1
+- 1,5 kg de pommes de terre
+- 1 reblochon
+- 200 g de lardons
+- 2 oignons
+- 20 cl de crème fraîche
+> Cuire les pommes de terre et les couper en rondelles.
+> Faire revenir lardons et oignons, mélanger aux pommes de terre et à la crème.
+> Couvrir de reblochon coupé en deux et gratiner 25 min à 200 °C.
+
+# Raclette
+p4 t10+20 [dinner] (française) {appareil_raclette} #hiver #convivial r0 f0 d1
+- 800 g de fromage à raclette {fromage_raclette}
+- 1 kg de pommes de terre grenaille
+- 200 g de jambon blanc
+- 100 g de jambon cru
+- 150 g de cornichons
+> Cuire les pommes de terre à la vapeur.
+> Faire fondre le fromage à l'appareil et servir avec charcuterie et cornichons.
+
+# Quiche lorraine
+p6 t15+40 [lunch,dinner] (française) {four} #tarte r2 f1 d1
+- 1 rouleau de pâte brisée
+- 200 g de lardons
+- 4 œufs
+- 20 cl de crème liquide
+- 20 cl de lait
+- muscade
+> Étaler la pâte dans un moule, la piquer.
+> Répartir les lardons dorés, verser les œufs battus avec crème, lait et muscade.
+> Cuire 40 min à 180 °C.
+
+# Poulet au curry express
+p4 t10+15 [lunch,dinner] (indienne) {plaques} #rapide r1 f0 d1
+- 500 g de blanc de poulet
+- 20 cl de crème liquide
+- 1 oignon
+- 1 c. à soupe de curry
+- 1 c. à soupe d'huile de tournesol
+- 250 g de riz basmati
+> Faire revenir l'oignon et le poulet émincé dans l'huile.
+> Ajouter curry et crème, laisser épaissir 5 min ; servir avec le riz.
+
+# Émincé de bœuf sauté aux légumes
+p4 t15+10 [lunch,dinner] (asiatique) {wok} #rapide r0 f0 d1
+- 400 g de bœuf en lanières {boeuf_steak}
+- 750 g de légumes pour wok
+- 3 c. à soupe de sauce soja
+- 1 gousse d'ail
+- 1 c. à soupe d'huile de sésame
+- 250 g de nouilles aux œufs
+> Cuire les nouilles selon le paquet.
+> Saisir le bœuf à feu vif au wok, réserver ; sauter les légumes et l'ail.
+> Remettre le bœuf, les nouilles et la sauce soja, mélanger.
+
+# Porc au caramel
+p4 t15+40 [lunch,dinner] (asiatique) {plaques} #sucre_sale r2 f1 d2
+- 600 g d'échine de porc
+- 3 c. à soupe de sucre
+- 3 c. à soupe de sauce soja
+- 2 échalotes
+- 1 gousse d'ail
+- 250 g de riz jasmin
+> Faire un caramel brun avec le sucre et un peu d'eau.
+> Ajouter le porc en morceaux, les échalotes, l'ail et la sauce soja.
+> Mijoter 35 min à couvert ; servir avec le riz.
+
+# Navarin d'agneau
+p6 t30+120 [lunch,dinner] (française) {plaques} #printemps r2 f1 d2
+- 1,2 kg d'épaule d'agneau
+- 6 carottes
+- 6 navets
+- 300 g de petits pois
+- 2 oignons
+- 2 c. à soupe de concentré de tomate
+- 2 gousses d'ail
+- 1 cube de bouillon
+- 2 c. à soupe d'huile d'olive
+- thym
+> Dorer l'agneau dans l'huile avec les oignons, ajouter le concentré.
+> Mouiller avec le bouillon, ajouter ail et thym ; cuire 1 h.
+> Ajouter carottes et navets 40 min, puis les petits pois 10 min.
+
+# Gratin de pâtes au jambon
+p4 t10+25 [lunch,dinner] (française) {four} #enfants r1 f0 d1
+- 300 g de coquillettes
+- 200 g de dés de jambon
+- 20 cl de crème liquide
+- 100 g d'emmental râpé
+> Cuire les pâtes, les mélanger au jambon et à la crème.
+> Verser dans un plat, couvrir d'emmental et gratiner 15 min à 200 °C.
+
+# Cassoulet express
+p6 t20+60 [lunch,dinner] (française) {four,plaques} #hiver #batch r3 f1 d1
+- 1 kg de haricots blancs
+- 6 saucisses de Toulouse
+- 4 cuisses de poulet
+- 200 g de lardons
+- 400 g de tomates concassées
+- 1 oignon
+- 2 gousses d'ail
+- 50 g de chapelure
+- 1 cube de bouillon
+> Dorer saucisses, poulet et lardons ; ajouter oignon et ail.
+> Ajouter tomates, bouillon et haricots, transvaser dans un plat.
+> Couvrir de chapelure et cuire 45 min à 180 °C.
+
+# Chou farci
+p6 t40+90 [lunch,dinner] (française) {four,plaques} #hiver r2 f1 d3
+- 1 chou vert
+- 500 g de viande hachée
+- 200 g de lardons
+- 1 oignon
+- 1 œuf
+- 50 g de chapelure
+- 1 cube de bouillon
+- 400 g de tomates concassées
+> Blanchir les feuilles de chou 5 min.
+> Mélanger viande, lardons, oignon, œuf et chapelure.
+> Monter le chou en alternant feuilles et farce, arroser de bouillon et de tomates ; cuire 1 h 30 à 180 °C.
+
+# Saucisses au four et légumes rôtis
+p4 t15+40 [lunch,dinner] (française) {four} #facile r0 f0 d1
+- 4 saucisses de Toulouse
+- 800 g de pommes de terre
+- 2 poivrons
+- 2 oignons rouges
+- 3 c. à soupe d'huile d'olive
+- herbes de Provence
+> Couper les légumes, les mélanger avec l'huile et les herbes sur une plaque.
+> Ajouter les saucisses et rôtir 40 min à 200 °C en retournant à mi-cuisson.
+
+# Brochettes de poulet marinées
+p4 t20+15 [lunch,dinner] (méditerranéenne) {barbecue} #ete r0 f0 d1
+- 600 g de blanc de poulet
+- 1 citron
+- 2 yaourts grecs
+- 1 poivron
+- 1 oignon rouge
+- 1 c. à café de paprika
+- 2 c. à soupe d'huile d'olive
+> Mariner le poulet en cubes avec yaourt, citron, paprika et huile 1 h.
+> Monter les brochettes avec poivron et oignon, griller 12 à 15 min.
+
+# Fajitas au poulet
+p4 t20+15 [lunch,dinner] (mexicaine) {plaques} #convivial r0 f0 d1
+- 8 tortillas
+- 500 g de blanc de poulet
+- 2 poivrons
+- 1 oignon
+- 1 c. à café de cumin
+- 1 c. à café de paprika
+- 1 avocat
+- 20 cl de crème fraîche
+- 1 citron vert
+- 2 c. à soupe d'huile de tournesol
+> Saisir le poulet en lanières avec les épices, ajouter poivrons et oignon.
+> Écraser l'avocat avec le citron vert.
+> Garnir les tortillas chaudes de poulet, avocat et crème.
+
+# Parmentier de canard simplifié au poulet
+p4 t20+30 [lunch,dinner] (française) {four} #reste r1 f1 d1
+- 2 cuisses de poulet
+- 800 g de pommes de terre
+- 1 échalote
+- 20 cl de lait
+- 30 g de beurre
+- 50 g de chapelure
+> Cuire les cuisses, les effilocher et les faire revenir avec l'échalote.
+> Préparer une purée avec pommes de terre, lait et beurre.
+> Monter en couches, parsemer de chapelure et gratiner 20 min.
+
+# Escalope milanaise
+p4 t15+10 [lunch,dinner] (italienne) {plaques} #rapide r0 f0 d1
+- 4 escalopes de dinde {dinde}
+- 2 œufs
+- 100 g de chapelure
+- 50 g de farine
+- 30 g de parmesan
+- 1 citron
+- 4 c. à soupe d'huile de tournesol
+> Paner les escalopes : farine, œuf battu, chapelure mélangée au parmesan.
+> Frire 4 min par face dans l'huile, servir avec le citron.
+
+# Bœuf stroganoff
+p4 t15+20 [lunch,dinner] (russe) {plaques} #rapide r1 f0 d2
+- 500 g de bœuf en lanières {boeuf_steak}
+- 250 g de champignons
+- 1 oignon
+- 20 cl de crème fraîche
+- 1 c. à café de paprika
+- 1 c. à soupe de moutarde
+- 300 g de tagliatelles
+- 20 g de beurre
+> Saisir le bœuf au beurre, réserver.
+> Faire revenir oignon et champignons, ajouter crème, moutarde et paprika.
+> Remettre le bœuf, servir sur les tagliatelles.
+
+# Jambon, coquillettes et emmental
+p4 t5+10 [lunch,dinner] (française) {plaques} #rapide #enfants r0 f0 d1
+- 400 g de coquillettes
+- 4 tranches de jambon
+- 80 g d'emmental râpé
+- 20 g de beurre
+> Cuire les coquillettes, égoutter et ajouter le beurre.
+> Servir avec le jambon coupé et l'emmental.
+
+# Endives au jambon
+p4 t20+30 [lunch,dinner] (française) {four,plaques} #hiver r1 f1 d1
+- 8 endives
+- 8 tranches de jambon
+- 50 cl de lait
+- 40 g de beurre
+- 40 g de farine
+- 80 g d'emmental râpé
+- muscade
+> Cuire les endives 15 min à la vapeur, les égoutter.
+> Enrouler chacune dans une tranche de jambon, disposer dans un plat.
+> Napper de béchamel muscadée, couvrir d'emmental et gratiner 25 min.
+
+# Poulet aux 40 gousses d'ail simplifié
+p4 t10+60 [lunch,dinner] (française) {four} #dimanche r1 f0 d1
+- 4 cuisses de poulet
+- 2 têtes d'ail {ail}
+- 2 branches de romarin
+- 3 c. à soupe d'huile d'olive
+- 10 cl de vin blanc
+> Disposer poulet et gousses d'ail en chemise dans un plat.
+> Arroser d'huile et de vin, ajouter le romarin.
+> Cuire 1 h à 190 °C à couvert puis 10 min découvert.
+
+# Keftas et semoule
+p4 t25+15 [lunch,dinner] (orientale) {plaques} #epice r1 f1 d1
+- 500 g de bœuf haché
+- 1 oignon
+- 1 botte de coriandre
+- 1 c. à café de cumin
+- 1 c. à café de paprika
+- 250 g de semoule
+- 2 yaourts
+- 1 c. à soupe d'huile d'olive
+> Mélanger viande, oignon râpé, coriandre et épices ; former des boulettes allongées.
+> Les dorer à la poêle dans l'huile 10 min.
+> Servir avec la semoule et le yaourt.

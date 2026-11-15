@@ -1,0 +1,575 @@
+# Saumon en papillote et riz
+p4 t10+20 [lunch,dinner] (française) {four} #leger r0 f0 d1
+- 4 pavés de saumon
+- 1 citron
+- 1 courgette
+- 250 g de riz basmati
+- aneth {herbes_provence}
+- 1 c. à soupe d'huile d'olive
+> Déposer chaque pavé sur un papier cuisson avec rondelles de courgette et de citron.
+> Arroser d'huile, fermer et cuire 18 min à 200 °C ; servir avec le riz.
+
+# Cabillaud à la provençale
+p4 t15+25 [lunch,dinner] (méditerranéenne) {four} #leger r0 f0 d1
+- 4 dos de cabillaud {cabillaud}
+- 4 tomates
+- 1 courgette
+- 50 g d'olives noires
+- 2 gousses d'ail
+- 2 c. à soupe d'huile d'olive
+- herbes de Provence
+> Disposer tomates et courgette en dés dans un plat avec ail, olives et huile.
+> Poser le poisson dessus, assaisonner et cuire 20 min à 200 °C.
+
+# Moules marinières et frites au four
+p4 t20+30 [lunch,dinner] (française) {plaques,four} #ete r0 f0 d1
+- 2 kg de moules
+- 2 échalotes
+- 20 cl de vin blanc
+- 30 g de beurre
+- persil
+- 1 kg de pommes de terre
+- 2 c. à soupe d'huile de tournesol
+> Couper les pommes de terre en frites, les huiler et les cuire 30 min à 220 °C.
+> Faire suer les échalotes au beurre, ajouter vin et moules ; couvrir 6 min.
+> Parsemer de persil et servir avec les frites.
+
+# Brandade de morue simplifiée au cabillaud
+p4 t20+30 [lunch,dinner] (française) {four,plaques} #familial r1 f1 d1
+- 500 g de cabillaud
+- 800 g de pommes de terre
+- 20 cl de lait
+- 3 c. à soupe d'huile d'olive
+- 2 gousses d'ail
+- 30 g de chapelure
+> Pocher le poisson 8 min dans le lait, l'émietter.
+> Écraser les pommes de terre cuites avec l'ail, l'huile et le lait de cuisson.
+> Mélanger au poisson, parsemer de chapelure et gratiner 15 min.
+
+# Pâtes au thon et à la tomate
+p4 t5+15 [lunch,dinner] (italienne) {plaques} #rapide #placard r0 f0 d1
+- 400 g de penne
+- 280 g de thon au naturel
+- 500 g de coulis de tomate
+- 1 oignon
+- 1 c. à soupe d'huile d'olive
+- herbes de Provence
+> Cuire les pâtes. Faire revenir l'oignon dans l'huile, ajouter coulis et herbes.
+> Ajouter le thon émietté, réchauffer et mélanger aux pâtes.
+
+# Curry de crevettes coco
+p4 t15+15 [lunch,dinner] (asiatique) {plaques} #rapide r0 f0 d1
+- 400 g de crevettes décortiquées
+- 40 cl de lait de coco
+- 2 c. à soupe de pâte de curry rouge
+- 1 poivron
+- 250 g de riz jasmin
+- 1 citron vert
+- coriandre
+> Faire revenir la pâte de curry, ajouter le lait de coco et le poivron émincé.
+> Ajouter les crevettes 4 min, arroser de citron vert ; servir avec le riz.
+
+# Poisson pané maison et petits pois
+p4 t20+15 [lunch,dinner] (française) {plaques} #enfants r0 f0 d1
+- 500 g de filets de poisson blanc
+- 2 œufs
+- 100 g de chapelure
+- 50 g de farine
+- 600 g de petits pois
+- 20 g de beurre
+- 4 c. à soupe d'huile de tournesol
+> Paner le poisson (farine, œuf, chapelure) et le dorer 3 min par face dans l'huile.
+> Cuire les petits pois 10 min à l'eau, les servir avec le beurre.
+
+# Risotto aux champignons
+p4 t10+25 [lunch,dinner] (italienne) {plaques} #vegetarien r1 f0 d2
+- 300 g de riz arborio
+- 300 g de champignons de Paris
+- 1 oignon
+- 10 cl de vin blanc
+- 1 cube de bouillon de légumes
+- 60 g de parmesan
+- 30 g de beurre
+> Faire revenir l'oignon et le riz au beurre, déglacer au vin blanc.
+> Ajouter le bouillon chaud louche par louche pendant 18 min, avec les champignons poêlés.
+> Hors du feu, incorporer le parmesan.
+
+# Ratatouille
+p6 t30+60 [lunch,dinner] (française) {plaques} #ete #vegan #batch r3 f1 d1
+- 2 aubergines
+- 3 courgettes
+- 2 poivrons
+- 6 tomates
+- 2 oignons
+- 3 gousses d'ail
+- 6 c. à soupe d'huile d'olive
+- herbes de Provence
+> Faire revenir séparément chaque légume dans l'huile.
+> Réunir dans une cocotte avec ail et herbes, mijoter 45 min à feu doux.
+
+# Gratin dauphinois
+p6 t20+60 [lunch,dinner] (française) {four} #vegetarien #accompagnement r2 f0 d1
+- 1,2 kg de pommes de terre
+- 50 cl de crème liquide
+- 25 cl de lait
+- 2 gousses d'ail
+- muscade
+- sel, poivre
+> Trancher finement les pommes de terre, les disposer dans un plat frotté à l'ail.
+> Couvrir de lait et de crème assaisonnés, cuire 1 h à 170 °C.
+
+# Curry de lentilles corail (dahl)
+p4 t10+25 [lunch,dinner] (indienne) {plaques} #vegan #budget r3 f1 d1
+- 300 g de lentilles corail
+- 40 cl de lait de coco
+- 400 g de tomates concassées
+- 1 oignon
+- 2 gousses d'ail
+- 1 c. à soupe de curry
+- 1 c. à café de curcuma
+- 1 c. à soupe d'huile de tournesol
+- 250 g de riz basmati
+> Faire revenir oignon, ail et épices dans l'huile.
+> Ajouter lentilles, tomates, lait de coco et 40 cl d'eau ; cuire 20 min.
+> Servir avec le riz.
+
+# Chili sin carne
+p6 t15+40 [lunch,dinner] (mexicaine) {plaques} #vegan #batch r3 f1 d1
+- 500 g de haricots rouges
+- 265 g de pois chiches
+- 285 g de maïs
+- 800 g de tomates concassées
+- 2 oignons
+- 2 poivrons
+- 2 c. à café de cumin
+- 1 c. à café de paprika fumé
+- 2 c. à soupe d'huile d'olive
+- 300 g de riz
+> Faire revenir oignons et poivrons, ajouter épices et tomates ; mijoter 20 min.
+> Ajouter légumineuses et maïs égouttés, cuire 15 min ; servir avec le riz.
+
+# Omelette aux fines herbes et salade
+p2 t5+5 [breakfast,lunch,dinner] (française) {plaques} #rapide #vegetarien r0 f0 d1
+- 4 œufs
+- 10 g de beurre
+- 1 botte de ciboulette
+- 150 g de mesclun
+- 1 c. à soupe d'huile d'olive
+- 1 c. à café de vinaigre
+> Battre les œufs avec la ciboulette ciselée.
+> Cuire l'omelette au beurre, servir avec la salade assaisonnée.
+
+# Tarte aux poireaux
+p6 t20+35 [lunch,dinner] (française) {four,plaques} #vegetarien #tarte r2 f1 d1
+- 1 rouleau de pâte brisée
+- 4 poireaux
+- 3 œufs
+- 20 cl de crème liquide
+- 80 g d'emmental râpé
+- 20 g de beurre
+> Faire fondre les poireaux émincés au beurre 15 min.
+> Garnir le fond de tarte, verser œufs et crème battus, parsemer de fromage.
+> Cuire 35 min à 180 °C.
+
+# Quiche chèvre épinards
+p6 t15+35 [lunch,dinner] (française) {four} #vegetarien #tarte r2 f1 d1
+- 1 rouleau de pâte brisée
+- 300 g d'épinards frais
+- 150 g de bûche de chèvre
+- 3 œufs
+- 20 cl de crème liquide
+> Faire tomber les épinards à la poêle, bien les égoutter.
+> Garnir la pâte d'épinards et de rondelles de chèvre, verser œufs et crème battus.
+> Cuire 35 min à 180 °C.
+
+# Lasagnes végétariennes ricotta épinards
+p6 t30+40 [lunch,dinner] (italienne) {four,plaques} #vegetarien #batch r2 f1 d2
+- 250 g de feuilles de lasagne
+- 500 g d'épinards
+- 250 g de ricotta
+- 700 g de coulis de tomate
+- 125 g de mozzarella
+- 60 g de parmesan
+- 2 gousses d'ail
+> Faire tomber les épinards avec l'ail, les mélanger à la ricotta.
+> Alterner pâtes, coulis et farce, terminer par mozzarella et parmesan.
+> Cuire 40 min à 180 °C.
+
+# Pâtes au pesto et tomates cerises
+p4 t5+12 [lunch,dinner] (italienne) {plaques} #rapide #vegetarien r0 f0 d1
+- 400 g de fusilli
+- 190 g de pesto
+- 250 g de tomates cerises
+- 30 g de parmesan
+- 20 g de pignons de pin
+> Cuire les pâtes, les mélanger au pesto.
+> Ajouter les tomates cerises coupées, le parmesan et les pignons grillés.
+
+# Gnocchis poêlés, épinards et parmesan
+p4 t5+15 [lunch,dinner] (italienne) {plaques} #rapide #vegetarien r0 f0 d1
+- 500 g de gnocchis
+- 200 g de pousses d'épinard
+- 2 gousses d'ail
+- 40 g de parmesan
+- 20 g de beurre
+> Dorer les gnocchis au beurre 8 min.
+> Ajouter l'ail et les épinards jusqu'à ce qu'ils tombent, parsemer de parmesan.
+
+# Buddha bowl quinoa, pois chiches et légumes rôtis
+p4 t20+30 [lunch,dinner] (healthy) {four,plaques} #vegan r1 f0 d1
+- 200 g de quinoa
+- 530 g de pois chiches
+- 500 g de patates douces
+- 1 avocat
+- 150 g de mesclun
+- 3 c. à soupe de tahini
+- 1 citron
+- 3 c. à soupe d'huile d'olive
+- 1 c. à café de cumin
+> Rôtir patates douces et pois chiches au cumin et à l'huile 30 min à 200 °C.
+> Cuire le quinoa ; préparer la sauce tahini-citron.
+> Dresser les bols avec salade, avocat et sauce.
+
+# Tofu sauté aux légumes et sésame
+p4 t15+12 [lunch,dinner] (asiatique) {wok} #vegan #rapide r0 f0 d1
+- 400 g de tofu ferme
+- 750 g de légumes pour wok
+- 3 c. à soupe de sauce soja
+- 1 c. à soupe d'huile de sésame
+- 1 c. à soupe de graines de sésame
+- 250 g de nouilles de riz
+- 1 gousse d'ail
+> Dorer le tofu en dés au wok, réserver.
+> Sauter légumes et ail, ajouter nouilles cuites, tofu et sauce soja.
+> Parsemer de sésame.
+
+# Pad thaï aux crevettes
+p4 t20+10 [lunch,dinner] (asiatique) {wok} #rapide r0 f0 d2
+- 250 g de nouilles de riz
+- 300 g de crevettes
+- 2 œufs
+- 50 g de cacahuètes
+- 3 c. à soupe de sauce soja
+- 1 c. à soupe de sucre
+- 1 citron vert
+- 2 oignons nouveaux {oignon}
+- coriandre
+- 2 c. à soupe d'huile de tournesol
+> Réhydrater les nouilles. Saisir les crevettes dans l'huile, pousser sur le côté et brouiller les œufs.
+> Ajouter nouilles, sauce soja, sucre et jus de citron vert.
+> Servir avec cacahuètes concassées, oignons et coriandre.
+
+# Falafels maison et salade
+p4 t25+15 [lunch,dinner] (orientale) {mixeur,plaques} #vegan r1 f1 d2
+- 530 g de pois chiches
+- 1 oignon
+- 2 gousses d'ail
+- 1 botte de persil
+- 1 c. à café de cumin
+- 3 c. à soupe de farine
+- 4 c. à soupe d'huile de tournesol
+- 4 tomates
+- 1 concombre
+- 3 c. à soupe de tahini
+> Mixer pois chiches égouttés, oignon, ail, persil, cumin et farine.
+> Former des galettes et les dorer 3 min par face dans l'huile.
+> Servir avec tomates et concombre en dés et sauce tahini.
+
+# Galettes de lentilles et yaourt
+p4 t20+30 [lunch,dinner] (orientale) {plaques} #vegetarien #budget r1 f1 d1
+- 250 g de lentilles vertes
+- 1 oignon
+- 1 œuf
+- 50 g de chapelure
+- 1 c. à café de cumin
+- 2 yaourts
+- menthe
+- 3 c. à soupe d'huile d'olive
+> Cuire les lentilles 25 min, égoutter et écraser grossièrement.
+> Mélanger avec oignon, œuf, chapelure et cumin ; former des galettes et les dorer.
+> Servir avec le yaourt à la menthe.
+
+# Shakshuka
+p4 t10+25 [breakfast,lunch,dinner] (orientale) {plaques} #vegetarien #budget r0 f0 d1
+- 6 œufs
+- 800 g de tomates concassées
+- 2 poivrons
+- 1 oignon
+- 2 gousses d'ail
+- 1 c. à café de cumin
+- 1 c. à café de paprika
+- 2 c. à soupe d'huile d'olive
+- coriandre
+> Faire fondre oignon et poivrons dans l'huile, ajouter ail, épices et tomates ; mijoter 15 min.
+> Creuser des puits, casser les œufs et cuire à couvert 8 min.
+
+# Gratin de chou-fleur
+p4 t15+30 [lunch,dinner] (française) {four,plaques} #vegetarien #hiver r1 f1 d1
+- 1 chou-fleur
+- 50 cl de lait
+- 40 g de beurre
+- 40 g de farine
+- 100 g d'emmental râpé
+- muscade
+> Cuire les bouquets de chou-fleur 10 min à l'eau.
+> Préparer une béchamel muscadée, napper le chou-fleur dans un plat.
+> Parsemer d'emmental et gratiner 20 min à 200 °C.
+
+# Gratin de courgettes
+p4 t15+35 [lunch,dinner] (française) {four} #vegetarien #ete r1 f0 d1
+- 4 courgettes
+- 3 œufs
+- 20 cl de crème liquide
+- 80 g d'emmental râpé
+- 1 gousse d'ail
+- 1 c. à soupe d'huile d'olive
+> Faire revenir les courgettes en rondelles avec l'ail dans l'huile.
+> Les disposer dans un plat, verser œufs et crème battus, couvrir de fromage.
+> Cuire 30 min à 180 °C.
+
+# Aubergines à la parmigiana
+p4 t30+40 [lunch,dinner] (italienne) {four,plaques} #vegetarien #ete r2 f1 d2
+- 3 aubergines
+- 700 g de coulis de tomate
+- 250 g de mozzarella
+- 60 g de parmesan
+- 4 c. à soupe d'huile d'olive
+- basilic
+> Trancher les aubergines, les badigeonner d'huile et les griller.
+> Alterner aubergines, coulis, mozzarella et basilic dans un plat.
+> Couvrir de parmesan et cuire 35 min à 180 °C.
+
+# Courge rôtie, feta et boulgour
+p4 t15+35 [lunch,dinner] (méditerranéenne) {four,plaques} #vegetarien #automne r1 f0 d1
+- 1 courge butternut
+- 200 g de boulgour
+- 200 g de feta
+- 50 g de noix
+- 3 c. à soupe d'huile d'olive
+- 1 c. à café de cumin
+- persil
+> Rôtir la courge en cubes avec l'huile et le cumin 35 min à 200 °C.
+> Cuire le boulgour, mélanger avec la courge, la feta émiettée, les noix et le persil.
+
+# Poêlée de légumes et œufs au plat
+p2 t10+15 [lunch,dinner] (française) {plaques} #rapide #vegetarien r0 f0 d1
+- 1 courgette
+- 1 poivron
+- 1 oignon
+- 4 œufs
+- 2 c. à soupe d'huile d'olive
+- herbes de Provence
+> Faire sauter les légumes émincés dans l'huile avec les herbes 10 min.
+> Casser les œufs dessus et cuire à couvert 4 min.
+
+# Pizza margherita maison
+p4 t15+15 [lunch,dinner] (italienne) {four} #enfants #vegetarien r0 f0 d1
+- 1 rouleau de pâte à pizza
+- 200 g de coulis de tomate
+- 250 g de mozzarella
+- basilic
+- 1 c. à soupe d'huile d'olive
+> Étaler la pâte, la garnir de coulis et de mozzarella en tranches.
+> Cuire 15 min à 240 °C, ajouter basilic et un filet d'huile.
+
+# Pizza jambon champignons
+p4 t15+15 [lunch,dinner] (italienne) {four} #enfants r0 f0 d1
+- 1 rouleau de pâte à pizza
+- 200 g de coulis de tomate
+- 125 g de mozzarella
+- 3 tranches de jambon
+- 150 g de champignons de Paris
+- 50 g d'emmental râpé
+> Garnir la pâte de coulis, jambon, champignons émincés et fromages.
+> Cuire 15 min à 240 °C.
+
+# Riz cantonais
+p4 t15+15 [lunch,dinner] (asiatique) {wok} #reste #rapide r0 f0 d1
+- 300 g de riz
+- 3 œufs
+- 150 g de dés de jambon
+- 150 g de petits pois
+- 2 c. à soupe de sauce soja
+- 2 c. à soupe d'huile de tournesol
+- 1 oignon
+> Cuire le riz la veille si possible.
+> Brouiller les œufs au wok, ajouter oignon, jambon et petits pois.
+> Ajouter le riz et la sauce soja, sauter 5 min à feu vif.
+
+# Nouilles sautées aux légumes
+p4 t10+10 [lunch,dinner] (asiatique) {wok} #rapide #vegetarien r0 f0 d1
+- 250 g de nouilles aux œufs
+- 750 g de légumes pour wok
+- 3 c. à soupe de sauce soja
+- 1 c. à soupe d'huile de sésame
+- 1 gousse d'ail
+- 1 morceau de gingembre {gingembre}
+> Cuire les nouilles, les égoutter.
+> Sauter légumes, ail et gingembre à feu vif, ajouter nouilles et sauce soja.
+
+# Taboulé libanais
+p4 t20+0 [lunch,dinner] (orientale) {} #ete #vegan #froid r2 f0 d1
+- 150 g de boulgour
+- 2 bottes de persil
+- 1 botte de menthe
+- 4 tomates
+- 1 oignon
+- 2 citrons
+- 5 c. à soupe d'huile d'olive
+> Faire gonfler le boulgour dans l'eau chaude 15 min, l'égoutter.
+> Hacher finement herbes, tomates et oignon ; mélanger avec citron et huile.
+
+# Salade niçoise
+p4 t20+10 [lunch,dinner] (française) {plaques} #ete #froid r0 f0 d1
+- 4 tomates
+- 4 œufs
+- 280 g de thon au naturel
+- 200 g de haricots verts
+- 50 g d'olives noires
+- 1 poivron
+- 1 salade
+- 4 c. à soupe d'huile d'olive
+- 1 c. à soupe de vinaigre
+> Cuire les œufs durs 10 min et les haricots verts 8 min.
+> Disposer salade, tomates, poivron, haricots, thon, œufs et olives ; assaisonner.
+
+# Salade de lentilles
+p4 t10+25 [lunch,dinner] (française) {plaques} #froid #budget r2 f0 d1
+- 300 g de lentilles vertes
+- 1 échalote
+- 2 carottes
+- 4 c. à soupe d'huile de colza
+- 2 c. à soupe de vinaigre
+- 1 c. à café de moutarde
+- persil
+> Cuire les lentilles 25 min avec les carottes en dés.
+> Égoutter, mélanger avec l'échalote, la vinaigrette moutardée et le persil.
+
+# Salade de pâtes au thon
+p4 t15+12 [lunch] (française) {plaques} #froid #ete r1 f0 d1
+- 300 g de farfalle
+- 140 g de thon
+- 250 g de tomates cerises
+- 285 g de maïs
+- 1 concombre
+- 3 c. à soupe de mayonnaise
+> Cuire les pâtes, les refroidir.
+> Mélanger avec thon, tomates, maïs, concombre et mayonnaise.
+
+# Salade César au poulet
+p4 t20+10 [lunch,dinner] (américaine) {plaques} #froid r0 f0 d1
+- 2 blancs de poulet
+- 1 laitue
+- 4 tranches de pain de mie
+- 50 g de parmesan
+- 3 c. à soupe de mayonnaise
+- 1 c. à café de moutarde
+- 1 citron
+- 1 c. à soupe d'huile d'olive
+> Griller le poulet, le trancher ; faire des croûtons avec le pain et l'huile.
+> Préparer la sauce : mayonnaise, moutarde, citron, parmesan.
+> Mélanger salade, poulet, croûtons et sauce.
+
+# Salade de chèvre chaud
+p4 t15+10 [lunch,dinner] (française) {four} #vegetarien r0 f0 d1
+- 1 baguette
+- 180 g de bûche de chèvre
+- 150 g de mesclun
+- 50 g de cerneaux de noix
+- 1 c. à soupe de miel
+- 3 c. à soupe d'huile d'olive
+- 1 c. à soupe de vinaigre balsamique
+> Poser des rondelles de chèvre sur des tranches de baguette, filet de miel, gratiner 8 min.
+> Servir sur la salade assaisonnée avec les noix.
+
+# Salade grecque
+p4 t15+0 [lunch,dinner] (grecque) {} #ete #vegetarien #froid r0 f0 d1
+- 4 tomates
+- 1 concombre
+- 1 oignon rouge
+- 200 g de feta
+- 80 g d'olives noires
+- 4 c. à soupe d'huile d'olive
+- origan
+> Couper tomates, concombre et oignon, ajouter feta et olives.
+> Assaisonner d'huile et d'origan.
+
+# Wraps au poulet et crudités
+p4 t15+10 [lunch] (américaine) {plaques} #rapide #froid r0 f0 d1
+- 4 tortillas
+- 2 blancs de poulet
+- 1 avocat
+- 1 tomate
+- 4 feuilles de salade {salade}
+- 4 c. à soupe de fromage blanc
+- 1 citron
+> Griller le poulet et le trancher.
+> Garnir les tortillas de fromage blanc citronné, salade, tomate, avocat et poulet ; rouler.
+
+# Croque végétarien tomate mozzarella
+p4 t10+10 [lunch,dinner] (italienne) {four} #rapide #vegetarien r0 f0 d1
+- 8 tranches de pain de mie
+- 2 tomates
+- 250 g de mozzarella
+- 2 c. à soupe de pesto
+> Tartiner le pain de pesto, garnir de tomate et mozzarella.
+> Refermer et cuire 10 min à 200 °C.
+
+# Poêlée de gnocchis, chorizo et poivrons
+p4 t10+15 [lunch,dinner] (espagnole) {plaques} #rapide r0 f0 d1
+- 500 g de gnocchis
+- 100 g de chorizo
+- 2 poivrons
+- 1 oignon
+- 1 c. à soupe d'huile d'olive
+> Faire revenir chorizo, oignon et poivrons dans l'huile.
+> Ajouter les gnocchis et dorer 8 min.
+
+# Pâtes à la crème, lardons et champignons
+p4 t10+15 [lunch,dinner] (française) {plaques} #rapide r0 f0 d1
+- 400 g de tagliatelles
+- 200 g de lardons
+- 250 g de champignons
+- 20 cl de crème liquide
+- 1 échalote
+> Faire revenir lardons, échalote et champignons.
+> Ajouter la crème, laisser réduire et mélanger aux pâtes cuites.
+
+# Sardines grillées et pommes de terre vapeur
+p4 t10+20 [lunch,dinner] (portugaise) {plaques} #budget r0 f0 d1
+- 460 g de sardines à l'huile
+- 800 g de pommes de terre
+- 1 citron
+- persil
+- 1 c. à soupe d'huile d'olive
+> Cuire les pommes de terre à la vapeur 20 min.
+> Réchauffer les sardines à la poêle, servir avec citron, persil et un filet d'huile.
+
+# Saumon teriyaki et riz
+p4 t10+15 [lunch,dinner] (japonaise) {plaques} #rapide r0 f0 d1
+- 4 pavés de saumon
+- 4 c. à soupe de sauce soja
+- 2 c. à soupe de miel
+- 1 gousse d'ail
+- 1 morceau de gingembre {gingembre}
+- 250 g de riz jasmin
+- 1 c. à soupe de graines de sésame
+> Mélanger sauce soja, miel, ail et gingembre râpés.
+> Saisir le saumon, ajouter la sauce et laquer 3 min ; parsemer de sésame, servir avec le riz.
+
+# Paella simplifiée
+p6 t25+40 [lunch,dinner] (espagnole) {plaques} #convivial r1 f0 d2
+- 400 g de riz rond
+- 4 cuisses de poulet
+- 300 g de crevettes
+- 1 kg de moules
+- 100 g de chorizo
+- 1 poivron
+- 1 oignon
+- 200 g de petits pois
+- 1 c. à café de curcuma
+- 1 cube de bouillon de volaille
+- 3 c. à soupe d'huile d'olive
+> Dorer poulet, chorizo, oignon et poivron dans l'huile.
+> Ajouter le riz, le curcuma et 1 l de bouillon ; cuire 20 min sans remuer.
+> Ajouter moules, crevettes et petits pois, couvrir 10 min.

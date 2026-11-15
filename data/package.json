@@ -1,0 +1,16 @@
+{
+  "name": "@mise/data",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "ciqual": "tsx ciqual/import.ts"
+  },
+  "dependencies": {
+    "@mise/db": "workspace:*",
+    "drizzle-orm": "0.45.4"
+  },
+  "devDependencies": {
+    "tsx": "4.23.15"
+  }
+}

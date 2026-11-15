@@ -65,15 +65,16 @@ export function buildIngredientIndex(ingredients: readonly Pick<Ingredient, "id"
 }
 
 /**
- * Score de similarité : Jaccard sur les jetons, bonus si tous les jetons du nom catalogue
- * sont présents (« huile d'olive vierge extra » ⊃ « huile olive »).
+ * Score de similarité. Si tous les jetons d'un nom du catalogue figurent dans le libellé
+ * (« huile d'olive vierge extra » ⊃ « huile olive »), le score croît avec la part du
+ * libellé couverte ; sinon, Jaccard atténué.
  */
 function similarity(query: Set<string>, target: Set<string>): number {
   let inter = 0;
   for (const t of query) if (target.has(t)) inter++;
   if (inter === 0) return 0;
-  const jaccard = inter / (query.size + target.size - inter);
-  return inter === target.size ? 0.7 + 0.3 * jaccard : 0.8 * jaccard;
+  if (inter === target.size) return 0.5 + 0.5 * (inter / query.size);
+  return 0.6 * (inter / (query.size + target.size - inter));
 }
 
 /**
@@ -95,7 +96,7 @@ export function matchIngredient(label: string, index: IngredientIndex, limit = 5
   const candidates = scored.slice(0, limit);
   if (exactId) return { status: "matched", ingredientId: exactId, candidates };
   const [first, second] = candidates;
-  if (first && first.score >= 0.85 && (!second || first.score - second.score >= 0.2)) {
+  if (first && first.score >= 0.7 && (!second || first.score - second.score >= 0.1)) {
     return { status: "matched", ingredientId: first.ingredientId, candidates };
   }
   if (first && first.score >= 0.2) return { status: "ambiguous", candidates };

@@ -1,0 +1,348 @@
+# Soupe de légumes maison
+p6 t20+35 [lunch,dinner] (française) {plaques,mixeur} #hiver #vegan #batch r3 f1 d1
+- 3 carottes
+- 2 poireaux
+- 3 pommes de terre
+- 1 navet
+- 1 oignon
+- 1 cube de bouillon de légumes
+- 1,5 l d'eau
+> Éplucher et couper les légumes, les mettre dans l'eau avec le bouillon.
+> Cuire 30 min puis mixer.
+
+# Velouté de potiron
+p6 t15+30 [lunch,dinner] (française) {plaques,mixeur} #automne #vegetarien #batch r3 f1 d1
+- 1 kg de potiron
+- 2 pommes de terre
+- 1 oignon
+- 20 cl de crème liquide
+- 1 cube de bouillon de légumes
+- 1 l d'eau
+- muscade
+> Cuire potiron, pommes de terre et oignon dans le bouillon 25 min.
+> Mixer avec la crème, muscader.
+
+# Soupe à l'oignon gratinée
+p4 t20+40 [lunch,dinner] (française) {plaques,four} #hiver r1 f1 d2
+- 6 oignons
+- 40 g de beurre
+- 1 c. à soupe de farine
+- 10 cl de vin blanc
+- 2 cubes de bouillon de bœuf
+- 1 l d'eau
+- 1 baguette
+- 100 g de comté râpé
+> Faire fondre les oignons émincés au beurre 20 min jusqu'à coloration.
+> Saupoudrer de farine, mouiller avec le vin et le bouillon ; cuire 20 min.
+> Verser dans des bols, couvrir de pain et de fromage, gratiner.
+
+# Velouté de carottes au cumin
+p4 t15+25 [lunch,dinner] (française) {plaques,mixeur} #vegan #budget r3 f1 d1
+- 800 g de carottes
+- 1 oignon
+- 1 c. à café de cumin
+- 1 cube de bouillon de légumes
+- 1 l d'eau
+- 1 c. à soupe d'huile d'olive
+> Faire revenir l'oignon et le cumin dans l'huile, ajouter les carottes et le bouillon.
+> Cuire 25 min puis mixer.
+
+# Soupe de lentilles corail
+p4 t10+25 [lunch,dinner] (orientale) {plaques,mixeur} #vegan #budget r3 f1 d1
+- 250 g de lentilles corail
+- 1 oignon
+- 2 carottes
+- 400 g de tomates concassées
+- 1 c. à café de cumin
+- 1 citron
+- 1 l d'eau
+- 1 cube de bouillon de légumes
+> Faire revenir l'oignon, ajouter carottes, lentilles, tomates, épices et bouillon.
+> Cuire 20 min, mixer et ajouter le jus de citron.
+
+# Velouté de brocoli
+p4 t10+20 [lunch,dinner] (française) {plaques,mixeur} #vegetarien r2 f1 d1
+- 1 brocoli
+- 2 pommes de terre
+- 1 oignon
+- 1 cube de bouillon de légumes
+- 80 cl d'eau
+- 10 cl de crème liquide
+> Cuire brocoli, pommes de terre et oignon dans le bouillon 20 min.
+> Mixer avec la crème.
+
+# Gaspacho
+p4 t15+0 [lunch,dinner] (espagnole) {mixeur} #ete #vegan #froid r2 f0 d1
+- 1 kg de tomates
+- 1 concombre
+- 1 poivron
+- 1 gousse d'ail
+- 3 c. à soupe d'huile d'olive
+- 1 c. à soupe de vinaigre de xérès
+> Mixer tous les ingrédients, assaisonner et réfrigérer 2 h.
+
+# Soupe de pois cassés
+p6 t10+60 [lunch,dinner] (française) {plaques,mixeur} #hiver #budget r3 f1 d1
+- 400 g de pois cassés
+- 150 g de lardons
+- 1 oignon
+- 2 carottes
+- 1,5 l d'eau
+- 1 cube de bouillon
+> Faire revenir lardons et oignon, ajouter pois cassés, carottes et bouillon.
+> Cuire 1 h puis mixer.
+
+# Minestrone
+p6 t20+40 [lunch,dinner] (italienne) {plaques} #vegetarien #batch r3 f1 d1
+- 2 carottes
+- 2 courgettes
+- 1 branche de céleri
+- 1 oignon
+- 265 g de haricots blancs
+- 400 g de tomates concassées
+- 100 g de coquillettes
+- 1 cube de bouillon de légumes
+- 1,5 l d'eau
+- 40 g de parmesan
+> Faire revenir les légumes en dés, ajouter tomates et bouillon ; cuire 25 min.
+> Ajouter pâtes et haricots 10 min ; servir avec le parmesan.
+
+# Soupe miso-style aux nouilles et légumes
+p4 t10+15 [lunch,dinner] (asiatique) {plaques} #rapide #vegan r0 f0 d1
+- 200 g de nouilles de riz
+- 200 g de tofu
+- 2 carottes
+- 200 g de champignons
+- 3 c. à soupe de sauce soja
+- 1 cube de bouillon de légumes
+- 1 l d'eau
+- 1 morceau de gingembre {gingembre}
+> Porter le bouillon à frémissement avec le gingembre et la sauce soja.
+> Ajouter carottes et champignons émincés 8 min, puis tofu et nouilles 4 min.
+
+# Velouté poireaux pommes de terre
+p4 t15+25 [lunch,dinner] (française) {plaques,mixeur} #hiver #vegetarien r3 f1 d1
+- 3 poireaux
+- 3 pommes de terre
+- 20 g de beurre
+- 1 cube de bouillon de légumes
+- 1 l d'eau
+- 10 cl de crème liquide
+> Faire suer les poireaux au beurre, ajouter pommes de terre et bouillon ; cuire 25 min.
+> Mixer avec la crème.
+
+# Soupe de légumes surgelés express
+p4 t5+20 [lunch,dinner] (française) {plaques,mixeur} #rapide #budget r2 f1 d1
+- 1 kg de légumes pour soupe
+- 1 cube de bouillon
+- 1 l d'eau
+- 60 g de fromage frais {fromage_blanc}
+> Cuire les légumes dans le bouillon 20 min, mixer avec le fromage.
+
+# Tarte à la tomate et moutarde
+p6 t15+30 [lunch,dinner] (française) {four} #ete #vegetarien #tarte r1 f0 d1
+- 1 rouleau de pâte brisée
+- 5 tomates
+- 3 c. à soupe de moutarde
+- 80 g d'emmental râpé
+- herbes de Provence
+- 1 c. à soupe d'huile d'olive
+> Étaler la pâte, la badigeonner de moutarde et parsemer de fromage.
+> Couvrir de rondelles de tomates, herbes et huile ; cuire 30 min à 200 °C.
+
+# Tarte au thon
+p6 t15+35 [lunch,dinner] (française) {four} #tarte #placard r2 f1 d1
+- 1 rouleau de pâte brisée
+- 280 g de thon
+- 3 œufs
+- 20 cl de crème liquide
+- 2 c. à soupe de moutarde
+- 2 tomates
+- 50 g d'emmental râpé
+> Tartiner la pâte de moutarde, répartir le thon émietté.
+> Verser œufs et crème battus, ajouter rondelles de tomates et fromage.
+> Cuire 35 min à 180 °C.
+
+# Tarte saumon fumé et poireaux
+p6 t20+35 [lunch,dinner] (française) {four,plaques} #tarte r1 f0 d1
+- 1 rouleau de pâte feuilletée
+- 2 poireaux
+- 150 g de saumon fumé
+- 3 œufs
+- 20 cl de crème liquide
+- 20 g de beurre
+> Faire fondre les poireaux au beurre, garnir la pâte avec le saumon en lanières.
+> Verser œufs et crème battus, cuire 35 min à 180 °C.
+
+# Feuilleté jambon fromage
+p4 t10+25 [lunch,dinner] (française) {four} #rapide #enfants r0 f0 d1
+- 2 rouleaux de pâte feuilletée
+- 4 tranches de jambon
+- 100 g d'emmental râpé
+- 1 œuf
+> Garnir une pâte de jambon et fromage, couvrir de la seconde, souder les bords.
+> Dorer à l'œuf et cuire 25 min à 200 °C.
+
+# Cake salé olives et jambon
+p6 t15+45 [lunch,snack] (française) {four} #pique-nique r3 f1 d1
+- 200 g de farine
+- 3 œufs
+- 10 cl de lait
+- 10 cl d'huile de tournesol
+- 1 sachet de levure chimique
+- 150 g de dés de jambon
+- 100 g d'olives vertes
+- 100 g d'emmental râpé
+> Mélanger farine, levure, œufs, lait et huile.
+> Ajouter jambon, olives et fromage, verser dans un moule à cake.
+> Cuire 45 min à 180 °C.
+
+# Pissaladière
+p6 t20+30 [lunch,dinner] (provençale) {four,plaques} #vegetarien r1 f0 d1
+- 1 rouleau de pâte à pizza
+- 6 oignons
+- 50 g d'olives noires
+- 3 c. à soupe d'huile d'olive
+- thym
+> Faire fondre les oignons émincés dans l'huile 25 min à feu doux.
+> Étaler sur la pâte, ajouter olives et thym ; cuire 25 min à 220 °C.
+
+# Croziflette simplifiée
+p4 t15+25 [lunch,dinner] (française) {four,plaques} #hiver r1 f0 d1
+- 300 g de pâtes
+- 200 g de lardons
+- 1 oignon
+- 20 cl de crème fraîche
+- 200 g de reblochon
+> Cuire les pâtes. Faire revenir lardons et oignon.
+> Mélanger avec la crème dans un plat, couvrir de reblochon et gratiner 20 min.
+
+# Gratin de pommes de terre et poireaux
+p4 t20+40 [lunch,dinner] (française) {four} #vegetarien #hiver r2 f0 d1
+- 800 g de pommes de terre
+- 2 poireaux
+- 30 cl de crème liquide
+- 80 g d'emmental râpé
+- 20 g de beurre
+> Faire fondre les poireaux au beurre, alterner avec les pommes de terre en rondelles.
+> Couvrir de crème et de fromage, cuire 40 min à 190 °C.
+
+# Œufs cocotte à la crème et ciboulette
+p4 t5+12 [breakfast,lunch,dinner] (française) {four} #rapide #vegetarien r0 f0 d1
+- 4 œufs
+- 4 c. à soupe de crème fraîche
+- ciboulette
+- 4 tranches de pain
+> Déposer une cuillère de crème dans chaque ramequin, casser un œuf.
+> Cuire 12 min au bain-marie à 180 °C, parsemer de ciboulette ; servir avec le pain.
+
+# Œufs durs mayonnaise et crudités
+p4 t10+10 [lunch,dinner] (française) {plaques} #budget #vegetarien r0 f0 d1
+- 6 œufs
+- 4 c. à soupe de mayonnaise
+- 3 carottes
+- 1 betterave
+- 1 laitue
+> Cuire les œufs 10 min, les écaler et les couper en deux.
+> Servir avec la mayonnaise, les carottes râpées, la betterave et la salade.
+
+# Galettes de sarrasin complètes simplifiées
+p4 t10+15 [lunch,dinner] (bretonne) {plaques} #rapide r0 f0 d1
+- 200 g de farine
+- 2 œufs
+- 50 cl de lait
+- 4 tranches de jambon
+- 4 œufs
+- 100 g d'emmental râpé
+> Préparer une pâte fine avec farine, 2 œufs et lait.
+> Cuire les galettes, garnir de jambon, d'un œuf et de fromage, replier les bords.
+
+# Purée de patate douce et poulet grillé
+p4 t15+25 [lunch,dinner] (française) {plaques} #enfants r1 f0 d1
+- 800 g de patates douces
+- 500 g de blanc de poulet
+- 20 g de beurre
+- 10 cl de lait
+- 1 c. à café de paprika
+> Cuire les patates douces à l'eau et les écraser avec beurre et lait.
+> Griller le poulet saupoudré de paprika.
+
+# Hachis de légumes au fromage (gratin du placard)
+p4 t15+30 [lunch,dinner] (française) {four} #reste #vegetarien r1 f0 d1
+- 600 g de pommes de terre
+- 300 g de haricots verts
+- 2 carottes
+- 3 œufs
+- 20 cl de lait
+- 100 g d'emmental râpé
+> Cuire les légumes, les disposer dans un plat.
+> Verser œufs et lait battus, couvrir de fromage ; cuire 25 min à 180 °C.
+
+# Poêlée de haricots verts et pommes de terre aux lardons
+p4 t15+25 [lunch,dinner] (française) {plaques} #ete r0 f0 d1
+- 500 g de haricots verts
+- 600 g de pommes de terre
+- 150 g de lardons
+- 1 échalote
+> Cuire haricots et pommes de terre en dés à l'eau 10 min.
+> Les faire sauter avec lardons et échalote 10 min.
+
+# Ratatouille au four et œufs
+p4 t20+45 [lunch,dinner] (française) {four} #vegetarien #ete r2 f1 d1
+- 1 aubergine
+- 2 courgettes
+- 1 poivron
+- 3 tomates
+- 1 oignon
+- 4 œufs
+- 4 c. à soupe d'huile d'olive
+- herbes de Provence
+> Rôtir les légumes en cubes avec huile et herbes 35 min à 200 °C.
+> Casser les œufs dessus et remettre au four 8 min.
+
+# Potée aux choux
+p6 t20+90 [lunch,dinner] (française) {plaques} #hiver #batch r3 f1 d1
+- 1 chou vert
+- 6 saucisses fumées {saucisse}
+- 200 g de lardons
+- 6 pommes de terre
+- 4 carottes
+- 2 navets
+- 1 oignon
+- 2 cubes de bouillon
+- laurier
+> Blanchir le chou coupé en quartiers 10 min.
+> Mettre tous les ingrédients dans une cocotte, couvrir d'eau et cuire 1 h 30.
+
+# Riz au curry et légumes
+p4 t10+20 [lunch,dinner] (indienne) {plaques} #vegan #budget r2 f1 d1
+- 300 g de riz basmati
+- 2 carottes
+- 1 courgette
+- 1 oignon
+- 1 c. à soupe de curry
+- 20 cl de lait de coco
+- 1 c. à soupe d'huile de tournesol
+> Faire revenir oignon et légumes en dés avec le curry.
+> Ajouter le riz, le lait de coco et 50 cl d'eau ; cuire 15 min à couvert.
+
+# Polenta crémeuse aux champignons
+p4 t10+20 [lunch,dinner] (italienne) {plaques} #vegetarien r0 f0 d1
+- 200 g de polenta
+- 1 l de lait
+- 400 g de champignons
+- 2 gousses d'ail
+- 50 g de parmesan
+- 20 g de beurre
+- persil
+> Cuire la polenta dans le lait 8 min en remuant, ajouter le parmesan.
+> Poêler les champignons au beurre avec ail et persil, servir sur la polenta.
+
+# Endives braisées et œufs mollets
+p4 t10+30 [lunch,dinner] (française) {plaques} #vegetarien #hiver r0 f0 d1
+- 8 endives
+- 30 g de beurre
+- 1 c. à café de sucre
+- 4 œufs
+> Braiser les endives au beurre et au sucre 30 min à couvert.
+> Cuire les œufs 6 min, les écaler et servir avec les endives.

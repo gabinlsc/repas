@@ -61,6 +61,7 @@ export const UNITS: Readonly<Record<string, UnitDef>> = Object.freeze({
   rouleau: u("rouleau", "ingredient", null, "rouleau", "rouleaux"),
   cube: u("cube", "ingredient", null, "cube", "cubes"),
   branche: u("branche", "ingredient", null, "branche", "branches"),
+  carre: u("carre", "ingredient", null, "carré", "carrés"),
 });
 
 export function getUnit(code: string): UnitDef {

@@ -1,0 +1,386 @@
+# Porridge aux pommes et cannelle
+p2 t5+5 [breakfast] (petit-déjeuner) {plaques} #rapide #vegetarien r0 f0 d1
+- 80 g de flocons d'avoine
+- 40 cl de lait
+- 1 pomme
+- 1 c. à café de cannelle
+- 1 c. à soupe de miel
+> Cuire les flocons dans le lait 5 min en remuant.
+> Ajouter la pomme râpée, la cannelle et le miel.
+
+# Porridge banane et beurre de cacahuète
+p2 t5+5 [breakfast] (petit-déjeuner) {plaques} #rapide #vegetarien r0 f0 d1
+- 80 g de flocons d'avoine
+- 40 cl de lait
+- 1 banane
+- 2 c. à soupe de beurre de cacahuète
+> Cuire les flocons dans le lait 5 min.
+> Garnir de banane en rondelles et de beurre de cacahuète.
+
+# Overnight oats aux fruits rouges
+p2 t5+0 [breakfast] (petit-déjeuner) {} #vegetarien #froid r1 f0 d1
+- 80 g de flocons d'avoine
+- 2 yaourts
+- 20 cl de lait
+- 150 g de fruits rouges
+- 1 c. à soupe de sirop d'érable
+> Mélanger flocons, yaourt et lait, réfrigérer une nuit.
+> Servir avec les fruits rouges et le sirop.
+
+# Pancakes moelleux
+p4 t10+15 [breakfast,snack] (américaine) {plaques} #enfants #vegetarien r1 f1 d1
+- 250 g de farine
+- 2 œufs
+- 30 cl de lait
+- 1 sachet de levure chimique
+- 2 c. à soupe de sucre
+- 30 g de beurre fondu
+- sirop d'érable
+> Mélanger farine, levure et sucre, ajouter œufs, lait et beurre fondu.
+> Cuire de petites louches de pâte 2 min par face.
+
+# Crêpes
+p6 t10+30 [breakfast,snack,dinner] (bretonne) {plaques} #enfants #vegetarien r1 f1 d1
+- 250 g de farine
+- 4 œufs
+- 50 cl de lait
+- 50 g de beurre fondu
+- 1 sachet de sucre vanillé
+- 1 pincée de sel
+> Mélanger farine et œufs, ajouter progressivement le lait puis le beurre et le sucre vanillé.
+> Laisser reposer 1 h, cuire les crêpes dans une poêle chaude.
+
+# Pain perdu
+p4 t10+10 [breakfast,snack] (française) {plaques} #anti-gaspi #vegetarien r0 f0 d1
+- 8 tranches de pain rassis {pain}
+- 3 œufs
+- 25 cl de lait
+- 2 c. à soupe de sucre
+- 30 g de beurre
+- cannelle
+> Battre œufs, lait, sucre et cannelle ; y tremper le pain.
+> Dorer au beurre 2 min par face.
+
+# Œufs brouillés et tartines
+p2 t5+5 [breakfast] (française) {plaques} #rapide #vegetarien r0 f0 d1
+- 4 œufs
+- 10 g de beurre
+- 4 tranches de pain
+- ciboulette
+> Cuire les œufs battus au beurre à feu doux en remuant.
+> Servir sur les tartines grillées avec la ciboulette.
+
+# Tartines avocat et œuf mollet
+p2 t10+6 [breakfast,lunch] (healthy) {plaques} #vegetarien r0 f0 d1
+- 4 tranches de pain de campagne
+- 1 avocat
+- 2 œufs
+- 1/2 citron
+- piment d'Espelette
+> Cuire les œufs 6 min, les écaler.
+> Écraser l'avocat avec le citron, tartiner le pain grillé et poser l'œuf.
+
+# Bol de fromage blanc, fruits et granola maison
+p2 t5+0 [breakfast,snack] (petit-déjeuner) {} #vegetarien #froid r0 f0 d1
+- 300 g de fromage blanc
+- 1 banane
+- 150 g de fraises
+- 40 g de flocons d'avoine
+- 20 g d'amandes effilées
+- 1 c. à soupe de miel
+> Répartir le fromage blanc, ajouter les fruits coupés.
+> Parsemer de flocons et d'amandes, arroser de miel.
+
+# Smoothie banane fraise
+p2 t5+0 [breakfast,snack] (petit-déjeuner) {mixeur} #rapide #vegetarien #froid r0 f0 d1
+- 2 bananes
+- 200 g de fraises
+- 1 yaourt
+- 20 cl de lait
+> Mixer tous les ingrédients jusqu'à obtenir une texture lisse.
+
+# Tartines beurre confiture et fruit
+p2 t5+0 [breakfast] (petit-déjeuner) {} #rapide #vegetarien r0 f0 d1
+- 1/2 baguette
+- 20 g de beurre
+- 4 c. à soupe de confiture
+- 2 oranges
+> Couper la baguette, tartiner de beurre et de confiture.
+> Servir avec les oranges.
+
+# Muesli maison au lait
+p2 t5+0 [breakfast] (petit-déjeuner) {} #rapide #vegetarien r0 f0 d1
+- 100 g de flocons d'avoine
+- 30 g de raisins secs
+- 30 g de cerneaux de noix
+- 30 cl de lait
+- 1 pomme
+> Mélanger flocons, raisins, noix et pomme en dés ; verser le lait.
+
+# Banana bread
+p8 t15+55 [breakfast,snack] (américaine) {four} #anti-gaspi #vegetarien r4 f1 d1
+- 3 bananes
+- 200 g de farine
+- 2 œufs
+- 80 g de sucre
+- 80 g de beurre fondu
+- 1 sachet de levure chimique
+- 1 c. à café de cannelle
+> Écraser les bananes, ajouter œufs, sucre et beurre.
+> Incorporer farine, levure et cannelle ; verser dans un moule à cake.
+> Cuire 55 min à 170 °C.
+
+# Muffins aux myrtilles
+p12 t15+22 [breakfast,snack] (américaine) {four} #vegetarien r3 f1 d1
+- 250 g de farine
+- 2 œufs
+- 120 g de sucre
+- 20 cl de lait
+- 80 g de beurre fondu
+- 1 sachet de levure chimique
+- 150 g de myrtilles
+> Mélanger les ingrédients secs, puis ajouter œufs, lait et beurre sans trop travailler.
+> Incorporer les myrtilles, remplir des moules et cuire 22 min à 180 °C.
+
+# Gaufres
+p6 t10+20 [breakfast,snack] (belge) {gaufrier} #enfants #vegetarien r1 f1 d1
+- 300 g de farine
+- 3 œufs
+- 50 cl de lait
+- 80 g de beurre fondu
+- 50 g de sucre
+- 1 sachet de levure chimique
+> Mélanger farine, levure et sucre, ajouter œufs, lait et beurre.
+> Cuire dans le gaufrier chaud.
+
+# Yaourt, compote et biscuits d'avoine
+p2 t5+0 [snack] (goûter) {} #rapide #vegetarien r0 f0 d1
+- 2 yaourts
+- 200 g de compote de pommes
+- 40 g de flocons d'avoine
+> Superposer yaourt, compote et flocons dans des verres.
+
+# Pommes au four
+p4 t10+30 [snack] (française) {four} #automne #vegetarien r1 f0 d1
+- 4 pommes
+- 20 g de beurre
+- 2 c. à soupe de sucre
+- 1 c. à café de cannelle
+> Évider les pommes, garnir de beurre, sucre et cannelle.
+> Cuire 30 min à 180 °C.
+
+# Salade de fruits frais
+p4 t15+0 [breakfast,snack] (française) {} #vegan #froid r1 f0 d1
+- 2 oranges
+- 2 kiwis
+- 2 bananes
+- 1 pomme
+- 1 citron
+- 1 c. à soupe de sucre
+> Couper les fruits en morceaux, arroser de jus de citron et sucrer légèrement.
+
+# Houmous et bâtonnets de légumes
+p4 t10+0 [snack,lunch] (orientale) {mixeur} #vegan #froid r2 f1 d1
+- 265 g de pois chiches
+- 2 c. à soupe de tahini
+- 1 citron
+- 1 gousse d'ail
+- 3 c. à soupe d'huile d'olive
+- 3 carottes
+- 1 concombre
+> Mixer pois chiches, tahini, citron, ail et huile avec un peu d'eau.
+> Servir avec les légumes en bâtonnets.
+
+# Gâteau au yaourt
+p8 t10+35 [snack] (française) {four} #enfants #vegetarien r4 f1 d1
+- 1 yaourt
+- 3 œufs
+- 200 g de sucre
+- 250 g de farine
+- 10 cl d'huile de tournesol
+- 1 sachet de levure chimique
+- 1 sachet de sucre vanillé
+> Mélanger dans l'ordre yaourt, sucres, œufs, farine, levure et huile.
+> Verser dans un moule beurré et cuire 35 min à 180 °C.
+
+# Fondant au chocolat
+p8 t15+25 [snack] (française) {four} #vegetarien r3 f1 d1
+- 200 g de chocolat noir
+- 150 g de beurre
+- 150 g de sucre
+- 4 œufs
+- 50 g de farine
+> Faire fondre chocolat et beurre, ajouter sucre, œufs puis farine.
+> Cuire 25 min à 180 °C.
+
+# Mousse au chocolat
+p6 t20+0 [snack] (française) {} #vegetarien #froid r2 f0 d2
+- 200 g de chocolat noir
+- 6 œufs
+- 1 pincée de sel
+> Faire fondre le chocolat, y incorporer les jaunes.
+> Monter les blancs en neige avec le sel et les incorporer délicatement ; réfrigérer 4 h.
+
+# Crumble aux pommes
+p6 t20+35 [snack] (anglaise) {four} #automne #vegetarien r2 f1 d1
+- 6 pommes
+- 150 g de farine
+- 100 g de sucre
+- 100 g de beurre
+- 1 c. à café de cannelle
+> Disposer les pommes en dés dans un plat avec la cannelle.
+> Sabler farine, sucre et beurre et en couvrir les fruits ; cuire 35 min à 180 °C.
+
+# Clafoutis aux cerises (ou fruits rouges)
+p6 t15+40 [snack] (française) {four} #ete #vegetarien r2 f0 d1
+- 500 g de fruits rouges
+- 3 œufs
+- 100 g de sucre
+- 80 g de farine
+- 30 cl de lait
+- 20 g de beurre
+> Beurrer un plat, y répartir les fruits.
+> Verser la pâte (œufs, sucre, farine, lait) et cuire 40 min à 180 °C.
+
+# Riz au lait
+p6 t5+40 [snack] (française) {plaques} #vegetarien #budget r3 f0 d1
+- 150 g de riz rond
+- 1 l de lait
+- 80 g de sucre
+- 1 sachet de sucre vanillé
+> Cuire le riz dans le lait vanillé à feu doux 35 min en remuant.
+> Ajouter le sucre en fin de cuisson et laisser refroidir.
+
+# Tarte aux pommes
+p8 t20+40 [snack] (française) {four} #vegetarien r2 f1 d1
+- 1 rouleau de pâte brisée
+- 5 pommes
+- 40 g de sucre
+- 30 g de beurre
+- 200 g de compote de pommes
+> Étaler la pâte, la garnir de compote puis de lamelles de pommes.
+> Parsemer de sucre et de noisettes de beurre ; cuire 40 min à 180 °C.
+
+# Crème dessert à la vanille
+p4 t10+10 [snack] (française) {plaques} #vegetarien r2 f0 d1
+- 50 cl de lait
+- 60 g de sucre
+- 40 g de maïzena
+- 2 jaunes d'œufs
+- 1 sachet de sucre vanillé
+> Chauffer le lait vanillé, verser sur jaunes, sucre et maïzena mélangés.
+> Remettre sur le feu jusqu'à épaississement, répartir et réfrigérer.
+
+# Cookies aux pépites de chocolat
+p12 t15+12 [snack] (américaine) {four} #enfants #vegetarien r5 f1 d1
+- 200 g de farine
+- 100 g de beurre mou
+- 100 g de sucre roux
+- 1 œuf
+- 150 g de pépites de chocolat
+- 1/2 sachet de levure chimique
+> Crémer beurre et sucre, ajouter l'œuf puis farine et levure.
+> Incorporer les pépites, former des boules et cuire 12 min à 180 °C.
+
+# Compote pommes poires maison
+p6 t15+20 [snack,breakfast] (française) {plaques} #vegan #anti-gaspi r4 f1 d1
+- 4 pommes
+- 3 poires
+- 1 c. à café de cannelle
+- 10 cl d'eau
+> Cuire les fruits en morceaux avec l'eau et la cannelle 20 min à couvert, écraser.
+
+# Rhubarbe et fraises rôties au yaourt
+p4 t10+20 [snack] (française) {four} #printemps #vegetarien r1 f0 d1
+- 400 g de rhubarbe
+- 250 g de fraises
+- 50 g de sucre
+- 4 yaourts
+> Rôtir rhubarbe et fraises avec le sucre 20 min à 180 °C.
+> Servir tiède sur le yaourt.
+
+# Pain d'épices simplifié
+p8 t15+50 [snack,breakfast] (française) {four} #hiver #vegetarien r5 f1 d1
+- 250 g de farine
+- 150 g de miel
+- 25 cl de lait
+- 80 g de sucre roux
+- 1 sachet de levure chimique
+- 2 c. à café de cannelle
+- 1 œuf
+> Chauffer lait, miel et sucre ; verser sur farine, levure, épices et œuf.
+> Cuire 50 min à 160 °C dans un moule à cake.
+
+# Tartine chèvre miel noix
+p2 t5+5 [snack,lunch] (française) {four} #rapide #vegetarien r0 f0 d1
+- 4 tranches de pain de campagne
+- 100 g de chèvre frais
+- 1 c. à soupe de miel
+- 20 g de cerneaux de noix
+> Tartiner le pain de chèvre, ajouter noix et miel ; gratiner 5 min.
+
+# Bâtonnets de légumes et sauce yaourt
+p4 t10+0 [snack] (healthy) {} #vegetarien #froid r1 f0 d1
+- 3 carottes
+- 1 concombre
+- 2 yaourts
+- 1 citron
+- ciboulette
+> Couper les légumes en bâtonnets ; mélanger yaourt, citron et ciboulette.
+
+# Fruits secs et chocolat
+p4 t2+0 [snack] (goûter) {} #rapide #vegetarien r0 f0 d1
+- 60 g d'amandes
+- 60 g de cerneaux de noix
+- 40 g de raisins secs
+- 40 g de chocolat noir
+> Mélanger et répartir en petites portions.
+
+# Tiramisu express aux fruits rouges
+p6 t20+0 [snack] (italienne) {} #vegetarien #froid r1 f0 d2
+- 250 g de ricotta
+- 300 g de fromage blanc
+- 80 g de sucre
+- 300 g de fruits rouges
+- 4 tranches de pain de mie
+- 1 sachet de sucre vanillé
+> Fouetter ricotta, fromage blanc, sucre et vanille.
+> Alterner pain de mie, crème et fruits dans des verres ; réfrigérer 2 h.
+
+# Granola maison
+p8 t10+25 [breakfast,snack] (petit-déjeuner) {four} #vegetarien r7 f0 d1
+- 300 g de flocons d'avoine
+- 80 g d'amandes
+- 80 g de miel
+- 4 c. à soupe d'huile de tournesol
+- 1 c. à café de cannelle
+> Mélanger tous les ingrédients et étaler sur une plaque.
+> Cuire 25 min à 160 °C en remuant à mi-cuisson ; laisser refroidir.
+
+# Lait chaud cacao et tartines
+p2 t5+5 [breakfast] (petit-déjeuner) {plaques} #enfants #vegetarien r0 f0 d1
+- 40 cl de lait
+- 2 c. à soupe de cacao
+- 1 c. à soupe de sucre
+- 1/2 baguette
+- 20 g de beurre
+> Chauffer le lait, y fouetter cacao et sucre.
+> Servir avec les tartines beurrées.
+
+# Yaourt grec, miel et noix
+p2 t2+0 [breakfast,snack] (grecque) {} #rapide #vegetarien r0 f0 d1
+- 2 yaourts grecs
+- 2 c. à soupe de miel
+- 30 g de cerneaux de noix
+> Arroser le yaourt de miel et parsemer de noix.
+
+# Mug cake chocolat
+p1 t3+2 [snack] (américaine) {micro_ondes} #rapide #vegetarien r0 f0 d1
+- 30 g de farine
+- 20 g de sucre
+- 1 œuf
+- 20 g de chocolat noir
+- 20 g de beurre
+- 1/4 sachet de levure chimique
+> Fondre beurre et chocolat dans un mug au micro-ondes, ajouter le reste et mélanger.
+> Cuire 1 min 30 au micro-ondes.

@@ -17,6 +17,5 @@ playwright-report/
 test-results/
 bench/results/*.json
 !bench/results/.gitkeep
-apps/web/public/sw.js
 apps/web/public/swe-worker-*.js
 data/cache/

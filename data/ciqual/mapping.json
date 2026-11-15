@@ -1,0 +1,19 @@
+{
+  "_doc": "Correspondance identifiant d'ingrédient Mise → alim_code Ciqual. À compléter ; les ingrédients absents conservent les valeurs approchées du seed.",
+  "_version": "Ciqual 2020 (ANSES)",
+  "oignon": "20034",
+  "carotte": "20009",
+  "pomme_de_terre": "4003",
+  "courgette": "20020",
+  "tomate": "20047",
+  "oeuf": "22000",
+  "lait": "19041",
+  "beurre": "16400",
+  "farine": "9410",
+  "riz": "9100",
+  "pates": "9810",
+  "poulet": "36017",
+  "saumon": "26036",
+  "lentilles": "20504",
+  "huile_olive": "17270"
+}

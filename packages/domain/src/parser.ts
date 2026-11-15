@@ -96,6 +96,8 @@ const UNIT_ALIASES: ReadonlyArray<readonly [string, string]> = (
     ["douzaines", "douzaine"],
     ["douzaine", "douzaine"],
     ["noix", "noix"],
+    ["carres", "carre"],
+    ["carre", "carre"],
     ["filets", "filet"],
     ["filet", "filet"],
   ] as const
