@@ -1,0 +1,28 @@
+{
+  "name": "mise",
+  "private": true,
+  "packageManager": "pnpm@10.28.0",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "test:coverage": "turbo run test:coverage",
+    "db:migrate": "pnpm --filter @mise/db migrate",
+    "db:seed": "pnpm --filter @mise/db seed",
+    "e2e": "pnpm --filter @mise/web e2e"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.5",
+    "eslint": "9.39.5",
+    "turbo": "2.11.11",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.72.2",
+    "vitest": "5.1.0",
+    "@vitest/coverage-v8": "5.1.0",
+    "fast-check": "4.10.2",
+    "@types/node": "22.19.1"
+  }
+}
