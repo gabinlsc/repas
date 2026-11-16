@@ -115,7 +115,9 @@ curl -fsSL --retry 4 --retry-delay 3 "${AUTH[@]}" -H "Accept: application/vnd.gi
   "https://api.github.com/repos/${REPO}/tarball/${BRANCH}" -o "$TMP_TGZ" \
   || die "téléchargement impossible (dépôt privé ? fournir GITHUB_TOKEN)."
 install -d -m 0750 "$NEW_RELEASE"
-TOP_DIR="$(tar -tzf "$TMP_TGZ" | head -1 | cut -d/ -f1)"
+# sed lit toute la liste (pas de « head ») : tar ne reçoit jamais SIGPIPE, ce qui ferait
+# échouer la commande sous « set -o pipefail ».
+TOP_DIR="$(tar -tzf "$TMP_TGZ" | sed -n '1{s|/.*||;p;}')"
 tar -xzf "$TMP_TGZ" -C "$NEW_RELEASE" --strip-components=1
 rm -f -- "$TMP_TGZ"
 # Le dossier racine de l'archive GitHub se termine par le commit (owner-repo-<sha>).
@@ -129,7 +131,8 @@ CURRENT_REV="$(cat "$INSTALL_DIR/current/REVISION" 2>/dev/null || echo aucune)"
 # ----------------------------------------------------------------------------- 3. secrets
 step "Configuration (.env)"
 ENV_FILE="$SHARED/.env"
-rand() { openssl rand -base64 48 | tr -dc 'A-Za-z0-9' | head -c "$1"; }
+# Secret alphanumérique de $1 caractères (≤ 64) ; cut lit toute l'entrée (pas de SIGPIPE).
+rand() { openssl rand -hex 32 | cut -c1-"$1"; }
 if [[ -n "$DOMAIN" && -z "${SKIP_TLS:-}" ]]; then APP_URL="https://$DOMAIN"
 elif [[ -n "$DOMAIN" ]]; then APP_URL="http://$DOMAIN"
 else APP_URL="http://$(curl -fsS4 --max-time 5 https://api.ipify.org || hostname -I | awk '{print $1}')"; fi
@@ -164,7 +167,7 @@ compose() { docker compose -p "$PROJECT" --env-file "$ENV_FILE" "$@"; }
 # ----------------------------------------------------------------------------- 4. sauvegarde + build
 PREVIOUS=""
 [[ -L "$INSTALL_DIR/current" ]] && PREVIOUS="$(readlink -f "$INSTALL_DIR/current")"
-if [[ -n "$PREVIOUS" ]] && (cd "$PREVIOUS" && compose ps --status running postgres 2>/dev/null | grep -q postgres); then
+if [[ -n "$PREVIOUS" ]] && (cd "$PREVIOUS" && compose ps --status running postgres 2>/dev/null | grep postgres >/dev/null); then
   step "Sauvegarde de la base avant mise à jour"
   (cd "$PREVIOUS" && compose exec -T postgres sh -c 'pg_dump -U "$POSTGRES_USER" -d "$POSTGRES_DB" --format=custom' </dev/null) > "$BACKUPS/pre-deploy-$STAMP.dump"
   ok "$BACKUPS/pre-deploy-$STAMP.dump"
