@@ -100,14 +100,13 @@ def plan(req: PlanRequest, workers: int = 8) -> PlanResponse:
             ],
         )
     diags = _relaxation_diagnostics(relaxed, rres)
-    if not diags and res.status == "unknown":
-        diags = [
-            Diagnostic(
-                code="timeout",
-                message="Le temps imparti est trop court pour trouver un plan ; un plan approché est proposé.",
-                params={"time_limit_s": req.time_limit_s},
-            )
-        ]
+    if not diags:
+        # Aucun écart non nul : la solution relâchée respecte toutes les contraintes dures,
+        # c'est donc un plan valide (la première résolution avait seulement manqué de temps).
+        out = _response(relaxed, rres, [])
+        return out.model_copy(
+            update={"wall_time_ms": res.wall_ms + rres.wall_ms, "deterministic": res.deterministic and rres.deterministic}
+        )
     out = _response(relaxed, rres, diags)
     return out.model_copy(update={"status": "infeasible", "wall_time_ms": res.wall_ms + rres.wall_ms})
 

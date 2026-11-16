@@ -248,7 +248,19 @@ def _greedy_hint(mdl: Model) -> None:
             if prev is not None and info.day - prev < k:
                 continue
             r = mdl.recipes[rid]
-            score = r.preference * 50 + (r.season_score - 50) * 2 - len(r.ingredients) * 5
+            # Coût indicatif par portion (centimes) : garde l'indice sous le budget.
+            cost = sum(
+                ri.qty_per_serving_centi
+                * (mdl.ingredients[ri.ingredient_id].pack_price_cents or 0)
+                // (mdl.ingredients[ri.ingredient_id].pack_size_centi or 1)
+                for ri in r.ingredients
+            )
+            score = (
+                r.preference * 50
+                + (r.season_score - 50) * 2
+                - len(r.ingredients) * 5
+                - cost * (2 if mdl.req.budget_cents is not None else 1)
+            )
             if best is None or score > best[0] or (score == best[0] and rid < best[1]):
                 best = (score, rid)
         if best is None and options:

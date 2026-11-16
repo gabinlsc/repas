@@ -1,5 +1,5 @@
 "use client";
-import { forwardRef, useEffect, useRef, type ButtonHTMLAttributes, type HTMLAttributes, type InputHTMLAttributes, type ReactNode, type SelectHTMLAttributes } from "react";
+import { forwardRef, type ComponentProps, useEffect, useRef, type ButtonHTMLAttributes, type HTMLAttributes, type InputHTMLAttributes, type ReactNode, type SelectHTMLAttributes } from "react";
 import { cn } from "./cn";
 
 type Variant = "primary" | "secondary" | "ghost" | "danger";
@@ -35,7 +35,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
   );
 });
 
-export function Card({ className, ...rest }: HTMLAttributes<HTMLDivElement>) {
+export function Card({ className, ...rest }: ComponentProps<"div">) {
   return <div className={cn("rounded-[var(--radius)] border border-[var(--border)] bg-[var(--surface)] p-4 shadow-[var(--shadow)]", className)} {...rest} />;
 }
 

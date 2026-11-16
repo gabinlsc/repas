@@ -20,7 +20,8 @@ export function proxy(req: NextRequest) {
     "form-action 'self'",
     "base-uri 'self'",
     "object-src 'none'",
-    dev ? "" : "upgrade-insecure-requests",
+    // Seulement derrière HTTPS : en local (http) cela casserait le chargement des ressources.
+    process.env.APP_URL?.startsWith("https://") ? "upgrade-insecure-requests" : "",
   ]
     .filter(Boolean)
     .join("; ");
