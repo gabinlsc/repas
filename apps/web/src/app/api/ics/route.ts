@@ -6,7 +6,7 @@ import { productionDeps, sessionFromCookieHeader } from "@/server/context";
 export const dynamic = "force-dynamic";
 
 const HOURS = { breakfast: "080000", lunch: "123000", snack: "163000", dinner: "193000" } as const;
-const esc = (s: string) => s.replace(/[\;,]/g, (c) => `\\${c}`).replace(/\n/g, "\\n");
+const esc = (s: string) => s.replace(/[\\;,]/g, (c) => `\\${c}`).replace(/\n/g, "\\n");
 
 /** Export iCalendar des repas d'une semaine (flux ICS, P2). */
 export async function GET(req: Request): Promise<Response> {

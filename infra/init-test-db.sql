@@ -1,0 +1,1 @@
+CREATE DATABASE mise_test;

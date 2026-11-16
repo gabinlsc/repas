@@ -19,3 +19,5 @@ bench/results/*.json
 !bench/results/.gitkeep
 apps/web/public/swe-worker-*.js
 data/cache/
+.lighthouseci/
+.coverage

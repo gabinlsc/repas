@@ -1,0 +1,89 @@
+# Lancement complet : `docker compose up` (données de démo : catalogue + 157 recettes).
+# En production, utiliser deploy.sh (génère .env avec de vrais secrets, nginx + HTTPS).
+name: mise
+
+x-env: &app-env
+  DATABASE_URL: postgres://${POSTGRES_USER:-mise}:${POSTGRES_PASSWORD:-mise-dev-only}@postgres:5432/${POSTGRES_DB:-mise}
+  REDIS_URL: redis://redis:6379
+  PLANNER_URL: http://planner:8000
+  APP_URL: ${APP_URL:-http://localhost:3000}
+  # Clé de DÉVELOPPEMENT uniquement : deploy.sh en génère une aléatoire.
+  DATA_ENCRYPTION_KEYS: ${DATA_ENCRYPTION_KEYS:-k0:ZGV2LW9ubHktZGV2LW9ubHktZGV2LW9ubHktZGV2LW8=}
+  PLANNER_TIME_LIMIT_S: ${PLANNER_TIME_LIMIT_S:-10}
+  LOG_LEVEL: ${LOG_LEVEL:-info}
+  METRICS_TOKEN: ${METRICS_TOKEN:-}
+
+services:
+  postgres:
+    image: postgres:16.6-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-mise}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-mise-dev-only}
+      POSTGRES_DB: ${POSTGRES_DB:-mise}
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  redis:
+    image: redis:7.4-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes", "--maxmemory", "256mb", "--maxmemory-policy", "noeviction"]
+    volumes: [redisdata:/data]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      retries: 20
+
+  planner:
+    build: { context: services/planner }
+    image: mise/planner:latest
+    restart: unless-stopped
+    environment:
+      PLANNER_WORKERS: ${PLANNER_WORKERS:-8}
+      PLANNER_MAX_CONCURRENT: ${PLANNER_MAX_CONCURRENT:-2}
+
+  migrate:
+    build: { context: ., target: migrate }
+    image: mise/migrate:latest
+    environment: *app-env
+    depends_on: { postgres: { condition: service_healthy } }
+    restart: "no"
+
+  web:
+    build: { context: ., target: web }
+    image: mise/web:latest
+    restart: unless-stopped
+    environment: *app-env
+    ports: ["${WEB_BIND:-127.0.0.1}:${WEB_PORT:-3000}:3000"]
+    depends_on:
+      migrate: { condition: service_completed_successfully }
+      redis: { condition: service_healthy }
+      planner: { condition: service_started }
+
+  worker:
+    build: { context: ., target: worker }
+    image: mise/worker:latest
+    restart: unless-stopped
+    environment: *app-env
+    depends_on:
+      migrate: { condition: service_completed_successfully }
+      redis: { condition: service_healthy }
+
+  # Optionnel : reverse proxy HTTPS automatique (alternative à nginx sur l'hôte).
+  caddy:
+    image: caddy:2.8-alpine
+    profiles: ["caddy"]
+    restart: unless-stopped
+    ports: ["80:80", "443:443"]
+    environment: { DOMAIN: "${DOMAIN:-localhost}" }
+    volumes: ["./infra/Caddyfile:/etc/caddy/Caddyfile:ro", "caddydata:/data"]
+    depends_on: [web]
+
+volumes:
+  pgdata:
+  redisdata:
+  caddydata:

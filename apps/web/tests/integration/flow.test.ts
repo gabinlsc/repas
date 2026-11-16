@@ -166,7 +166,7 @@ describe("recettes : import et validation", () => {
     const text = await caller.recipes.importText({ text: "Crêpes\nPour 4 personnes\nIngrédients\n250 g de farine\n3 œufs\nPréparation\nMélanger." });
     expect(text.lines.every((l) => l.match === "matched")).toBe(true);
     await caller.recipes.feedback({ recipeId: pending.id, favorite: true, rating: 5 });
-    expect((await caller.recipes.list({ mine: true }))[0]!.favorite).toBe(true);
+    expect((await caller.recipes.list({ mine: true })).find((r) => r.id === pending.id)!.favorite).toBe(true);
     expect((await caller.products.lookupEan({ ean: "3017620422003" }))!.source).toBe("openfoodfacts");
     await caller.recipes.remove({ id: pending.id });
   });

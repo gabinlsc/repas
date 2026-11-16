@@ -47,7 +47,7 @@ function splitCsvLine(line: string): string[] {
 }
 
 export function parseCiqualCsv(text: string): CiqualRow[] {
-  const lines = text.replace(/^﻿/, "").split(/\r?\n/).filter((l) => l.trim().length > 0);
+  const lines = text.replace(/^\uFEFF/, "").split(/\r?\n/).filter((l) => l.trim().length > 0);
   if (lines.length < 2) throw new CiqualFormatError("Fichier Ciqual vide");
   const header = splitCsvLine(lines[0]!).map((h) => h.trim());
   const codeIdx = header.findIndex((h) => h === "alim_code");

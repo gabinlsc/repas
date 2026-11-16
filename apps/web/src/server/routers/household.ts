@@ -27,7 +27,7 @@ const settingsInput = z.object({
   repeatWindowDays: z.number().int().min(0).max(28).optional(),
   equipment: z.array(z.enum(EQUIPMENT)).max(EQUIPMENT.length).optional(),
   defaultStoreId: z.string().uuid().nullable().optional(),
-  weights: z.record(z.enum(Object.keys(DEFAULT_WEIGHTS) as [keyof typeof DEFAULT_WEIGHTS]), z.number().int().min(0).max(10)).optional(),
+  weights: z.partialRecord(z.enum(Object.keys(DEFAULT_WEIGHTS) as [keyof typeof DEFAULT_WEIGHTS]), z.number().int().min(0).max(10)).optional(),
 });
 
 export const householdRouter = router({

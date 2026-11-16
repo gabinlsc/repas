@@ -37,5 +37,10 @@
   "devDependencies": {
     "drizzle-kit": "0.31.11",
     "tsx": "4.23.15"
-  }
+  },
+  "files": [
+    "dist",
+    "drizzle",
+    "seed/recipes"
+  ]
 }

@@ -121,6 +121,28 @@ importers:
         specifier: 4.3.5
         version: 4.3.5
 
+  apps/worker:
+    dependencies:
+      '@mise/db':
+        specifier: workspace:*
+        version: link:../../packages/db
+      '@mise/domain':
+        specifier: workspace:*
+        version: link:../../packages/domain
+      bullmq:
+        specifier: 5.81.5
+        version: 5.81.5
+      drizzle-orm:
+        specifier: 0.45.4
+        version: 0.45.4(@opentelemetry/api@1.10.0)(postgres@3.4.9)
+      pino:
+        specifier: 10.4.0
+        version: 10.4.0
+    devDependencies:
+      tsx:
+        specifier: 4.23.15
+        version: 4.23.15
+
   data:
     dependencies:
       '@mise/db':

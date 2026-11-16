@@ -1,0 +1,12 @@
+{$DOMAIN} {
+	encode zstd gzip
+	header {
+		Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+		-Server
+	}
+	@metrics path /api/metrics
+	respond @metrics 404
+	reverse_proxy web:3000 {
+		flush_interval -1
+	}
+}

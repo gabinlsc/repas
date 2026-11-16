@@ -31,7 +31,8 @@ Format : **Contexte → Options → Choix → Conséquences**. Chaque décision 
 ## D-006 — Solveur : CP-SAT, déterminisme par temps déterministe
 - **Contexte** : même snapshot + même graine ⇒ même plan ; temps borné.
 - **Options** : limite de temps mur seule (non déterministe) ; `num_workers=1` (lent) ; temps déterministe CP-SAT.
-- **Choix** : `random_seed = seed`, `num_workers` fixe, `interleave_search=True` (recherche multi-thread déterministe) et budget en `max_deterministic_time` dérivé de `time_limit`. La limite mur (`max_time_in_seconds = time_limit`) reste un garde-fou ; si elle est atteinte avant le temps déterministe, la réponse l'indique (`deterministic: false`).
+- **Choix** : `random_seed = seed`, `num_workers` fixe, `interleave_search=True` (recherche multi-thread déterministe) et budget en `max_deterministic_time` (0,8 × `time_limit`). La limite mur (`max_time_in_seconds = time_limit`) reste un garde-fou ; si elle est atteinte avant le temps déterministe, la réponse l'indique (`deterministic: false`).
+- **Mesures qui ont guidé le réglage** (500 recettes, 21 créneaux, 4 vCPU) : en recherche entrelacée par défaut, aucun voisinage LNS n'était exécuté et l'objectif restait celui de l'indice ; le sondage de présolve coûtait ~4 s. Réglage retenu : présolve sans sondage, phase 1 « LNS seul » depuis un indice glouton (≈ 4× meilleur objectif en 5 s, résultats identiques sur 3 exécutions), phase 2 recherche complète si l'indice est infaisable (budget serré) — seule capable de prouver l'infaisabilité. Si la résolution stricte manque de temps mais que la résolution relâchée trouve une solution sans aucun écart, ce plan est valide et renvoyé.
 - **Conséquences** : reproductibilité testée (`test_determinism`). Sur machine très lente, on peut perdre la reproductibilité — signalé dans la réponse.
 
 ## D-007 — Modèle de coût du solveur : paquets entiers du produit de référence
@@ -81,7 +82,15 @@ Format : **Contexte → Options → Choix → Conséquences**. Chaque décision 
 - **Choix** : une recette `leftover_days > 0` peut être cuisinée en « double » (`cook_big[r,d,s]`) ; un créneau ultérieur dans la fenêtre peut alors être servi en `leftover` (coût 0, préparation 0). Les recettes `freezes` étendent la fenêtre à toute la semaine.
 
 ## D-020 — Observabilité
-- Logs JSON (pino côté Node, `structlog`-like JSON côté Python) sans données personnelles (identifiants opaques seulement). `/api/metrics` et `/metrics` (Prometheus). OpenTelemetry : SDK Node activé si `OTEL_EXPORTER_OTLP_ENDPOINT` est défini ; FastAPI instrumenté de même.
+- Logs JSON (pino côté Node avec caviardage, formateur JSON côté Python) sans données personnelles (identifiants opaques seulement). `/api/metrics` et `/metrics` (Prometheus).
+- OpenTelemetry : l'API `@opentelemetry/api` est en dépendance ; l'export OTLP (SDK Node + instrumentation FastAPI) n'est pas encore branché — BACKLOG B-011.
+
+## D-022 — Déploiement VPS : `deploy.sh`
+- **Contexte** : déploiement depuis le serveur, en tirant le code de GitHub, en gérant tous les paquets et nginx.
+- **Choix** : script idempotent (installation = mise à jour) récupéré via raw.githubusercontent.com ; le code est téléchargé en archive par l'API GitHub (jeton optionnel pour dépôt privé, jamais écrit sur disque). Releases horodatées + lien `current`, secrets générés une fois dans `shared/.env`, sauvegarde avant chaque mise à jour, retour automatique à la release précédente si `/api/health` ne répond pas. nginx sur l'hôte (limitation de débit, SSE sans tampon, `/api/metrics` interne), certbot, ufw, cron de sauvegarde, unité systemd, commandes `mise-*`.
+
+## D-023 — Données de démo
+- `docker compose up` démarre avec le catalogue complet (ingrédients, conditionnements, prix indicatifs, 157 recettes, 2 magasins types). Aucun compte de démonstration n'est créé (un mot de passe connu serait une faille en production) : l'inscription prend moins d'une minute.
 
 ## D-021 — Traçabilité Git
 - Les commits sont attribués au propriétaire du dépôt, sans métadonnées d'outil, et poussés directement sur `main` à sa demande.
@@ -96,3 +105,20 @@ Format : **Contexte → Options → Choix → Conséquences**. Chaque décision 
 4. Auth : inscription/connexion/déconnexion, sessions, Argon2id, rotation.
 5. Squelettes : `apps/web` (Next.js, tRPC, `/api/health`), `apps/worker` (BullMQ, health), `services/planner` (FastAPI `/health`, `/v1/plan`).
 6. Docker Compose dev + prod, Caddyfile, `.env.example`, CI GitHub Actions (lint, typecheck, tests, build, audit).
+
+---
+
+# État d'avancement par phase
+
+| Phase | État | Remarques |
+|---|---|---|
+| 1. Fondations | ✅ | monorepo, CI, Compose, schéma + migration, auth, health checks |
+| 2. Domaine | ✅ | rationnels exacts, unités/densités, parseur FR, import Ciqual (testé sur fixture) |
+| 3. Recettes | ✅ | import URL (JSON-LD + repli HTML, anti-SSRF) et texte, écran de validation, 157 recettes |
+| 4. Solveur | ✅ | contraintes dures, objectif pondéré, restes, explications, diagnostic, benchmark |
+| 5. Plan | ✅ | jobs BullMQ (ou repli en processus), verrous, glisser-déposer accessible, régénération d'un créneau |
+| 6. Liste de courses | ✅ | pipeline §6.1 complet, DP de conditionnements, rayons par magasin |
+| 7. Stock et budget | ✅ | FEFO/DLC, alertes, décrément « cuisiné », historique de prix, estimé vs réel, restes |
+| 8. Offline et partage | ✅ | service worker, IndexedDB + file idempotente, LWW/HLC, SSE, Wake Lock |
+| 9. Nutrition, saison, P1/P2 | ◑ | nutrition hebdo, saison, ICS, Markdown, impression, recherche EAN (API) ; OCR, OAuth, substitutions, scan caméra : BACKLOG |
+| 10. Durcissement | ◑ | modèle de menaces, tests d'autorisation, RUNBOOK, sauvegarde/restauration testée ; Lighthouse CI configuré mais non exécuté localement |
