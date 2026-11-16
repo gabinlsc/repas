@@ -3,7 +3,7 @@
  * - Pages : réseau d'abord, repli sur le cache, puis sur /hors-ligne.
  * - API : jamais mises en cache (la file d'opérations IndexedDB gère le hors-ligne).
  */
-const VERSION = "mise-v1";
+const VERSION = "mise-v2";
 const SHELL = ["/courses/magasin", "/courses", "/semaine", "/hors-ligne", "/manifest.webmanifest", "/icons/icon.svg"];
 
 self.addEventListener("install", (event) => {

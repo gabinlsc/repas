@@ -20,7 +20,11 @@ Arborescence :
 ```
 
 ## Mise à jour
-`sudo mise-update` (ou relancer la commande `curl … | sudo bash`). Étapes : sauvegarde automatique de la base, construction, migrations (service `migrate`, idempotent), démarrage, contrôle de santé. Si `/api/health` ne répond pas sous 3 minutes, la release précédente est relancée et le script s'arrête en erreur.
+`sudo mise-update` — affiche à la fin « Mise est en ligne … (commit xxxxxxx) » ; `sudo mise-status` indique le commit actif.
+
+> Correctif important : jusqu'au commit `f9dd9ae` inclus, une mise à jour lancée via `curl … | bash` (ou `mise-update`, qui faisait de même) s'arrêtait silencieusement après la sauvegarde de la base, car `docker compose exec` lisait la suite du script sur l'entrée standard. Le script est désormais exécuté en entier avant toute commande (`main()` + entrée standard fermée) et `mise-update` télécharge le script dans un fichier. **Les installations existantes doivent relancer une fois la commande `curl` complète** (le `mise-update` déjà installé contient l'ancienne logique).
+
+ (ou relancer la commande `curl … | sudo bash`). Étapes : sauvegarde automatique de la base, construction, migrations (service `migrate`, idempotent), démarrage, contrôle de santé. Si `/api/health` ne répond pas sous 3 minutes, la release précédente est relancée et le script s'arrête en erreur.
 
 Retour arrière manuel :
 ```bash

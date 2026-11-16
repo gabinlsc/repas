@@ -58,6 +58,14 @@ warn() { printf '%s ! %s%s\n' "$c_yellow" "$*" "$c_off" >&2; }
 die()  { printf '%s ✗ %s%s\n' "$c_red" "$*" "$c_off" >&2; exit 1; }
 trap 'die "échec à la ligne $LINENO (commande : $BASH_COMMAND)"' ERR
 
+# Tout le script est dans main() : avec « curl … | bash », bash lit alors le fichier en
+# entier AVANT d'exécuter quoi que ce soit. Sans cela, une commande qui lit l'entrée
+# standard (ex. « docker compose exec ») avalait la suite du script, qui s'arrêtait en
+# silence avec un code de succès — et la mise à jour ne s'appliquait jamais.
+main() {
+# Plus aucune commande ne peut lire le script depuis l'entrée standard.
+exec </dev/null
+
 # ----------------------------------------------------------------------------- 0. pré-requis
 [[ $EUID -eq 0 ]] || die "à lancer en root (sudo)."
 [[ -r /etc/os-release ]] || die "système non reconnu."
@@ -107,10 +115,16 @@ curl -fsSL --retry 4 --retry-delay 3 "${AUTH[@]}" -H "Accept: application/vnd.gi
   "https://api.github.com/repos/${REPO}/tarball/${BRANCH}" -o "$TMP_TGZ" \
   || die "téléchargement impossible (dépôt privé ? fournir GITHUB_TOKEN)."
 install -d -m 0750 "$NEW_RELEASE"
+TOP_DIR="$(tar -tzf "$TMP_TGZ" | head -1 | cut -d/ -f1)"
 tar -xzf "$TMP_TGZ" -C "$NEW_RELEASE" --strip-components=1
 rm -f -- "$TMP_TGZ"
+# Le dossier racine de l'archive GitHub se termine par le commit (owner-repo-<sha>).
+REVISION="${TOP_DIR##*-}"
+echo "$REVISION" > "$NEW_RELEASE/REVISION"
 [[ -f "$NEW_RELEASE/docker-compose.yml" ]] || die "archive inattendue : docker-compose.yml absent."
-ok "release $STAMP"
+ok "release $STAMP (commit ${REVISION})"
+CURRENT_REV="$(cat "$INSTALL_DIR/current/REVISION" 2>/dev/null || echo aucune)"
+[[ "$CURRENT_REV" == "$REVISION" ]] && warn "le commit $REVISION est déjà déployé : reconstruction quand même."
 
 # ----------------------------------------------------------------------------- 3. secrets
 step "Configuration (.env)"
@@ -152,7 +166,7 @@ PREVIOUS=""
 [[ -L "$INSTALL_DIR/current" ]] && PREVIOUS="$(readlink -f "$INSTALL_DIR/current")"
 if [[ -n "$PREVIOUS" ]] && (cd "$PREVIOUS" && compose ps --status running postgres 2>/dev/null | grep -q postgres); then
   step "Sauvegarde de la base avant mise à jour"
-  (cd "$PREVIOUS" && compose exec -T postgres sh -c 'pg_dump -U "$POSTGRES_USER" -d "$POSTGRES_DB" --format=custom') > "$BACKUPS/pre-deploy-$STAMP.dump"
+  (cd "$PREVIOUS" && compose exec -T postgres sh -c 'pg_dump -U "$POSTGRES_USER" -d "$POSTGRES_DB" --format=custom' </dev/null) > "$BACKUPS/pre-deploy-$STAMP.dump"
   ok "$BACKUPS/pre-deploy-$STAMP.dump"
 fi
 
@@ -296,7 +310,7 @@ cat > /usr/local/bin/mise-backup <<EOF
 set -euo pipefail
 cd "$INSTALL_DIR/current"
 out="$BACKUPS/mise-\$(date -u +%Y%m%d-%H%M%S).dump"
-docker compose -p $PROJECT --env-file "$ENV_FILE" exec -T postgres sh -c 'pg_dump -U "\$POSTGRES_USER" -d "\$POSTGRES_DB" --format=custom' > "\$out"
+docker compose -p $PROJECT --env-file "$ENV_FILE" exec -T postgres sh -c 'pg_dump -U "\$POSTGRES_USER" -d "\$POSTGRES_DB" --format=custom' </dev/null > "\$out"
 cp "$ENV_FILE" "$BACKUPS/env-\$(date -u +%Y%m%d).bak"
 chmod 600 "\$out" "$BACKUPS"/env-*.bak
 find "$BACKUPS" -maxdepth 1 -type f \( -name 'mise-*.dump' -o -name 'env-*.bak' -o -name 'pre-deploy-*.dump' \) -mtime +14 -delete
@@ -321,8 +335,12 @@ cat > /usr/local/bin/mise-update <<EOF
 set -euo pipefail
 auth=()
 [[ -n "\${GITHUB_TOKEN:-}" ]] && auth=(-H "Authorization: token \$GITHUB_TOKEN")
-curl -fsSL "\${auth[@]}" "https://raw.githubusercontent.com/${REPO}/${BRANCH}/deploy.sh" \
-  | REPO="${REPO}" BRANCH="${BRANCH}" DOMAIN="${DOMAIN}" EMAIL="${EMAIL}" INSTALL_DIR="${INSTALL_DIR}" GITHUB_TOKEN="\${GITHUB_TOKEN:-}" bash
+tmp="\$(mktemp)"
+trap 'rm -f -- "\$tmp"' EXIT
+# Fichier plutôt que « curl | bash » : rien ne peut tronquer le script en cours de route.
+# Paramètre anti-cache : raw.githubusercontent.com garde l'ancienne version ~5 minutes.
+curl -fsSL "\${auth[@]}" -H "Cache-Control: no-cache" "https://raw.githubusercontent.com/${REPO}/${BRANCH}/deploy.sh?t=\$(date +%s)" -o "\$tmp"
+REPO="${REPO}" BRANCH="${BRANCH}" DOMAIN="${DOMAIN}" EMAIL="${EMAIL}" INSTALL_DIR="${INSTALL_DIR}" GITHUB_TOKEN="\${GITHUB_TOKEN:-}" bash "\$tmp"
 EOF
 cat > /usr/local/bin/mise-logs <<EOF
 #!/usr/bin/env bash
@@ -330,7 +348,7 @@ cd "$INSTALL_DIR/current" && exec docker compose -p $PROJECT --env-file "$ENV_FI
 EOF
 cat > /usr/local/bin/mise-status <<EOF
 #!/usr/bin/env bash
-cd "$INSTALL_DIR/current" && docker compose -p $PROJECT --env-file "$ENV_FILE" ps && curl -fsS http://127.0.0.1:${WEB_PORT}/api/health && echo
+cd "$INSTALL_DIR/current" && echo "commit déployé : \$(cat REVISION 2>/dev/null || echo inconnu)" && docker compose -p $PROJECT --env-file "$ENV_FILE" ps && curl -fsS http://127.0.0.1:${WEB_PORT}/api/health && echo
 EOF
 chmod 0750 /usr/local/bin/mise-{backup,restore,update,logs,status}
 
@@ -370,6 +388,9 @@ done
 docker image prune -f >/dev/null
 ok "anciennes releases et images supprimées"
 
-printf '\n%s Mise est en ligne : %s%s\n' "$c_green" "$APP_URL" "$c_off"
+printf '\n%s Mise est en ligne : %s (commit %s)%s\n' "$c_green" "$APP_URL" "$REVISION" "$c_off"
 printf '   Secrets : %s (à sauvegarder hors du serveur)\n' "$ENV_FILE"
 printf '   Mise à jour : sudo mise-update   ·   Statut : sudo mise-status   ·   Journaux : sudo mise-logs\n'
+}
+
+main "$@"
