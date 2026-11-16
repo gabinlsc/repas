@@ -49,16 +49,23 @@ export function useListSync() {
     if (local) void cacheList(local.list.id, local);
   }, [local]);
 
+  const refreshPending = useCallback(async () => {
+    const { offlineDb } = await import("@/lib/offline");
+    setPending(await offlineDb().ops.count());
+  }, []);
+
   const flush = useCallback(async () => {
-    if (!navigator.onLine) return;
+    // Hors ligne, on ne tente rien mais on affiche le nombre de modifications en attente.
+    if (!navigator.onLine) return refreshPending();
     try {
       await flushOps((ops) => client.shopping.sync.mutate({ ops: ops as never }));
       await qc.invalidateQueries({ queryKey: trpc.shopping.latest.queryKey() });
+    } catch {
+      // Réseau instable : les opérations restent en file et seront rejouées.
     } finally {
-      const { offlineDb } = await import("@/lib/offline");
-      setPending(await offlineDb().ops.count());
+      await refreshPending();
     }
-  }, [client, qc, trpc]);
+  }, [client, qc, trpc, refreshPending]);
 
   useEffect(() => {
     void flush();

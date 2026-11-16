@@ -92,6 +92,22 @@ Format : **Contexte → Options → Choix → Conséquences**. Chaque décision 
 ## D-023 — Données de démo
 - `docker compose up` démarre avec le catalogue complet (ingrédients, conditionnements, prix indicatifs, 157 recettes, 2 magasins types). Aucun compte de démonstration n'est créé (un mot de passe connu serait une faille en production) : l'inscription prend moins d'une minute.
 
+## D-024 — Variété des semaines (retour utilisateur : « les mêmes recettes tous les jours »)
+- **Constat mesuré** : 4 repas sur 14 étaient des restes (même plat le lendemain) ; deux générations partageaient 17 recettes sur 21 ; un budget irréaliste faisait échouer la génération ou basculait sur « le moins cher à tout prix ».
+- **Choix** :
+  1. restes optionnels (`household.batch_cooking`, désactivé par défaut) ;
+  2. bruit déterministe par (graine, recette) dans l'objectif et dans l'indice de départ : même graine ⇒ même plan, nouvelle graine ⇒ plan différent ;
+  3. historique : recettes des 3 semaines précédentes pénalisées (≈ 10 € d'équivalent la semaine suivante, décroissant) ; « Nouvelle proposition » traite les plats actuels non verrouillés comme servis la veille ;
+  4. familles de plats (pâtes, riz, crêpes/galettes, tartes, pain…, et familles du matin) : pénalité au-delà de 2 par semaine et forte pénalité 2 fois le même jour ; même protéine > 2 fois par semaine ou 2 fois le même jour (repas principaux) ;
+  5. non-répétition complète au petit-déjeuner dès que le catalogue compatible le permet ;
+  6. budget **souple** : dépassement pénalisé à 8 × le coût normal mais possible, signalé en avertissement chiffré — une seule résolution, toujours un plan varié ;
+  7. saisonnalité renforcée (×3) ; catalogue porté à 359 recettes dont 80 petits-déjeuners et goûters, doublons retirés.
+- **Résultat** (catalogue réel, 1 personne, 3 repas/jour, 110 €) : 21 recettes distinctes sur 21, 6 protéines différentes, résolution ≈ 4 s.
+
+## D-025 — Interface v2
+- **Contexte** : interface jugée laide et peu pratique.
+- **Choix** : identité chaleureuse (crème, vert sauge, accent tomate), Fraunces (titres) + Inter (texte) auto-hébergées via @fontsource (compatibles CSP), icônes Lucide, illustrations de recettes générées (emoji + dégradé par type de plat, sans photo ni droits), barre latérale sur ordinateur et barre d'onglets sur mobile, onboarding en 4 étapes avec budget suggéré réaliste, cartes de repas avec menu d'actions et sélecteur de recette, fiche recette avec portions ajustables et étapes à cocher, ajout au stock en langage naturel, mode magasin plein écran.
+
 ## D-021 — Traçabilité Git
 - Les commits sont attribués au propriétaire du dépôt, sans métadonnées d'outil, et poussés directement sur `main` à sa demande.
 

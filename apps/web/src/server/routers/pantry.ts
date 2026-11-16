@@ -31,7 +31,7 @@ export const pantryRouter = router({
         unit: z.string().max(20),
         bestBefore: date.nullable(),
         expiryKind: z.enum(["dlc", "ddm"]).default("ddm"),
-        location: z.enum(["fridge", "freezer", "cupboard"]).default("cupboard"),
+        location: z.enum(["fridge", "freezer", "cupboard", "auto"]).default("auto"),
       }),
     )
     .mutation(async ({ ctx, input }) => {
@@ -45,9 +45,19 @@ export const pantryRouter = router({
         badRequest("Unité incompatible avec cet ingrédient");
       }
       if (base.kind !== "exact") badRequest("Quantité imprécise : indiquez une valeur");
+      // « auto » : emplacement déduit du rayon (frais → frigo, surgelés → congélateur).
+      const location =
+        input.location !== "auto"
+          ? input.location
+          : ["boucherie", "poissonnerie", "cremerie", "fromagerie", "charcuterie_traiteur"].includes(ing.aisle)
+            ? ("fridge" as const)
+            : ing.aisle === "surgeles"
+              ? ("freezer" as const)
+              : ("cupboard" as const);
+      const expiryKind = input.location === "auto" && location === "fridge" ? ("dlc" as const) : input.expiryKind;
       const [row] = await ctx.db
         .insert(pantryItems)
-        .values({ householdId: ctx.householdId, ingredientId: ing.id, quantity: toFixed(base.quantity, 3, "floor"), bestBefore: input.bestBefore, expiryKind: input.expiryKind, location: input.location })
+        .values({ householdId: ctx.householdId, ingredientId: ing.id, quantity: toFixed(base.quantity, 3, "floor"), bestBefore: input.bestBefore, expiryKind, location })
         .returning({ id: pantryItems.id });
       return row!;
     }),

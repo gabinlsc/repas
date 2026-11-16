@@ -152,7 +152,7 @@ async function writeRecipe(ctx: { db: import("@mise/db").Db; householdId: string
 
 export const recipesRouter = router({
   list: householdProcedure
-    .input(z.object({ q: z.string().max(100).optional(), slot: z.enum(MEAL_SLOTS).optional(), diet: z.enum(DIETS).optional(), mine: z.boolean().optional(), limit: z.number().int().min(1).max(100).default(30), offset: z.number().int().min(0).default(0) }))
+    .input(z.object({ q: z.string().max(100).optional(), slot: z.enum(MEAL_SLOTS).optional(), diet: z.enum(DIETS).optional(), mine: z.boolean().optional(), limit: z.number().int().min(1).max(500).default(30), offset: z.number().int().min(0).default(0) }))
     .query(async ({ ctx, input }) => {
       const where = and(
         input.mine ? eq(recipes.householdId, ctx.householdId) : or(isNull(recipes.householdId), eq(recipes.householdId, ctx.householdId)),

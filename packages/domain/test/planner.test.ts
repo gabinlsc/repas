@@ -74,8 +74,10 @@ describe("snapshot du solveur", () => {
   it("valide la réponse du solveur", () => {
     expect(buildPlanRequest(input()).recipes.find((r) => r.id === "pates")!.family).toBe("pates");
     expect(buildPlanRequest(input({ recent: { pates: 1, inconnue: 2 }, allowLeftovers: true })).recent).toEqual({ pates: 1 });
+    expect(recipeFamily(["flocons_avoine", "lait"], ["breakfast"])).toBe("matin_avoine");
     expect(recipeFamily(["riz"], ["breakfast"])).toBeNull();
-    expect(recipeFamily(["oeuf"], ["dinner"])).toBeNull();
+    expect(recipeFamily(["oeuf"], ["dinner"])).toBe("oeufs");
+    expect(recipeFamily(["courgette"], ["dinner"])).toBeNull();
     expect(planResponseSchema.safeParse({ version: "1", status: "optimal", deterministic: true, wall_time_ms: 10, estimated_cost_cents: 0, score: null, meals: [], diagnostics: [] }).success).toBe(true);
   });
   it("propriété : chaque recette du snapshot porte au moins les allergènes de ses ingrédients", () => {

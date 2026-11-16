@@ -143,10 +143,13 @@ def build(req: PlanRequest, relaxed: bool = False) -> Model:
 
     # --- Fenêtre de non-répétition ---------------------------------------------
     k_main = req.repeat_window_days
+    # Petit-déjeuner et collation : fenêtre complète si le catalogue compatible est assez
+    # riche (≥ 2 recettes par jour planifié), sinon fenêtre courte de 3 jours.
+    morning_candidates = len({rid for (rid, t) in mdl.x if t[1] in ("breakfast", "snack")})
+    morning_k = k_main if morning_candidates >= 2 * max(1, n_days) else min(k_main, 3)
     if k_main > 0:
         for r in req.recipes:
-            # Petit-déjeuner et collation se répètent naturellement : fenêtre plus courte.
-            k = min(k_main, 3) if set(r.slots) <= {"breakfast", "snack"} else k_main
+            k = morning_k if set(r.slots) <= {"breakfast", "snack"} else k_main
             for start in range(0, max(1, n_days - k + 1)):
                 in_window = [(t, v) for t, v in mdl.x_by_recipe.get(r.id, []) if start <= t[0] < start + k]
                 window_vars = [v for _t, v in in_window]
@@ -222,12 +225,11 @@ def build(req: PlanRequest, relaxed: bool = False) -> Model:
 
     mdl.cost = sum(cost_terms) if cost_terms else 0
     if req.budget_cents is not None:
-        if relaxed:
-            s = m.new_int_var(0, 10_000_000, "slack_budget")
-            mdl.slacks["budget"] = (s, {"budget_cents": req.budget_cents})
-            m.add(mdl.cost <= req.budget_cents + s)
-        else:
-            m.add(mdl.cost <= req.budget_cents)
+        # Budget toujours « souple » : un dépassement est très pénalisé mais reste possible,
+        # pour toujours proposer une semaine variée (le dépassement est signalé).
+        s = m.new_int_var(0, 10_000_000, "slack_budget")
+        mdl.slacks["budget"] = (s, {"budget_cents": req.budget_cents})
+        m.add(mdl.cost <= req.budget_cents + s)
 
     _objective(mdl, n_days)
     _greedy_hint(mdl)
@@ -272,7 +274,7 @@ def _greedy_hint(mdl: Model) -> None:
             )
             score = (
                 _jitter(mdl.req.seed, rid) * 3
-                - (60 * (9 - mdl.req.recent[rid]) if rid in mdl.req.recent else 0)
+                - (400 * max(1, 5 - mdl.req.recent[rid]) if rid in mdl.req.recent else 0)
                 + r.preference * 50
                 + (r.season_score - 50) * 2
                 - len(r.ingredients) * 5
@@ -322,7 +324,7 @@ def _objective(mdl: Model, n_days: int) -> None:
     # Saisonnalité et préférences, par repas cuisiné.
     for (rid, t), v in mdl.x.items():
         r = mdl.recipes[rid]
-        obj.append(-w.seasonality * 2 * SCALE * (r.season_score - 50) * v)
+        obj.append(-w.seasonality * 6 * SCALE * (r.season_score - 50) * v)
         obj.append(-w.preferences * 50 * SCALE * r.preference * v)
         _ = t
     # Restes : légère pénalité (un plat répété), compensée par l'économie d'achats.
@@ -338,7 +340,7 @@ def _objective(mdl: Model, n_days: int) -> None:
     for (rid, _t), v in mdl.x.items():
         weeks = req.recent.get(rid)
         if weeks is not None:
-            obj.append((1 + w.diversity) * (9 - weeks) * 25 * SCALE * v)
+            obj.append((1 + w.diversity) * max(1, 5 - weeks) * 200 * SCALE * v)
 
     # Une même recette plusieurs fois dans la semaine (possible au petit-déjeuner) : pénalisée.
     for rid, entries in mdl.x_by_recipe.items():
@@ -346,7 +348,27 @@ def _objective(mdl: Model, n_days: int) -> None:
             continue
         extra = m.new_int_var(0, len(entries), f"repeat_excess[{rid}]")
         m.add(extra >= sum(v for _t, v in entries) - 1)
-        obj.append((1 + w.diversity) * 60 * SCALE * extra)
+        obj.append((1 + w.diversity) * 600 * SCALE * extra)
+
+    # Même protéine trop souvent (jambon partout…) : > 2 fois par semaine ou 2 fois le même jour.
+    prot_week: dict[str, list[cp_model.IntVar]] = {}
+    prot_day: dict[tuple[str, int], list[cp_model.IntVar]] = {}
+    for (rid, t), v in mdl.x.items():
+        prot = mdl.recipes[rid].protein
+        # Les œufs du petit-déjeuner ne comptent pas : seuls les repas principaux sont visés.
+        if prot and t[1] in ("lunch", "dinner"):
+            prot_week.setdefault(prot, []).append(v)
+            prot_day.setdefault((prot, t[0]), []).append(v)
+    for prot, vs in prot_week.items():
+        if len(vs) > 2:
+            ex = m.new_int_var(0, len(vs), f"protein_excess[{prot}]")
+            m.add(ex >= sum(vs) - 2)
+            obj.append((1 + w.diversity) * 400 * SCALE * ex)
+    for (prot, d), vs in prot_day.items():
+        if len(vs) > 1:
+            ex = m.new_int_var(0, len(vs), f"protein_day[{prot},{d}]")
+            m.add(ex >= sum(vs) - 1)
+            obj.append((1 + w.diversity) * 300 * SCALE * ex)
 
     # Monotonie : plus de 2 plats d'une même famille (pâtes, riz, gratin…) dans la semaine.
     families: dict[str, list[cp_model.IntVar]] = {}
@@ -354,12 +376,24 @@ def _objective(mdl: Model, n_days: int) -> None:
         fam = mdl.recipes[rid].family
         if fam:
             families.setdefault(fam, []).append(v)
+    # Même famille deux fois le même jour (pâtes midi et soir) : nettement pénalisé.
+    fam_day: dict[tuple[str, int], list[cp_model.IntVar]] = {}
+    for (rid, t), v in mdl.x.items():
+        fam = mdl.recipes[rid].family
+        if fam:
+            fam_day.setdefault((fam, t[0]), []).append(v)
+    for (fam, d), vs in fam_day.items():
+        if len(vs) <= 1:
+            continue
+        same = m.new_int_var(0, len(vs), f"family_day[{fam},{d}]")
+        m.add(same >= sum(vs) - 1)
+        obj.append((1 + w.diversity) * 500 * SCALE * same)
     for fam, vs in families.items():
         if len(vs) <= 2:
             continue
         excess = m.new_int_var(0, len(vs), f"family_excess[{fam}]")
         m.add(excess >= sum(vs) - 2)
-        obj.append((1 + w.diversity) * 80 * SCALE * excess)
+        obj.append((1 + w.diversity) * 300 * SCALE * excess)
 
     # Diversité : protéines/cuisines distinctes, pénalité si même protéine deux jours de suite.
     proteins = sorted({r.protein for r in req.recipes if r.protein})
@@ -422,7 +456,13 @@ def _objective(mdl: Model, n_days: int) -> None:
             obj.append(w.nutrition * 100 * gap)
 
     for slack_key, (s, _params) in mdl.slacks.items():
-        obj.append(SLACK_WEIGHT[slack_key.split(":")[0]] * SLACK_PENALTY * SCALE * s)
+        family = slack_key.split(":")[0]
+        if family == "budget":
+            # Dépassement de budget : très cher (8 fois le coût normal) mais pas absolu, pour que
+            # la variété continue de compter dans le meilleur compromis proposé.
+            obj.append(8 * max(1, w.cost) * SCALE * s)
+        else:
+            obj.append(SLACK_WEIGHT[family] * SLACK_PENALTY * SCALE * s)
     m.minimize(sum(obj))
 
 

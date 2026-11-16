@@ -1,5 +1,6 @@
 "use client";
 import { createContext, useCallback, useContext, useMemo, useRef, useState, type ReactNode } from "react";
+import { CheckCircle2, AlertTriangle } from "lucide-react";
 
 interface Toast {
   id: number;
@@ -17,8 +18,7 @@ const Ctx = createContext<ToastApi | null>(null);
 
 /**
  * Notifications avec action « Annuler » : on préfère l'annulation à la confirmation
- * préalable pour les actions destructives (moins de friction, aussi sûr).
- * Annoncées aux lecteurs d'écran via une région `aria-live`.
+ * préalable pour les actions destructives. Annoncées via une région `aria-live`.
  */
 export function ToastProvider({ children }: { children: ReactNode }) {
   const [toasts, setToasts] = useState<Toast[]>([]);
@@ -36,13 +36,14 @@ export function ToastProvider({ children }: { children: ReactNode }) {
   return (
     <Ctx.Provider value={api}>
       {children}
-      <div aria-live="polite" className="pointer-events-none fixed inset-x-0 bottom-20 z-50 flex flex-col items-center gap-2 px-4 md:bottom-6">
+      <div aria-live="polite" className="pointer-events-none fixed inset-x-0 bottom-24 z-50 flex flex-col items-center gap-2 px-4 md:bottom-8">
         {toasts.map((t) => (
-          <div key={t.id} role={t.tone === "error" ? "alert" : "status"} className="pointer-events-auto flex w-full max-w-md items-center justify-between gap-3 rounded-[var(--radius)] bg-[var(--text)] px-4 py-3 text-[var(--bg)] shadow-lg">
-            <span>{t.message}</span>
+          <div key={t.id} role={t.tone === "error" ? "alert" : "status"} className="mise-pop pointer-events-auto flex w-full max-w-md items-center gap-3 rounded-full bg-[#1f1c17] px-5 py-3 text-[#f8f4ec] shadow-[var(--shadow-lg)]">
+            {t.tone === "error" ? <AlertTriangle className="h-5 w-5 shrink-0 text-[#ff8b7d]" aria-hidden /> : <CheckCircle2 className="h-5 w-5 shrink-0 text-[#6fcf9c]" aria-hidden />}
+            <span className="flex-1 text-sm">{t.message}</span>
             {t.actionLabel ? (
               <button
-                className="font-semibold underline"
+                className="rounded-full px-2 py-1 text-sm font-bold text-[#6fcf9c] hover:bg-white/10"
                 onClick={() => {
                   t.onAction?.();
                   dismiss(t.id);

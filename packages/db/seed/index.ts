@@ -1,6 +1,6 @@
 import { AISLES, recipeAllergens, recipeDiets, toFixed, UNITS, type Aisle } from "@mise/domain";
 import { createHash } from "node:crypto";
-import { sql } from "drizzle-orm";
+import { and, isNull, notInArray, sql } from "drizzle-orm";
 import type { Db } from "../src/client.js";
 import * as s from "../src/schema.js";
 import { CATALOG, loadSeedRecipes } from "./catalog.js";
@@ -124,6 +124,9 @@ export async function seedCatalog(db: Db): Promise<{ ingredients: number; recipe
         })),
       );
     }
+    // Recettes du catalogue retirées du seed : désactivées (pas supprimées, elles peuvent
+    // figurer dans des plans existants).
+    await tx.update(s.recipes).set({ status: "rejected" }).where(and(isNull(s.recipes.householdId), notInArray(s.recipes.slug, recipes.map((r) => r.slug))));
     return { ingredients: SEED_INGREDIENTS.length, recipes: recipes.length, products };
   });
 }

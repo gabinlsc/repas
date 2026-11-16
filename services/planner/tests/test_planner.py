@@ -85,14 +85,16 @@ def test_locked_unsafe_is_rejected() -> None:
     assert res.diagnostics[0].code == "locked_unsafe"
 
 
-def test_budget_too_low_reports_minimum() -> None:
+def test_budget_too_low_gives_best_plan_with_warning() -> None:
     res = plan(request([recipe("a"), recipe("b"), recipe("c")], days=3, budget_cents=100), workers=4)
-    assert res.status == "infeasible"
+    # Un budget irréaliste ne bloque plus : la semaine est proposée avec un avertissement chiffré.
+    assert len(res.meals) == 3
     d = next(d for d in res.diagnostics if d.code == "budget_too_low")
     assert int(d.params["minimum_cents"]) > 100
     assert "€" in d.message
     ok = plan(request([recipe("a"), recipe("b"), recipe("c")], days=3, budget_cents=int(d.params["minimum_cents"])), workers=4)
     assert ok.status in ("optimal", "feasible")
+    assert not any(x.code == "budget_too_low" for x in ok.diagnostics)
 
 
 def test_repeat_window_infeasible() -> None:
@@ -148,6 +150,7 @@ def test_leftovers_feed_later_slot() -> None:
     )
     body = req.model_dump()
     body["days"][1]["max_prep_minutes"] = 5
+    body["allow_leftovers"] = True
     res = plan(type(req).model_validate(body), workers=4)
     assert res.status in ("optimal", "feasible")
     d0 = next(m for m in res.meals if m.day == 0)
@@ -182,3 +185,40 @@ def test_nutrition_and_partial_prices() -> None:
     assert res.score is not None
     assert any(d.code == "partial_prices" for d in res.diagnostics)
     assert all(any(e.code == "kcal" for e in m.explanations) for m in res.meals)
+
+
+def test_different_seeds_give_different_weeks() -> None:
+    req = request([recipe(f"r{i}", preference=i % 2) for i in range(40)], days=7, slots=["lunch", "dinner"], repeat_window_days=7)
+    a = plan(req, workers=4)
+    b = plan(req.model_copy(update={"seed": req.seed + 1}), workers=4)
+    ra = {m.recipe_id for m in a.meals}
+    rb = {m.recipe_id for m in b.meals}
+    assert len(ra & rb) < len(ra)  # la graine change réellement la proposition
+
+
+def test_recent_recipes_are_avoided() -> None:
+    req = request(
+        [recipe(f"r{i}", preference=i % 3, season_score=40 + i % 30) for i in range(30)],
+        days=7,
+        slots=["lunch", "dinner"],
+        repeat_window_days=7,
+    )
+    first = plan(req, workers=4)
+    recent = {m.recipe_id: 1 for m in first.meals}
+    second = plan(req.model_copy(update={"recent": recent}), workers=4)
+    overlap = {m.recipe_id for m in second.meals} & set(recent)
+    assert len(overlap) <= 2
+
+
+def test_leftovers_are_opt_in() -> None:
+    req = request([recipe("batch", total_minutes=40, leftover_days=2), recipe("other", total_minutes=40), recipe("third")], days=3)
+    res = plan(req, workers=4)
+    assert not any(m.cook_big or m.leftover_of for m in res.meals)
+
+
+def test_same_family_not_twice_a_day() -> None:
+    recipes = [recipe(f"pates{i}", family="pates", preference=3) for i in range(4)] + [recipe(f"autre{i}") for i in range(4)]
+    res = plan(request(recipes, days=2, slots=["lunch", "dinner"], repeat_window_days=7), workers=4)
+    for d in (0, 1):
+        fams = [m.recipe_id.startswith("pates") for m in res.meals if m.day == d]
+        assert sum(fams) <= 1

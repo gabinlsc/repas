@@ -77,7 +77,7 @@ def plan(req: PlanRequest, workers: int = 8) -> PlanResponse:
     mdl = build(req)
     res = solve(mdl, req.seed, req.time_limit_s, workers)
     if res.status in ("optimal", "feasible"):
-        return _response(mdl, res, [])
+        return _response(mdl, res, _relaxation_diagnostics(mdl, res))
     if res.status == "unknown":
         # Temps écoulé sans solution : on tente la version relâchée pour au moins diagnostiquer.
         pass
@@ -129,7 +129,8 @@ def _relaxation_diagnostics(mdl: Model, res: Solved) -> list[Diagnostic]:
             out.append(
                 Diagnostic(
                     code="budget_too_low",
-                    message=f"Budget trop bas pour ces contraintes : minimum estimé {_euros(minimum)}.",
+                    message=f"Cette semaine dépasse ton budget de {_euros(value)} (environ {_euros(minimum)} au total) : "
+                    "augmente un peu le budget ou retire un repas par jour.",
                     params={"budget_cents": params["budget_cents"], "minimum_cents": minimum},
                 )
             )

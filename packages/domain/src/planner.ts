@@ -192,18 +192,29 @@ export interface SnapshotInput {
  * pâtes » dans la même semaine même si les recettes sont différentes.
  */
 const FAMILY_OF: ReadonlyArray<readonly [string, readonly string[]]> = [
+  ["crepe", ["farine_sarrasin"]],
   ["pates", ["pates", "lasagne", "gnocchi", "nouilles", "nouilles_riz"]],
   ["riz", ["riz", "riz_risotto"]],
+  ["tarte", ["pate_brisee", "pate_feuilletee", "pate_pizza"]],
   ["pomme_de_terre", ["pomme_de_terre", "patate_douce"]],
   ["semoule", ["semoule", "boulgour", "quinoa", "polenta"]],
-  ["tarte", ["pate_brisee", "pate_feuilletee", "pate_pizza"]],
-  ["legumineuses", ["lentilles", "lentilles_corail", "pois_chiches", "haricots_rouges", "haricots_blancs", "pois_casses"]],
-  ["pain", ["pain", "pain_mie", "pain_burger", "tortilla"]],
+  ["legumineuses", ["lentilles", "lentilles_corail", "pois_chiches", "haricots_rouges", "haricots_blancs", "haricots_noirs", "pois_casses"]],
+  ["pain", ["pain", "pain_mie", "pain_burger", "tortilla", "pain_pita", "brioche"]],
+  ["oeufs", ["oeuf"]],
+];
+/** Familles du petit-déjeuner et du goûter (porridge, tartines, crêpes…). */
+const MORNING_FAMILY_OF: ReadonlyArray<readonly [string, readonly string[]]> = [
+  ["crepe", ["farine_sarrasin", "farine"]],
+  ["avoine", ["flocons_avoine", "graines_chia"]],
+  ["pain", ["pain", "pain_mie", "brioche", "pain_burger", "galette_riz"]],
+  ["oeufs", ["oeuf", "tofu"]],
+  ["laitage", ["yaourt", "fromage_blanc", "ricotta"]],
+  ["fruits", ["banane", "mangue", "fraise", "fruits_rouges", "kiwi", "pomme", "poire", "ananas", "orange"]],
 ];
 
 export function recipeFamily(ingredientIds: readonly string[], slots: readonly MealSlot[]): string | null {
-  if (slots.every((s) => s === "breakfast" || s === "snack")) return null;
-  for (const [fam, ids] of FAMILY_OF) if (ingredientIds.some((i) => ids.includes(i))) return fam;
+  const morning = slots.every((s) => s === "breakfast" || s === "snack");
+  for (const [fam, ids] of morning ? MORNING_FAMILY_OF : FAMILY_OF) if (ingredientIds.some((i) => ids.includes(i))) return morning ? `matin_${fam}` : fam;
   return null;
 }
 

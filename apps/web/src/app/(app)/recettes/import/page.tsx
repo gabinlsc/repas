@@ -3,7 +3,8 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { MEAL_SLOTS, type MealSlot } from "@mise/domain";
-import { Badge, Button, Card, Field, Input, Select } from "@mise/ui";
+import { Badge, Button, Card, Chip, Field, Input, Segmented, Select } from "@mise/ui";
+import { PageHeader } from "@/components/AppShell";
 import { translator, type MessageKey } from "@/lib/i18n";
 import { useTRPC } from "@/lib/trpc";
 
@@ -52,11 +53,8 @@ export default function ImportPage() {
 
   return (
     <div className="flex flex-col gap-4">
-      <h1 className="text-2xl font-bold">{t("recipes.import")}</h1>
-      <div role="tablist" className="flex gap-2">
-        <Button role="tab" aria-selected={mode === "url"} variant={mode === "url" ? "primary" : "secondary"} onClick={() => setMode("url")}>Depuis une URL</Button>
-        <Button role="tab" aria-selected={mode === "text"} variant={mode === "text" ? "primary" : "secondary"} onClick={() => setMode("text")}>Texte collé</Button>
-      </div>
+      <PageHeader title="Ajouter une recette" subtitle="Colle le lien d'un site de recettes ou le texte d'une recette : on reconnaît les ingrédients pour toi." />
+      <Segmented label="Source" value={mode} onChange={setMode} options={[{ value: "url", label: "Depuis un lien" }, { value: "text", label: "Texte collé" }]} />
       <Card className="flex flex-col gap-3">
         {mode === "url" ? (
           <Field label="Adresse de la recette" htmlFor="url">
@@ -64,7 +62,7 @@ export default function ImportPage() {
           </Field>
         ) : (
           <Field label="Texte de la recette" htmlFor="txt" hint="Titre, « Pour 4 personnes », « Ingrédients », « Préparation »…">
-            <textarea id="txt" rows={10} className="w-full rounded-[var(--radius)] border border-[var(--border)] bg-[var(--surface)] p-3" value={text} onChange={(e) => setText(e.target.value)} />
+            <textarea id="txt" rows={10} className="w-full rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface)] p-4" value={text} onChange={(e) => setText(e.target.value)} />
           </Field>
         )}
         <Button className="self-start" loading={fromUrl.isPending || fromText.isPending} onClick={() => (mode === "url" ? fromUrl.mutate({ url }) : fromText.mutate({ text }))}>Analyser</Button>
@@ -75,9 +73,10 @@ export default function ImportPage() {
           <Field label="Titre" htmlFor="title"><Input id="title" value={title ?? draft.title} onChange={(e) => setTitle(e.target.value)} /></Field>
           <fieldset>
             <legend className="text-sm font-medium">Repas</legend>
-            <div className="flex gap-3">{MEAL_SLOTS.map((s) => <label key={s} className="flex items-center gap-1"><input type="checkbox" checked={slots.includes(s)} onChange={() => setSlots(slots.includes(s) ? slots.filter((x) => x !== s) : [...slots, s])} />{t(`slot.${s}` as MessageKey)}</label>)}</div>
+            <div className="mt-2 flex flex-wrap gap-2">{MEAL_SLOTS.map((s) => <Chip key={s} selected={slots.includes(s)} onToggle={() => setSlots(slots.includes(s) ? slots.filter((x) => x !== s) : [...slots, s])}>{t(`slot.${s}` as MessageKey)}</Chip>)}</div>
           </fieldset>
-          <h2 className="font-semibold">Correspondance des ingrédients</h2>
+          <h2 className="font-display text-xl font-semibold">Vérifie les ingrédients</h2>
+          <p className="-mt-2 text-sm text-[var(--text-muted)]">Chaque ingrédient doit être associé pour que la recette soit proposée dans tes semaines (c&apos;est ce qui garantit le respect des allergies).</p>
           <ul className="flex flex-col gap-2">
             {draft.lines.map((l, i) => (
               <li key={i} className="grid grid-cols-1 items-center gap-2 sm:grid-cols-2">

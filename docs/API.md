@@ -48,4 +48,6 @@ Entrée (extrait) :
   "recipes": [{ "id": "…", "total_minutes": 25, "allergens": [], "diets": ["vegetarian"], "slots": ["dinner"], "ingredients": [{ "ingredient_id": "riz", "qty_per_serving_centi": 7500 }], "…": "…" }],
   "ingredients": [{ "id": "riz", "name": "Riz", "pack_size_centi": 100000, "pack_price_cents": 219, "pantry": [{ "qty_centi": 25000, "expiry_day": null, "must_use": false }] }] }
 ```
+Champs de variété : `recipes[].family` (famille de plat), `recent` (recette → semaines écoulées), `allow_leftovers` (restes, défaut `false`).
+
 Sortie : `status` (`optimal`/`feasible`/`infeasible`/`invalid`), `deterministic`, `meals[]` (avec `cook_big`, `leftover_of`, `explanations[]` codés), `score`, `estimated_cost_cents`, `diagnostics[]` (`no_candidates`, `locked_unsafe`, `budget_too_low` avec `minimum_cents`, `repeat_window`, `perishable`, `timeout`, `partial_prices`).

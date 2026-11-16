@@ -178,16 +178,6 @@ p4 t15+30 [lunch,dinner] (auvergnate) {plaques} #hiver r0 f0 d2
 > Préparer une purée avec crème et ail, incorporer la mozzarella en filant.
 > Griller les saucisses.
 
-# Galettes complètes au sarrasin
-p4 t10+20 [lunch,dinner] (bretonne) {plaques} #sans-gluten r0 f0 d1
-- 250 g de farine de sarrasin
-- 50 cl d'eau
-- 4 tranches de jambon
-- 4 œufs
-- 120 g d'emmental râpé
-> Préparer une pâte avec farine, eau et sel, cuire les galettes.
-> Garnir de jambon, fromage et un œuf, replier les bords.
-
 # Soupe au pistou
 p6 t30+40 [lunch,dinner] (provençale) {plaques} #ete #vegetarien #batch r3 f1 d1
 - 2 courgettes

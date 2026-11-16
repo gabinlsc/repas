@@ -34,7 +34,7 @@ apps/web            Next.js 16 (App Router) + tRPC + Tailwind — PWA, API, SSE
 apps/worker         worker BullMQ : génération asynchrone des plans
 services/planner    FastAPI + OR-Tools CP-SAT (Python 3.12, mypy strict)
 packages/domain     logique métier pure : quantités exactes, unités, parseur, liste de courses, conditionnements, sync LWW
-packages/db         schéma Drizzle, migrations, seed (176 ingrédients, 226 conditionnements, 157 recettes), services
+packages/db         schéma Drizzle, migrations, seed (207 ingrédients, 260 conditionnements, 359 recettes), services
 packages/ui         design system (jetons clair/sombre, composants accessibles)
 data/               import Ciqual (ANSES)
 bench/              benchmark reproductible du solveur
@@ -47,10 +47,10 @@ infra/              Compose de développement, Caddyfile
 | Contrôle | Résultat (machine de dev, 4 vCPU) |
 |---|---|
 | `packages/domain` | 113 tests (dont propriétés fast-check), couverture lignes 98 % |
-| `services/planner` | 24 tests pytest/Hypothesis, propriété « aucun allergène » sur 10 000 cas, couverture 98 % |
+| `services/planner` | 28 tests pytest/Hypothesis (dont variété : graines, historique, familles), propriété « aucun allergène » sur 10 000 cas |
 | `packages/db` | 13 tests d'intégration PostgreSQL |
 | `apps/web` | 41 tests (intégration tRPC dont cloisonnement inter-foyers, unitaires), couverture 84 % |
-| E2E Playwright | inscription → plan → liste → mode magasin hors ligne → resynchronisation, desktop + mobile (≈ 10–17 s) |
+| E2E Playwright | inscription → plan sans répétition → liste → mode magasin hors ligne → resynchronisation ; « nouvelle proposition » change la semaine ; desktop + mobile |
 | Benchmark | 500 recettes, 7 j × 3 repas, 6 membres : p95 ≈ 5,5 s (limite 10 s), déterministe |
 
 ```bash

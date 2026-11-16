@@ -67,6 +67,10 @@ export async function prepareGeneration(db: Db, ring: Keyring, opts: GenerationO
     }
   }
 
+  // « Nouvelle proposition » : les plats actuels non verrouillés sont traités comme
+  // servis la semaine dernière, pour que la proposition change vraiment.
+  if (!opts.onlySlot) for (const m of existing) if (!m.locked) recent[m.recipeId] = 1;
+
   const [ingredients, recipes, products, pantry] = await Promise.all([
     loadIngredients(db),
     loadPlannableRecipes(db, opts.householdId),
