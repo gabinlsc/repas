@@ -7,6 +7,9 @@
 #    curl -fsSL https://raw.githubusercontent.com/gabinlsc/repas/main/deploy.sh \
 #      | sudo DOMAIN=repas.example.fr EMAIL=admin@example.fr bash
 #
+#  (Juste après un push, le CDN peut servir l'ancienne version ~5 min : remplacer « main »
+#   par l'identifiant du commit dans l'URL, ou utiliser « sudo mise-update » qui le fait.)
+#
 #  Dépôt privé : ajouter GITHUB_TOKEN=<jeton lecture seule> (jamais écrit sur disque).
 #    curl -fsSL -H "Authorization: token $GITHUB_TOKEN" \
 #      https://raw.githubusercontent.com/gabinlsc/repas/main/deploy.sh \
@@ -341,8 +344,12 @@ auth=()
 tmp="\$(mktemp)"
 trap 'rm -f -- "\$tmp"' EXIT
 # Fichier plutôt que « curl | bash » : rien ne peut tronquer le script en cours de route.
-# Paramètre anti-cache : raw.githubusercontent.com garde l'ancienne version ~5 minutes.
-curl -fsSL "\${auth[@]}" -H "Cache-Control: no-cache" "https://raw.githubusercontent.com/${REPO}/${BRANCH}/deploy.sh?t=\$(date +%s)" -o "\$tmp"
+# raw.githubusercontent.com garde une branche en cache jusqu'à 5 minutes (selon le serveur
+# du CDN) : on résout d'abord le dernier commit via l'API, puis on télécharge à ce commit.
+sha="\$(curl -fsSL "\${auth[@]}" -H "Accept: application/vnd.github.sha" "https://api.github.com/repos/${REPO}/commits/${BRANCH}")"
+[[ "\$sha" =~ ^[0-9a-f]{40}\$ ]] || { echo "commit introuvable pour ${REPO}@${BRANCH}" >&2; exit 1; }
+echo "mise à jour vers le commit \${sha:0:7}"
+curl -fsSL "\${auth[@]}" "https://raw.githubusercontent.com/${REPO}/\$sha/deploy.sh" -o "\$tmp"
 REPO="${REPO}" BRANCH="${BRANCH}" DOMAIN="${DOMAIN}" EMAIL="${EMAIL}" INSTALL_DIR="${INSTALL_DIR}" GITHUB_TOKEN="\${GITHUB_TOKEN:-}" bash "\$tmp"
 EOF
 cat > /usr/local/bin/mise-logs <<EOF
