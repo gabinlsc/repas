@@ -1,0 +1,520 @@
+// Cuisine française du quotidien et des régions.
+
+# Magret de canard, pommes de terre sautées
+p4 t15+30 [lunch,dinner] (française) {plaques} #weekend r0 f0 d2
+- 2 magrets de canard {canard}
+- 800 g de pommes de terre
+- 2 gousses d'ail
+- persil
+> Inciser la peau des magrets, les cuire côté peau 10 min puis 4 min côté chair ; laisser reposer.
+> Sauter les pommes de terre en dés dans la graisse de canard avec ail et persil.
+
+# Parmentier de canard au potiron
+p6 t30+30 [lunch,dinner] (française) {four,plaques} #automne r2 f1 d2
+- 2 magrets de canard {canard}
+- 800 g de pommes de terre
+- 500 g de potiron
+- 20 cl de lait
+- 30 g de beurre
+- 2 échalotes
+> Cuire et effilocher le canard avec les échalotes.
+> Préparer une purée pommes de terre-potiron ; monter en couches et gratiner 20 min.
+
+# Filets de maquereau, lentilles tièdes
+p4 t10+25 [lunch,dinner] (française) {plaques} #budget r1 f0 d1
+- 400 g de filets de maquereau
+- 300 g de lentilles vertes
+- 1 échalote
+- 2 c. à soupe de moutarde
+- 3 c. à soupe d'huile de colza
+- 1 c. à soupe de vinaigre
+> Cuire les lentilles 25 min, assaisonner de vinaigrette moutardée et d'échalote.
+> Poêler les filets côté peau 4 min.
+
+# Truite aux amandes, haricots verts
+p4 t10+15 [lunch,dinner] (française) {plaques} #leger r0 f0 d1
+- 4 filets de truite
+- 40 g d'amandes effilées
+- 30 g de beurre
+- 1 citron
+- 500 g de haricots verts
+> Cuire les haricots verts 8 min.
+> Poêler la truite au beurre, ajouter les amandes dorées et le citron.
+
+# Cabillaud, purée de panais
+p4 t15+25 [lunch,dinner] (française) {plaques} #hiver r0 f0 d1
+- 4 dos de cabillaud {cabillaud}
+- 800 g de panais
+- 20 cl de lait
+- 30 g de beurre
+- 1 citron
+> Cuire les panais 20 min, les écraser avec lait et beurre.
+> Poêler le cabillaud et servir avec un trait de citron.
+
+# Saumon, poireaux fondus à la crème
+p4 t10+25 [lunch,dinner] (française) {plaques} #hiver r0 f0 d1
+- 4 pavés de saumon
+- 4 poireaux
+- 20 cl de crème liquide
+- 20 g de beurre
+- 250 g de riz
+> Faire fondre les poireaux émincés au beurre 15 min, ajouter la crème.
+> Cuire le saumon à la poêle, servir avec riz et poireaux.
+
+# Hachis parmentier de légumes et lentilles
+p6 t25+30 [lunch,dinner] (française) {four,plaques} #vegetarien #batch r2 f1 d1
+- 250 g de lentilles vertes
+- 1 kg de pommes de terre
+- 2 carottes
+- 1 oignon
+- 400 g de tomates concassées
+- 20 cl de lait
+- 30 g de beurre
+- 60 g d'emmental râpé
+> Cuire les lentilles avec carottes, oignon et tomates 25 min.
+> Couvrir de purée, parsemer de fromage et gratiner 20 min.
+
+# Poulet à la moutarde et champignons
+p4 t10+30 [lunch,dinner] (française) {plaques} #familial r1 f0 d1
+- 4 cuisses de poulet
+- 250 g de champignons
+- 2 c. à soupe de moutarde à l'ancienne
+- 20 cl de crème fraîche
+- 1 échalote
+- 300 g de tagliatelles
+> Dorer le poulet, ajouter échalote et champignons, couvrir 20 min.
+> Lier avec crème et moutarde ; servir avec les pâtes.
+
+# Poulet vallée d'Auge (cidre et crème)
+p4 t15+35 [lunch,dinner] (normande) {plaques} #automne r1 f0 d2
+- 4 cuisses de poulet
+- 25 cl de cidre
+- 20 cl de crème fraîche
+- 2 pommes
+- 200 g de champignons
+- 1 échalote
+- 20 g de beurre
+> Dorer le poulet, ajouter échalote et champignons, déglacer au cidre ; cuire 25 min.
+> Ajouter la crème et les pommes poêlées.
+
+# Pot-au-feu de la mer simplifié
+p4 t20+25 [lunch,dinner] (française) {plaques} #leger r0 f0 d2
+- 400 g de cabillaud
+- 300 g de saumon
+- 3 carottes
+- 2 poireaux
+- 4 pommes de terre
+- 1 cube de bouillon de légumes
+> Cuire les légumes dans le bouillon 20 min.
+> Ajouter les poissons en gros cubes 6 min à frémissement.
+
+# Croque-madame
+p4 t10+12 [lunch,dinner] (française) {four,plaques} #rapide r0 f0 d1
+- 8 tranches de pain de mie
+- 4 tranches de jambon
+- 120 g d'emmental râpé
+- 4 œufs
+- 20 g de beurre
+> Préparer des croque-monsieur et les dorer au four.
+> Poser un œuf au plat sur chacun.
+
+# Quiche au saumon et brocoli
+p6 t15+35 [lunch,dinner] (française) {four} #tarte r2 f1 d1
+- 1 rouleau de pâte brisée
+- 250 g de saumon
+- 1/2 brocoli
+- 3 œufs
+- 20 cl de crème liquide
+> Précuire les fleurettes de brocoli 5 min ; répartir avec le saumon sur la pâte.
+> Verser œufs et crème battus, cuire 35 min à 180 °C.
+
+# Tarte fine aux courgettes et chèvre
+p4 t15+25 [lunch,dinner] (française) {four} #ete #vegetarien r1 f0 d1
+- 1 rouleau de pâte feuilletée
+- 2 courgettes
+- 150 g de bûche de chèvre
+- 2 c. à soupe d'huile d'olive
+- thym
+> Couvrir la pâte de fines rondelles de courgette et de chèvre.
+> Arroser d'huile, parsemer de thym ; cuire 25 min à 200 °C.
+
+# Flammekueche
+p4 t15+15 [lunch,dinner] (alsacienne) {four} #convivial r0 f0 d1
+- 1 rouleau de pâte à pizza
+- 20 cl de crème fraîche
+- 150 g de lardons
+- 2 oignons
+> Étaler la crème sur la pâte, ajouter oignons émincés et lardons.
+> Cuire 15 min à 250 °C.
+
+# Choucroute simplifiée au poisson
+p4 t15+30 [lunch,dinner] (alsacienne) {plaques} #hiver r1 f0 d2
+- 600 g de chou blanc {chou}
+- 400 g de cabillaud
+- 200 g de saumon fumé
+- 4 pommes de terre
+- 20 cl de vin blanc
+- 20 cl de crème liquide
+> Braiser le chou émincé au vin blanc 25 min avec les pommes de terre.
+> Pocher le cabillaud, servir avec saumon fumé et crème.
+
+# Saucisses de Morteau, purée et chou
+p4 t15+40 [lunch,dinner] (franc-comtoise) {plaques} #hiver r1 f0 d1
+- 2 saucisses de Morteau {saucisse}
+- 1 kg de pommes de terre
+- 1/2 chou vert
+- 20 cl de lait
+- 30 g de beurre
+> Pocher les saucisses 35 min, cuire le chou émincé 15 min.
+> Préparer une purée et servir le tout.
+
+# Aligot-style purée au fromage et saucisses
+p4 t15+30 [lunch,dinner] (auvergnate) {plaques} #hiver r0 f0 d2
+- 1 kg de pommes de terre
+- 300 g de mozzarella
+- 20 cl de crème fraîche
+- 2 gousses d'ail
+- 4 saucisses de Toulouse
+> Préparer une purée avec crème et ail, incorporer la mozzarella en filant.
+> Griller les saucisses.
+
+# Galettes complètes au sarrasin
+p4 t10+20 [lunch,dinner] (bretonne) {plaques} #sans-gluten r0 f0 d1
+- 250 g de farine de sarrasin
+- 50 cl d'eau
+- 4 tranches de jambon
+- 4 œufs
+- 120 g d'emmental râpé
+> Préparer une pâte avec farine, eau et sel, cuire les galettes.
+> Garnir de jambon, fromage et un œuf, replier les bords.
+
+# Soupe au pistou
+p6 t30+40 [lunch,dinner] (provençale) {plaques} #ete #vegetarien #batch r3 f1 d1
+- 2 courgettes
+- 300 g de haricots verts
+- 265 g de haricots blancs
+- 2 pommes de terre
+- 2 carottes
+- 100 g de coquillettes
+- 190 g de pesto
+- 1,5 l d'eau
+> Cuire les légumes en dés 25 min, ajouter haricots blancs et pâtes 10 min.
+> Servir avec une cuillère de pesto.
+
+# Tian provençal
+p4 t20+50 [lunch,dinner] (provençale) {four} #ete #vegan r2 f0 d1
+- 2 courgettes
+- 2 aubergines
+- 4 tomates
+- 1 oignon
+- 4 c. à soupe d'huile d'olive
+- herbes de Provence
+> Disposer les légumes en rondelles alternées sur l'oignon émincé.
+> Arroser d'huile, parsemer d'herbes et cuire 50 min à 180 °C.
+
+# Bouillabaisse express
+p4 t20+25 [lunch,dinner] (provençale) {plaques} #weekend r0 f0 d2
+- 400 g de cabillaud
+- 500 g de moules
+- 200 g de crevettes
+- 400 g de tomates concassées
+- 1 fenouil
+- 1 oignon
+- 4 pommes de terre
+- 1 c. à café de curcuma
+- 1 baguette
+> Faire revenir oignon et fenouil, ajouter tomates, curcuma, pommes de terre et 1 l d'eau ; cuire 15 min.
+> Ajouter poissons et fruits de mer 6 min ; servir avec le pain.
+
+# Blanquette de poisson
+p4 t15+25 [lunch,dinner] (française) {plaques} #leger r0 f0 d1
+- 600 g de cabillaud
+- 250 g de champignons
+- 2 carottes
+- 20 cl de crème liquide
+- 1 cube de bouillon de légumes
+- 250 g de riz
+> Cuire carottes et champignons dans le bouillon 15 min.
+> Ajouter le poisson 6 min, lier à la crème ; servir avec le riz.
+
+# Steak, frites au four et salade
+p4 t15+35 [lunch,dinner] (française) {four,plaques} #classique r0 f0 d1
+- 4 steaks {boeuf_steak}
+- 1 kg de pommes de terre
+- 3 c. à soupe d'huile de tournesol
+- 1 laitue
+> Cuire les frites huilées 30 min à 220 °C.
+> Saisir les steaks, servir avec la salade.
+
+# Carbonade flamande
+p6 t20+150 [lunch,dinner] (flamande) {plaques} #hiver #batch r3 f1 d2
+- 1,2 kg de bœuf à braiser {boeuf_braiser}
+- 3 oignons
+- 66 cl de bière brune
+- 2 tranches de pain d'épices {pain_mie}
+- 1 c. à soupe de moutarde
+- 1 c. à soupe de sucre roux
+- 1 kg de pommes de terre
+> Saisir la viande, ajouter les oignons, mouiller de bière.
+> Ajouter le pain tartiné de moutarde et le sucre ; mijoter 2 h 30. Servir avec des pommes de terre.
+
+# Gratin de chou-fleur au jambon
+p4 t15+30 [lunch,dinner] (française) {four,plaques} #enfants r1 f1 d1
+- 1 chou-fleur
+- 4 tranches de jambon
+- 50 cl de lait
+- 40 g de beurre
+- 40 g de farine
+- 100 g d'emmental râpé
+> Cuire le chou-fleur 10 min, ajouter le jambon en lanières.
+> Napper de béchamel, couvrir de fromage et gratiner 20 min.
+
+# Choux de Bruxelles rôtis aux lardons
+p4 t10+30 [lunch,dinner] (française) {four} #hiver r0 f0 d1
+- 600 g de choux de Bruxelles
+- 150 g de lardons
+- 600 g de pommes de terre grenaille
+- 2 c. à soupe d'huile d'olive
+> Mélanger choux coupés en deux, pommes de terre, lardons et huile.
+> Rôtir 30 min à 200 °C.
+
+# Cocotte de poulet aux légumes d'hiver
+p6 t20+60 [lunch,dinner] (française) {four} #hiver #batch r3 f1 d1
+- 6 cuisses de poulet
+- 3 carottes
+- 2 panais
+- 3 pommes de terre
+- 2 oignons
+- 20 cl de vin blanc
+- thym
+> Dorer le poulet, ajouter les légumes en morceaux et le vin.
+> Couvrir et cuire 1 h au four à 180 °C.
+
+# Rôti de dinde aux pruneaux
+p6 t15+60 [lunch,dinner] (française) {four} #dimanche r2 f1 d1
+- 900 g de filet de dinde {dinde}
+- 150 g de pruneaux
+- 2 oignons
+- 20 cl de bouillon {eau}
+- 1 cube de bouillon de volaille
+- 800 g de pommes de terre
+> Dorer le rôti, ajouter oignons, pruneaux, bouillon et pommes de terre.
+> Cuire 1 h à 180 °C en arrosant.
+
+# Lapin-style poulet à la moutarde (version rapide)
+p4 t10+25 [lunch,dinner] (française) {plaques} #rapide r1 f0 d1
+- 500 g de blanc de poulet
+- 3 c. à soupe de moutarde
+- 20 cl de crème liquide
+- 1 oignon
+- 300 g de coquillettes
+> Faire revenir oignon et poulet émincé, ajouter moutarde et crème.
+> Laisser épaissir, servir avec les pâtes.
+
+# Croquettes de thon et purée
+p4 t20+15 [lunch,dinner] (française) {plaques} #enfants #budget r1 f1 d1
+- 280 g de thon
+- 600 g de pommes de terre
+- 1 œuf
+- 50 g de chapelure
+- persil
+- 3 c. à soupe d'huile de tournesol
+> Écraser les pommes de terre cuites avec thon, œuf et persil.
+> Former des croquettes, les paner et les dorer.
+
+# Œufs mimosa et salade de lentilles
+p4 t15+25 [lunch,dinner] (française) {plaques} #froid #budget r0 f0 d1
+- 6 œufs
+- 3 c. à soupe de mayonnaise
+- 250 g de lentilles vertes
+- 1 échalote
+- 3 c. à soupe d'huile de colza
+- 1 c. à soupe de vinaigre
+> Cuire œufs durs et lentilles ; garnir les œufs de jaunes mélangés à la mayonnaise.
+> Assaisonner les lentilles de vinaigrette et d'échalote.
+
+# Petit salé aux lentilles
+p6 t15+60 [lunch,dinner] (française) {plaques} #hiver #batch r3 f1 d1
+- 600 g d'échine de porc
+- 200 g de lardons
+- 400 g de lentilles vertes
+- 2 carottes
+- 1 oignon
+- laurier
+> Pocher la viande et les lardons 30 min, ajouter lentilles, carottes, oignon et laurier.
+> Cuire encore 30 min.
+
+# Tartiflette au poulet (sans porc)
+p4 t15+30 [lunch,dinner] (savoyarde) {four,plaques} #hiver r1 f0 d1
+- 1 kg de pommes de terre
+- 300 g de blanc de poulet
+- 1 reblochon
+- 2 oignons
+- 20 cl de crème fraîche
+> Cuire les pommes de terre ; dorer poulet et oignons.
+> Mélanger avec la crème, couvrir de reblochon et gratiner 25 min.
+
+# Velouté d'endives et jambon cru
+p4 t10+25 [lunch,dinner] (française) {plaques,mixeur} #hiver r2 f1 d1
+- 6 endives
+- 2 pommes de terre
+- 1 oignon
+- 1 cube de bouillon de légumes
+- 1 l d'eau
+- 10 cl de crème liquide
+- 60 g de jambon cru
+> Cuire endives, pommes de terre et oignon dans le bouillon 25 min, mixer avec la crème.
+> Servir avec le jambon cru grillé émietté.
+
+# Gratin de courge et lardons
+p4 t15+35 [lunch,dinner] (française) {four} #automne r2 f1 d1
+- 1 kg de courge
+- 150 g de lardons
+- 20 cl de crème liquide
+- 80 g d'emmental râpé
+> Disposer la courge en cubes et les lardons dans un plat.
+> Ajouter la crème et le fromage, cuire 35 min à 190 °C.
+
+# Galettes de pommes de terre et saumon fumé
+p4 t20+15 [lunch,dinner] (française) {plaques} #weekend r0 f0 d1
+- 800 g de pommes de terre
+- 2 œufs
+- 2 c. à soupe de farine
+- 150 g de saumon fumé
+- 150 g de fromage blanc
+- aneth
+- 4 c. à soupe d'huile de tournesol
+> Râper les pommes de terre, les mélanger aux œufs et à la farine ; dorer en galettes.
+> Servir avec saumon fumé et fromage blanc à l'aneth.
+
+# Pâtes au saumon fumé et citron
+p4 t5+12 [lunch,dinner] (française) {plaques} #rapide r0 f0 d1
+- 400 g de tagliatelles
+- 150 g de saumon fumé
+- 20 cl de crème liquide
+- 1 citron
+- aneth
+> Chauffer la crème avec le zeste de citron.
+> Mélanger aux pâtes avec le saumon en lanières et l'aneth.
+
+# Navets glacés et côtes de porc
+p4 t10+30 [lunch,dinner] (française) {plaques} #hiver r0 f0 d1
+- 4 côtes de porc {porc_filet}
+- 800 g de navets
+- 30 g de beurre
+- 1 c. à soupe de sucre
+> Cuire les navets avec beurre, sucre et un fond d'eau jusqu'à glaçage.
+> Poêler les côtes de porc.
+
+# Brochettes de merguez, semoule aux légumes
+p4 t15+15 [lunch,dinner] (orientale) {barbecue} #ete r0 f0 d1
+- 8 merguez
+- 250 g de semoule
+- 1 courgette
+- 1 poivron
+- 2 c. à soupe d'huile d'olive
+> Griller les merguez et les légumes en morceaux.
+> Préparer la semoule et servir.
+
+# Salade de pommes de terre, hareng-style au maquereau
+p4 t15+20 [lunch,dinner] (française) {plaques} #froid r1 f0 d1
+- 800 g de pommes de terre
+- 350 g de maquereau
+- 1 oignon rouge
+- 4 c. à soupe d'huile de colza
+- 1 c. à soupe de vinaigre
+- persil
+> Cuire les pommes de terre, les couper tièdes.
+> Mélanger avec le maquereau émietté, l'oignon et la vinaigrette.
+
+# Clafoutis salé tomates cerises et feta
+p4 t10+30 [lunch,dinner] (française) {four} #ete #vegetarien r1 f0 d1
+- 400 g de tomates cerises
+- 150 g de feta
+- 3 œufs
+- 60 g de farine
+- 25 cl de lait
+- basilic
+> Disposer tomates et feta dans un plat.
+> Verser la pâte œufs-farine-lait, cuire 30 min à 180 °C.
+
+# Cassolette de crevettes à l'ail
+p4 t10+15 [lunch,dinner] (française) {plaques} #rapide r0 f0 d1
+- 400 g de crevettes
+- 3 gousses d'ail
+- 20 cl de crème liquide
+- persil
+- 300 g de riz
+> Faire revenir l'ail, ajouter les crevettes puis la crème.
+> Parsemer de persil, servir avec le riz.
+
+# Gratin d'endives au jambon et pommes de terre
+p4 t20+35 [lunch,dinner] (nordiste) {four,plaques} #hiver r1 f1 d1
+- 6 endives
+- 4 pommes de terre
+- 6 tranches de jambon
+- 20 cl de crème liquide
+- 100 g d'emmental râpé
+> Braiser les endives coupées, cuire les pommes de terre en rondelles.
+> Monter en couches avec le jambon, napper de crème et de fromage ; gratiner 25 min.
+
+# Velouté de panais et carottes
+p4 t15+25 [lunch,dinner] (française) {plaques,mixeur} #hiver #vegan r3 f1 d1
+- 500 g de panais
+- 400 g de carottes
+- 1 oignon
+- 1 cube de bouillon de légumes
+- 1 l d'eau
+- 1 c. à café de cumin
+> Cuire les légumes dans le bouillon 25 min avec le cumin, mixer.
+
+# Fricassée de calamars au chorizo
+p4 t10+15 [lunch,dinner] (basque) {plaques} #rapide r0 f0 d1
+- 500 g de calamars
+- 100 g de chorizo
+- 2 poivrons
+- 2 gousses d'ail
+- 250 g de riz
+> Faire revenir chorizo, poivrons et ail.
+> Saisir les calamars 3 min, servir avec le riz.
+
+# Poulet basquaise au riz (une casserole)
+p4 t15+35 [lunch,dinner] (basque) {plaques} #familial r2 f1 d1
+- 500 g de blanc de poulet
+- 2 poivrons
+- 400 g de tomates concassées
+- 1 oignon
+- 250 g de riz
+- 1 cube de bouillon de volaille
+- 1 c. à café de piment d'Espelette
+> Dorer poulet, oignon et poivrons ; ajouter tomates, riz et 50 cl de bouillon.
+> Cuire 20 min à couvert.
+
+# Bœuf mode aux carottes (cocotte-minute)
+p6 t20+50 [lunch,dinner] (française) {cocotte_minute} #batch r3 f1 d1
+- 1 kg de bœuf à braiser {boeuf_braiser}
+- 1 kg de carottes
+- 2 oignons
+- 20 cl de vin rouge
+- 1 cube de bouillon de bœuf
+> Saisir la viande et les oignons, ajouter carottes, vin et bouillon.
+> Cuire 45 min sous pression.
+
+# Omelette aux pommes de terre et lardons
+p2 t10+15 [lunch,dinner] (française) {plaques} #rapide r0 f0 d1
+- 4 œufs
+- 2 pommes de terre
+- 75 g de lardons
+- 10 g de beurre
+> Dorer pommes de terre en dés et lardons.
+> Verser les œufs battus et cuire à feu doux.
+
+# Velouté de chou-fleur au curry
+p4 t10+25 [lunch,dinner] (française) {plaques,mixeur} #vegetarien r3 f1 d1
+- 1 chou-fleur
+- 1 oignon
+- 1 c. à café de curry
+- 1 cube de bouillon de légumes
+- 80 cl d'eau
+- 10 cl de crème liquide
+> Cuire chou-fleur et oignon dans le bouillon au curry 20 min, mixer avec la crème.

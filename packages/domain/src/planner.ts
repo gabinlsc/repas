@@ -76,6 +76,7 @@ export const planRequestSchema = z.object({
       leftover_days: z.number().int().min(0).max(7),
       freezes: z.boolean(),
       ingredients: z.array(z.object({ ingredient_id: z.string(), qty_per_serving_centi: z.number().int().min(0) })),
+      family: z.string().nullable(),
     }),
   ),
   ingredients: z.array(
@@ -87,6 +88,8 @@ export const planRequestSchema = z.object({
       pantry: z.array(z.object({ qty_centi: z.number().int().min(0), expiry_day: z.number().int().nullable(), must_use: z.boolean() })),
     }),
   ),
+  allow_leftovers: z.boolean(),
+  recent: z.record(z.string(), z.number().int().min(1).max(8)),
 });
 export type PlanRequest = z.infer<typeof planRequestSchema>;
 
@@ -178,6 +181,30 @@ export interface SnapshotInput {
   readonly ingredients: ReadonlyMap<string, Ingredient>;
   readonly products: readonly ListProduct[];
   readonly pantry: readonly PantryLot[];
+  /** cuisiner en double pour servir des restes (désactivé par défaut). */
+  readonly allowLeftovers?: boolean;
+  /** recettes servies les semaines précédentes → semaines écoulées. */
+  readonly recent?: Readonly<Record<string, number>>;
+}
+
+/**
+ * Famille d'un plat d'après ses ingrédients dominants : sert à éviter « pâtes, pâtes,
+ * pâtes » dans la même semaine même si les recettes sont différentes.
+ */
+const FAMILY_OF: ReadonlyArray<readonly [string, readonly string[]]> = [
+  ["pates", ["pates", "lasagne", "gnocchi", "nouilles", "nouilles_riz"]],
+  ["riz", ["riz", "riz_risotto"]],
+  ["pomme_de_terre", ["pomme_de_terre", "patate_douce"]],
+  ["semoule", ["semoule", "boulgour", "quinoa", "polenta"]],
+  ["tarte", ["pate_brisee", "pate_feuilletee", "pate_pizza"]],
+  ["legumineuses", ["lentilles", "lentilles_corail", "pois_chiches", "haricots_rouges", "haricots_blancs", "pois_casses"]],
+  ["pain", ["pain", "pain_mie", "pain_burger", "tortilla"]],
+];
+
+export function recipeFamily(ingredientIds: readonly string[], slots: readonly MealSlot[]): string | null {
+  if (slots.every((s) => s === "breakfast" || s === "snack")) return null;
+  for (const [fam, ids] of FAMILY_OF) if (ingredientIds.some((i) => ids.includes(i))) return fam;
+  return null;
 }
 
 const centi = (r: Rational): number => Number(roundToInt(mul(r, rat(100)), "ceil"));
@@ -239,6 +266,7 @@ export function buildPlanRequest(input: SnapshotInput): PlanRequest {
         leftover_days: r.leftoverDays,
         freezes: r.freezes,
         ingredients: perServing.sort((a, b) => a.ingredient_id.localeCompare(b.ingredient_id)),
+        family: recipeFamily(ings.map((i) => i.id), r.slots),
       },
     ];
   });
@@ -299,6 +327,8 @@ export function buildPlanRequest(input: SnapshotInput): PlanRequest {
     days,
     recipes,
     ingredients,
+    allow_leftovers: input.allowLeftovers ?? false,
+    recent: Object.fromEntries(Object.entries(input.recent ?? {}).filter(([id]) => recipes.some((r) => r.id === id))),
   });
 }
 

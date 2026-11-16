@@ -1,0 +1,624 @@
+// Cuisines du monde, plats du quotidien.
+
+# Butter chicken
+p4 t15+30 [lunch,dinner] (indienne) {plaques} #epice r2 f1 d2
+- 600 g de blanc de poulet
+- 400 g de coulis de tomate
+- 20 cl de crème liquide
+- 1 oignon
+- 2 gousses d'ail
+- 1 morceau de gingembre {gingembre}
+- 2 c. à café de curry
+- 30 g de beurre
+- 250 g de riz basmati
+> Faire revenir oignon, ail, gingembre et curry dans le beurre.
+> Ajouter le poulet en morceaux, puis coulis et crème ; mijoter 20 min.
+> Servir avec le riz.
+
+# Dahl de lentilles corail aux épinards
+p4 t10+25 [lunch,dinner] (indienne) {plaques} #vegan #budget r3 f1 d1
+- 250 g de lentilles corail
+- 200 g d'épinards
+- 40 cl de lait de coco
+- 1 oignon
+- 2 gousses d'ail
+- 2 c. à café de curry
+- 4 pains naan {pain_pita}
+> Faire revenir oignon, ail et curry, ajouter lentilles, lait de coco et 50 cl d'eau.
+> Cuire 20 min, ajouter les épinards ; servir avec les naans.
+
+# Chana masala
+p4 t10+25 [lunch,dinner] (indienne) {plaques} #vegan r3 f1 d1
+- 530 g de pois chiches
+- 400 g de tomates concassées
+- 1 oignon
+- 2 gousses d'ail
+- 1 morceau de gingembre {gingembre}
+- 2 c. à café de garam masala
+- 250 g de riz basmati
+- coriandre
+> Faire revenir oignon, ail, gingembre et épices.
+> Ajouter tomates et pois chiches, mijoter 20 min ; servir avec le riz.
+
+# Poulet tikka à la poêle
+p4 t15+15 [lunch,dinner] (indienne) {plaques} #rapide r1 f0 d1
+- 600 g de blanc de poulet
+- 2 yaourts
+- 2 c. à café de curry
+- 1 c. à café de paprika
+- 1 citron
+- 250 g de riz basmati
+- 1 concombre
+> Mariner le poulet avec yaourt, épices et citron 15 min.
+> Saisir à la poêle 10 min ; servir avec riz et concombre.
+
+# Pad krapow au poulet
+p4 t15+10 [lunch,dinner] (thaïe) {wok} #rapide #epice r0 f0 d1
+- 500 g de blanc de poulet
+- 3 gousses d'ail
+- 1 piment
+- 2 c. à soupe de sauce soja
+- 1 c. à soupe de nuoc-mâm
+- 1 botte de basilic
+- 250 g de riz jasmin
+- 4 œufs
+> Hacher le poulet, le saisir au wok avec ail et piment.
+> Ajouter sauces et basilic ; servir sur le riz avec un œuf au plat.
+
+# Curry vert de légumes
+p4 t15+20 [lunch,dinner] (thaïe) {plaques} #vegan r2 f1 d1
+- 40 cl de lait de coco
+- 2 c. à soupe de pâte de curry vert
+- 1 courgette
+- 1 poivron
+- 200 g de pois gourmands
+- 200 g de tofu
+- 250 g de riz jasmin
+> Faire revenir la pâte de curry, ajouter le lait de coco.
+> Cuire les légumes 10 min, ajouter le tofu ; servir avec le riz.
+
+# Soupe phở au bœuf (simplifiée)
+p4 t20+30 [lunch,dinner] (vietnamienne) {plaques} #reconfort r0 f0 d2
+- 300 g de bœuf en lanières {boeuf_steak}
+- 200 g de nouilles de riz
+- 2 cubes de bouillon de bœuf
+- 1,5 l d'eau
+- 1 oignon
+- 1 morceau de gingembre {gingembre}
+- 2 c. à soupe de nuoc-mâm
+- 1 citron vert
+- coriandre
+- menthe
+> Faire frémir le bouillon avec oignon et gingembre 20 min, ajouter le nuoc-mâm.
+> Cuire les nouilles, répartir dans les bols avec le bœuf cru tranché finement.
+> Verser le bouillon bouillant, garnir d'herbes et de citron vert.
+
+# Bò bún
+p4 t25+10 [lunch,dinner] (vietnamienne) {plaques} #ete r0 f0 d2
+- 400 g de bœuf en lanières {boeuf_steak}
+- 200 g de vermicelles de riz
+- 1 salade
+- 2 carottes
+- 1 concombre
+- 50 g de cacahuètes
+- 3 c. à soupe de nuoc-mâm
+- 1 citron vert
+- 1 c. à soupe de sucre
+- 1 bâton de citronnelle
+- menthe
+> Mariner le bœuf avec citronnelle hachée et un peu de nuoc-mâm, le saisir.
+> Préparer la sauce : nuoc-mâm, citron vert, sucre, eau.
+> Dresser vermicelles, crudités, bœuf, cacahuètes et herbes ; arroser de sauce.
+
+# Poulet teriyaki et brocoli
+p4 t10+15 [lunch,dinner] (japonaise) {plaques} #rapide r1 f0 d1
+- 500 g de cuisses de poulet désossées {poulet}
+- 4 c. à soupe de sauce soja
+- 2 c. à soupe de miel
+- 1 brocoli
+- 250 g de riz
+- 1 c. à café de graines de sésame
+> Saisir le poulet en morceaux, ajouter soja et miel pour laquer.
+> Cuire le brocoli à la vapeur, servir avec le riz et le sésame.
+
+# Ramen au porc et œuf mollet
+p4 t20+20 [lunch,dinner] (japonaise) {plaques} #reconfort r0 f0 d2
+- 300 g de filet de porc
+- 250 g de nouilles ramen
+- 2 cubes de bouillon de volaille
+- 1,2 l d'eau
+- 3 c. à soupe de sauce soja
+- 4 œufs
+- 200 g de champignons
+- 2 oignons nouveaux {oignon}
+> Préparer le bouillon avec la sauce soja, y cuire les champignons.
+> Saisir le porc tranché, cuire les œufs 6 min et les nouilles.
+> Dresser dans des bols et verser le bouillon.
+
+# Donburi au saumon
+p4 t10+15 [lunch,dinner] (japonaise) {plaques} #rapide r0 f0 d1
+- 4 pavés de saumon
+- 250 g de riz rond
+- 3 c. à soupe de sauce soja
+- 1 c. à soupe de miel
+- 1 avocat
+- 200 g d'edamame
+- 1 c. à soupe de graines de sésame
+> Cuire le riz. Saisir le saumon et le laquer avec soja et miel.
+> Servir sur le riz avec avocat, edamame et sésame.
+
+# Bibimbap aux légumes
+p4 t25+15 [lunch,dinner] (coréenne) {plaques} #vegetarien r0 f0 d2
+- 300 g de riz rond
+- 2 carottes
+- 1 courgette
+- 200 g d'épinards
+- 200 g de champignons
+- 4 œufs
+- 3 c. à soupe de sauce soja
+- 1 c. à soupe d'huile de sésame
+- 1 c. à soupe de harissa
+> Sauter séparément chaque légume dans un peu d'huile de sésame.
+> Servir sur le riz avec un œuf au plat, la sauce soja et un peu de harissa.
+
+# Nouilles sautées au bœuf et brocoli
+p4 t15+10 [lunch,dinner] (chinoise) {wok} #rapide r0 f0 d1
+- 400 g de bœuf en lanières {boeuf_steak}
+- 1 brocoli
+- 250 g de nouilles aux œufs
+- 3 c. à soupe de sauce soja
+- 1 c. à soupe de maïzena
+- 2 gousses d'ail
+> Enrober le bœuf de maïzena, le saisir au wok.
+> Ajouter brocoli en fleurettes et ail, puis nouilles et sauce soja.
+
+# Porc aigre-doux à l'ananas
+p4 t15+20 [lunch,dinner] (chinoise) {wok} #sucre_sale r1 f0 d2
+- 500 g de filet de porc
+- 300 g d'ananas
+- 1 poivron
+- 1 oignon
+- 3 c. à soupe de ketchup
+- 2 c. à soupe de vinaigre de riz
+- 2 c. à soupe de sauce soja
+- 1 c. à soupe de sucre
+- 2 c. à soupe de maïzena
+- 250 g de riz
+> Enrober le porc de maïzena et le dorer.
+> Sauter poivron, oignon et ananas ; ajouter ketchup, vinaigre, soja et sucre.
+> Remettre le porc, servir avec le riz.
+
+# Tacos de poulet, salsa maison
+p4 t20+15 [lunch,dinner] (mexicaine) {plaques} #convivial r0 f0 d1
+- 8 tortillas
+- 500 g de blanc de poulet
+- 2 tomates
+- 1 oignon rouge
+- 1 citron vert
+- 1 c. à café de cumin
+- 1 c. à café de paprika
+- coriandre
+- 20 cl de crème fraîche
+> Saisir le poulet émincé avec les épices.
+> Préparer la salsa : tomates, oignon, coriandre, citron vert.
+> Garnir les tortillas chaudes.
+
+# Burritos aux haricots noirs
+p4 t15+15 [lunch,dinner] (mexicaine) {plaques} #vegetarien r1 f1 d1
+- 4 tortillas
+- 500 g de haricots noirs
+- 200 g de riz
+- 285 g de maïs
+- 1 poivron
+- 100 g d'emmental râpé
+- 1 c. à café de cumin
+> Cuire le riz. Faire revenir poivron, haricots, maïs et cumin.
+> Garnir les tortillas de riz, haricots et fromage ; rouler et dorer à la poêle.
+
+# Quesadillas fromage et poivrons
+p4 t10+10 [lunch,dinner,snack] (mexicaine) {plaques} #rapide #vegetarien r0 f0 d1
+- 8 tortillas
+- 200 g d'emmental râpé
+- 2 poivrons
+- 1 oignon
+> Faire revenir poivrons et oignon émincés.
+> Garnir une tortilla de fromage et de légumes, couvrir d'une autre et dorer 2 min par face.
+
+# Enchiladas au poulet
+p4 t20+25 [lunch,dinner] (mexicaine) {four,plaques} #familial r1 f1 d2
+- 8 tortillas
+- 400 g de blanc de poulet
+- 500 g de coulis de tomate
+- 250 g de haricots rouges
+- 150 g d'emmental râpé
+- 1 c. à café de cumin
+> Cuire le poulet effiloché avec les haricots et le cumin.
+> Rouler dans les tortillas, napper de coulis et de fromage.
+> Gratiner 20 min à 200 °C.
+
+# Chakchouka aux merguez
+p4 t10+25 [lunch,dinner] (orientale) {plaques} #epice r0 f0 d1
+- 6 merguez
+- 4 œufs
+- 2 poivrons
+- 800 g de tomates concassées
+- 1 oignon
+- 1 c. à café de cumin
+> Dorer les merguez, réserver ; faire fondre oignon et poivrons.
+> Ajouter tomates et cumin, mijoter 15 min, puis merguez et œufs ; couvrir 8 min.
+
+# Couscous aux légumes et pois chiches
+p6 t25+45 [lunch,dinner] (orientale) {plaques} #vegan #batch r3 f1 d1
+- 500 g de semoule
+- 3 carottes
+- 3 courgettes
+- 2 navets
+- 530 g de pois chiches
+- 400 g de tomates concassées
+- 1 oignon
+- 2 c. à soupe de ras el hanout
+- 3 c. à soupe d'huile d'olive
+> Faire revenir oignon et épices, ajouter tomates et 1 l d'eau.
+> Cuire carottes et navets 20 min, puis courgettes et pois chiches 15 min.
+> Préparer la semoule et servir.
+
+# Tajine d'agneau aux pruneaux
+p6 t25+120 [lunch,dinner] (orientale) {plaques} #mijote r2 f1 d2
+- 1 kg d'épaule d'agneau
+- 200 g de pruneaux
+- 2 oignons
+- 2 c. à café de ras el hanout
+- 1 c. à café de cannelle
+- 30 g d'amandes
+- 1 c. à soupe de miel
+- 2 c. à soupe d'huile d'olive
+- 400 g de semoule
+> Dorer l'agneau et les oignons, ajouter épices et eau à hauteur ; mijoter 1 h 30.
+> Ajouter pruneaux et miel 20 min avant la fin, parsemer d'amandes.
+
+# Kefta, boulgour et yaourt menthe
+p4 t20+20 [lunch,dinner] (libanaise) {plaques} #epice r1 f1 d1
+- 500 g de bœuf haché
+- 1 oignon
+- 1 c. à café de cumin
+- persil
+- 200 g de boulgour
+- 2 yaourts
+- menthe
+> Former des boulettes allongées avec viande, oignon, cumin et persil ; les dorer.
+> Cuire le boulgour, servir avec la sauce yaourt-menthe.
+
+# Shawarma de poulet en pita
+p4 t20+15 [lunch,dinner] (libanaise) {plaques} #rapide r0 f0 d1
+- 600 g de blanc de poulet
+- 4 pains pita
+- 2 c. à café de cumin
+- 1 c. à café de paprika
+- 1 c. à café de curcuma
+- 2 tomates
+- 1 salade
+- 2 c. à soupe de tahini
+- 1 citron
+> Mariner le poulet émincé avec les épices et le citron, le saisir.
+> Garnir les pitas de salade, tomate, poulet et sauce tahini.
+
+# Falafels au four et taboulé
+p4 t25+25 [lunch,dinner] (libanaise) {four,mixeur} #vegan r1 f1 d2
+- 530 g de pois chiches
+- 1 oignon
+- 1 botte de persil
+- 1 c. à café de cumin
+- 2 c. à soupe de farine
+- 150 g de boulgour
+- 3 tomates
+- 1 citron
+- 4 c. à soupe d'huile d'olive
+> Mixer pois chiches, oignon, persil, cumin et farine ; former des boulettes et cuire 25 min à 200 °C.
+> Préparer le taboulé : boulgour gonflé, tomates, persil, citron et huile.
+
+# Moussaka
+p6 t40+45 [lunch,dinner] (grecque) {four,plaques} #familial r2 f1 d2
+- 3 aubergines
+- 500 g de viande hachée
+- 400 g de tomates concassées
+- 1 oignon
+- 50 cl de lait
+- 40 g de beurre
+- 40 g de farine
+- 60 g de parmesan
+- 1 c. à café de cannelle
+- 4 c. à soupe d'huile d'olive
+> Rôtir les aubergines tranchées huilées 20 min.
+> Préparer la sauce viande-tomate à la cannelle et une béchamel.
+> Alterner aubergines et viande, couvrir de béchamel et parmesan ; cuire 45 min à 180 °C.
+
+# Souvlaki de porc, tzatziki et pommes de terre
+p4 t25+25 [lunch,dinner] (grecque) {four,plaques} #ete r0 f0 d1
+- 600 g de filet de porc
+- 1 citron
+- origan
+- 800 g de pommes de terre
+- 2 yaourts grecs
+- 1 concombre
+- 1 gousse d'ail
+- 3 c. à soupe d'huile d'olive
+> Mariner le porc en cubes avec citron, origan et huile ; griller.
+> Rôtir les pommes de terre ; préparer le tzatziki (yaourt, concombre râpé, ail).
+
+# Halloumi grillé, salade de pastèque-style aux tomates
+p4 t15+10 [lunch,dinner] (chypriote) {plaques} #ete #vegetarien r0 f0 d1
+- 225 g de halloumi
+- 500 g de tomates
+- 1 concombre
+- 1 oignon rouge
+- menthe
+- 3 c. à soupe d'huile d'olive
+- 200 g de boulgour
+> Cuire le boulgour. Griller le halloumi en tranches.
+> Mélanger tomates, concombre, oignon et menthe ; servir avec boulgour et halloumi.
+
+# Spaghetti bolognaise
+p4 t15+40 [lunch,dinner] (italienne) {plaques} #familial r2 f1 d1
+- 400 g de spaghetti
+- 400 g de bœuf haché
+- 700 g de coulis de tomate
+- 1 oignon
+- 1 carotte
+- 1 branche de céleri
+- 40 g de parmesan
+> Faire revenir oignon, carotte et céleri, ajouter la viande.
+> Verser le coulis, mijoter 30 min ; servir sur les spaghetti avec le parmesan.
+
+# Penne all'arrabbiata
+p4 t5+15 [lunch,dinner] (italienne) {plaques} #rapide #vegan #budget r0 f0 d1
+- 400 g de penne
+- 700 g de coulis de tomate
+- 3 gousses d'ail
+- 1 piment
+- 3 c. à soupe d'huile d'olive
+- persil
+> Faire revenir ail et piment dans l'huile, ajouter le coulis ; mijoter 10 min.
+> Mélanger aux pâtes et parsemer de persil.
+
+# Risotto au potiron
+p4 t10+25 [lunch,dinner] (italienne) {plaques} #automne #vegetarien r1 f0 d2
+- 300 g de riz arborio
+- 500 g de potiron
+- 1 oignon
+- 1 cube de bouillon de légumes
+- 50 g de parmesan
+- 30 g de beurre
+> Faire revenir l'oignon et le potiron en dés, ajouter le riz.
+> Mouiller de bouillon chaud louche par louche 18 min ; finir avec beurre et parmesan.
+
+# Pâtes au citron et parmesan
+p4 t5+12 [lunch,dinner] (italienne) {plaques} #rapide #vegetarien r0 f0 d1
+- 400 g de spaghetti
+- 2 citrons
+- 60 g de parmesan
+- 30 g de beurre
+- poivre
+> Cuire les pâtes, garder un peu d'eau de cuisson.
+> Mélanger avec beurre, zeste et jus de citron, parmesan et eau de cuisson.
+
+# Orecchiette-style brocoli et saucisse
+p4 t10+15 [lunch,dinner] (italienne) {plaques} #rapide r0 f0 d1
+- 400 g de pâtes
+- 1 brocoli
+- 3 saucisses de Toulouse
+- 2 gousses d'ail
+- 1 piment
+- 40 g de parmesan
+- 2 c. à soupe d'huile d'olive
+> Cuire pâtes et brocoli ensemble.
+> Émietter la chair des saucisses et la dorer avec ail et piment ; mélanger le tout.
+
+# Pâtes alla norma
+p4 t15+20 [lunch,dinner] (italienne) {plaques} #ete #vegetarien r1 f0 d1
+- 400 g de rigatoni
+- 2 aubergines
+- 700 g de coulis de tomate
+- 125 g de ricotta
+- basilic
+- 4 c. à soupe d'huile d'olive
+> Dorer les aubergines en cubes dans l'huile.
+> Ajouter le coulis, mijoter 10 min, mélanger aux pâtes ; garnir de ricotta et basilic.
+
+# Lasagnes au saumon et épinards
+p6 t25+35 [lunch,dinner] (italienne) {four,plaques} #familial r2 f1 d2
+- 250 g de feuilles de lasagne
+- 400 g de saumon
+- 400 g d'épinards
+- 60 cl de lait
+- 40 g de beurre
+- 40 g de farine
+- 80 g d'emmental râpé
+> Préparer une béchamel ; faire tomber les épinards.
+> Alterner pâtes, saumon émietté, épinards et béchamel ; finir par le fromage.
+> Cuire 35 min à 180 °C.
+
+# Gnocchis à la sauce tomate et mozzarella au four
+p4 t5+20 [lunch,dinner] (italienne) {four} #rapide #vegetarien r0 f0 d1
+- 500 g de gnocchis
+- 500 g de coulis de tomate
+- 125 g de mozzarella
+- basilic
+> Mélanger gnocchis crus et coulis dans un plat, couvrir de mozzarella.
+> Cuire 20 min à 200 °C, parsemer de basilic.
+
+# Pizza blanche chèvre miel
+p4 t10+15 [lunch,dinner] (italienne) {four} #vegetarien r0 f0 d1
+- 1 rouleau de pâte à pizza
+- 20 cl de crème fraîche
+- 180 g de bûche de chèvre
+- 1 c. à soupe de miel
+- 50 g de cerneaux de noix
+> Étaler la crème sur la pâte, ajouter le chèvre et les noix.
+> Cuire 15 min à 240 °C, arroser de miel.
+
+# Calzone jambon champignons
+p4 t15+20 [lunch,dinner] (italienne) {four} #enfants r0 f0 d1
+- 1 rouleau de pâte à pizza
+- 200 g de coulis de tomate
+- 125 g de mozzarella
+- 3 tranches de jambon
+- 150 g de champignons
+> Garnir la moitié de la pâte, replier et souder les bords.
+> Cuire 20 min à 220 °C.
+
+# Paella aux légumes
+p4 t20+30 [lunch,dinner] (espagnole) {plaques} #vegan r1 f0 d1
+- 300 g de riz rond
+- 1 poivron
+- 1 courgette
+- 200 g de haricots verts
+- 400 g de tomates concassées
+- 1 c. à café de curcuma
+- 1 c. à café de paprika fumé
+- 1 cube de bouillon de légumes
+- 3 c. à soupe d'huile d'olive
+> Faire revenir les légumes, ajouter le riz et les épices.
+> Mouiller avec 80 cl de bouillon et les tomates ; cuire 20 min sans remuer.
+
+# Calamars à la plancha, riz et poivrons
+p4 t15+15 [lunch,dinner] (espagnole) {plaques} #ete r0 f0 d1
+- 500 g de calamars
+- 2 poivrons
+- 250 g de riz
+- 3 gousses d'ail
+- persil
+- 1 citron
+- 3 c. à soupe d'huile d'olive
+> Cuire le riz. Saisir les poivrons puis les calamars à feu vif 3 min avec l'ail.
+> Parsemer de persil et arroser de citron.
+
+# Tortilla espagnole
+p4 t15+25 [lunch,dinner] (espagnole) {plaques} #vegetarien #budget r1 f0 d2
+- 600 g de pommes de terre
+- 1 oignon
+- 6 œufs
+- 10 cl d'huile d'olive
+> Confire pommes de terre et oignon émincés dans l'huile 15 min.
+> Mélanger aux œufs battus, cuire à feu doux puis retourner.
+
+# Feijoada simplifiée
+p6 t20+60 [lunch,dinner] (brésilienne) {plaques} #batch r3 f1 d1
+- 750 g de haricots noirs
+- 300 g de saucisses fumées {saucisse}
+- 200 g de lardons
+- 1 oignon
+- 3 gousses d'ail
+- 2 feuilles de laurier
+- 300 g de riz
+- 2 oranges
+> Faire revenir lardons, saucisses, oignon et ail.
+> Ajouter haricots, laurier et 30 cl d'eau, mijoter 45 min ; servir avec riz et oranges.
+
+# Mafé de poulet
+p6 t20+50 [lunch,dinner] (africaine) {plaques} #reconfort r3 f1 d1
+- 6 cuisses de poulet
+- 120 g de beurre de cacahuète
+- 400 g de tomates concassées
+- 2 oignons
+- 2 carottes
+- 500 g de patates douces
+- 300 g de riz
+> Dorer le poulet et les oignons, ajouter tomates, beurre de cacahuète et eau à hauteur.
+> Ajouter carottes et patates douces, mijoter 40 min ; servir avec le riz.
+
+# Poulet yassa
+p4 t20+40 [lunch,dinner] (africaine) {plaques} #epice r2 f1 d1
+- 4 cuisses de poulet
+- 4 oignons
+- 3 citrons
+- 2 c. à soupe de moutarde
+- 1 piment
+- 250 g de riz
+- 3 c. à soupe d'huile de tournesol
+> Mariner le poulet avec citron, moutarde et oignons émincés.
+> Dorer le poulet, confire les oignons avec la marinade 20 min, remettre le poulet 15 min.
+
+# Chili sin carne patate douce
+p6 t15+40 [lunch,dinner] (mexicaine) {plaques} #vegan #batch r3 f1 d1
+- 600 g de patates douces
+- 500 g de haricots noirs
+- 800 g de tomates concassées
+- 1 oignon
+- 2 c. à café de cumin
+- 1 c. à café de paprika fumé
+- 300 g de riz
+> Faire revenir l'oignon et les épices, ajouter patates douces en dés et tomates.
+> Mijoter 30 min, ajouter les haricots ; servir avec le riz.
+
+# Wok de crevettes ail et pois gourmands
+p4 t10+10 [lunch,dinner] (chinoise) {wok} #rapide r0 f0 d1
+- 400 g de crevettes
+- 250 g de pois gourmands
+- 3 gousses d'ail
+- 3 c. à soupe de sauce soja
+- 1 morceau de gingembre {gingembre}
+- 250 g de riz jasmin
+> Sauter ail et gingembre, ajouter pois gourmands 3 min puis crevettes 2 min.
+> Déglacer à la sauce soja ; servir avec le riz.
+
+# Curry japonais aux légumes
+p4 t15+30 [lunch,dinner] (japonaise) {plaques} #reconfort #vegetarien r2 f1 d1
+- 3 pommes de terre
+- 2 carottes
+- 1 oignon
+- 2 c. à soupe de curry
+- 2 c. à soupe de farine
+- 30 g de beurre
+- 1 cube de bouillon de légumes
+- 250 g de riz rond
+> Faire un roux beurre-farine-curry, mouiller de 60 cl de bouillon.
+> Ajouter les légumes en dés et cuire 25 min ; servir sur le riz.
+
+# Riz sauté thaï à l'ananas
+p4 t15+10 [lunch,dinner] (thaïe) {wok} #reste r0 f0 d1
+- 300 g de riz
+- 300 g d'ananas
+- 200 g de crevettes
+- 2 œufs
+- 3 c. à soupe de sauce soja
+- 50 g de noix de cajou
+- 2 oignons nouveaux {oignon}
+> Utiliser du riz cuit de la veille. Brouiller les œufs au wok.
+> Ajouter crevettes, ananas, riz, sauce soja ; finir avec cajou et oignons.
+
+# Soupe thaïe coco-poulet (tom kha)
+p4 t15+20 [lunch,dinner] (thaïe) {plaques} #reconfort r1 f0 d1
+- 400 g de blanc de poulet
+- 40 cl de lait de coco
+- 1 cube de bouillon de volaille
+- 50 cl d'eau
+- 2 bâtons de citronnelle
+- 200 g de champignons
+- 2 c. à soupe de nuoc-mâm
+- 1 citron vert
+- coriandre
+> Infuser la citronnelle dans bouillon et lait de coco 10 min.
+> Ajouter poulet émincé et champignons 8 min, assaisonner de nuoc-mâm et citron vert.
+
+# Bao-style buns au porc effiloché (pain burger)
+p4 t20+90 [dinner] (asiatique) {four} #weekend r2 f1 d2
+- 800 g d'échine de porc
+- 4 c. à soupe de sauce soja
+- 2 c. à soupe de miel
+- 6 pains à burger
+- 2 carottes
+- 1 concombre
+> Cuire le porc avec soja et miel à couvert 1 h 30 à 160 °C, puis l'effilocher.
+> Garnir les pains de porc et de crudités en julienne.
+
+# Gratin de pâtes à la mexicaine
+p4 t15+20 [lunch,dinner] (mexicaine) {four,plaques} #enfants r1 f1 d1
+- 300 g de pâtes
+- 400 g de bœuf haché
+- 250 g de haricots rouges
+- 285 g de maïs
+- 500 g de coulis de tomate
+- 100 g d'emmental râpé
+- 1 c. à café de cumin
+> Cuire les pâtes. Faire revenir la viande avec cumin, haricots, maïs et coulis.
+> Mélanger, couvrir de fromage et gratiner 15 min.

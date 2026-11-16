@@ -80,6 +80,8 @@ export const households = pgTable("household", {
   equipment: text("equipment").array().notNull().default(sql`'{plaques,four}'::text[]`),
   defaultStoreId: uuid("default_store_id").references((): AnyPgColumn => stores.id, { onDelete: "set null" }),
   weights: jsonb("weights").$type<Record<string, number>>().notNull().default(sql`'{}'::jsonb`),
+  /** cuisiner en double pour avoir des restes (désactivé par défaut : répète un plat). */
+  batchCooking: boolean("batch_cooking").notNull().default(false),
   onboardedAt: timestamp("onboarded_at", { withTimezone: true }),
   createdAt: createdAt(),
 }, (t) => [

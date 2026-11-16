@@ -1,0 +1,1 @@
+ALTER TABLE "household" ADD COLUMN "batch_cooking" boolean DEFAULT false NOT NULL;

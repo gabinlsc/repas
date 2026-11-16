@@ -1,0 +1,372 @@
+// Petits-déjeuners variés : sucrés, salés, sans œufs, sans gluten, végans.
+
+# Tartines fromage frais et concombre
+p2 t5+0 [breakfast] (petit-déjeuner) {} #rapide #vegetarien r0 f0 d1
+- 4 tranches de pain de campagne
+- 80 g de fromage frais
+- 1/2 concombre
+- ciboulette
+> Tartiner le pain de fromage frais, ajouter le concombre en fines rondelles et la ciboulette.
+
+# Porridge coco mangue
+p2 t5+5 [breakfast] (petit-déjeuner) {plaques} #vegan r0 f0 d1
+- 80 g de flocons d'avoine
+- 20 cl de lait de coco
+- 20 cl d'eau
+- 1 mangue
+- 1 c. à soupe de noix de coco râpée
+> Cuire les flocons dans le lait de coco et l'eau 5 min.
+> Servir avec la mangue en dés et la noix de coco.
+
+# Chia pudding vanille et fruits rouges
+p2 t5+0 [breakfast,snack] (healthy) {} #vegetarien #froid r1 f0 d1
+- 40 g de graines de chia
+- 30 cl de lait
+- 1 c. à soupe de miel
+- 150 g de fruits rouges
+> Mélanger chia, lait et miel, réfrigérer une nuit.
+> Servir avec les fruits rouges.
+
+# Galettes de sarrasin œuf fromage
+p2 t5+10 [breakfast,lunch] (bretonne) {plaques} #sans-gluten r0 f0 d1
+- 120 g de farine de sarrasin
+- 25 cl d'eau
+- 2 œufs
+- 60 g d'emmental râpé
+- 10 g de beurre
+> Mélanger farine, eau et une pincée de sel ; cuire deux galettes.
+> Garnir d'un œuf et de fromage, replier les bords et laisser prendre.
+
+# Bowl de skyr, banane et graines
+p2 t5+0 [breakfast] (healthy) {} #rapide #vegetarien r0 f0 d1
+- 2 yaourts
+- 1 banane
+- 20 g de graines de chia
+- 1 c. à soupe de miel
+> Répartir le yaourt, ajouter la banane en rondelles, les graines et le miel.
+
+# Toast brioché à la cannelle
+p2 t5+8 [breakfast] (française) {plaques} #gourmand #vegetarien r0 f0 d1
+- 4 tranches de brioche
+- 2 œufs
+- 15 cl de lait
+- 1 c. à café de cannelle
+- 15 g de beurre
+> Battre œufs, lait et cannelle ; y tremper la brioche.
+> Dorer au beurre et servir.
+
+# Pancakes à la banane (sans sucre ajouté)
+p2 t5+10 [breakfast] (américaine) {plaques} #enfants #vegetarien r0 f0 d1
+- 2 bananes
+- 2 œufs
+- 60 g de flocons d'avoine
+- 10 g de beurre
+> Écraser les bananes, mélanger avec œufs et flocons.
+> Cuire de petits pancakes 2 min par face.
+
+# Pancakes végans à l'avoine
+p2 t5+10 [breakfast] (américaine) {plaques} #vegan r0 f0 d1
+- 120 g de farine
+- 20 cl de boisson végétale
+- 1 c. à soupe de sucre
+- 1/2 sachet de levure chimique
+- 1 c. à soupe d'huile de tournesol
+- sirop d'érable
+> Mélanger farine, sucre et levure, ajouter la boisson végétale et l'huile.
+> Cuire de petites louches 2 min par face, servir avec le sirop.
+
+# Muesli bircher pomme
+p2 t5+0 [breakfast] (suisse) {} #vegetarien #froid r1 f0 d1
+- 80 g de flocons d'avoine
+- 20 cl de lait
+- 1 yaourt
+- 1 pomme
+- 20 g de raisins secs
+> Mélanger flocons, lait et yaourt, laisser une nuit au frais.
+> Ajouter la pomme râpée et les raisins secs.
+
+# Tartines houmous, tomate et graines
+p2 t5+0 [breakfast,lunch] (orientale) {} #vegan r0 f0 d1
+- 4 tranches de pain complet
+- 120 g de pois chiches
+- 1 c. à soupe de tahini
+- 1/2 citron
+- 1 tomate
+> Écraser pois chiches, tahini et citron.
+> Tartiner, ajouter la tomate en rondelles.
+
+# Omelette roulée épinards fromage frais
+p2 t5+8 [breakfast,lunch] (française) {plaques} #vegetarien r0 f0 d1
+- 4 œufs
+- 80 g d'épinards
+- 40 g de fromage frais
+- 10 g de beurre
+> Faire tomber les épinards, réserver.
+> Cuire l'omelette au beurre, garnir d'épinards et de fromage, rouler.
+
+# Œufs brouillés au saumon fumé
+p2 t5+5 [breakfast] (française) {plaques} #rapide r0 f0 d1
+- 4 œufs
+- 60 g de saumon fumé
+- 10 g de beurre
+- 2 tranches de pain de mie
+- aneth
+> Brouiller doucement les œufs au beurre, ajouter le saumon en lanières.
+> Servir sur le pain grillé avec l'aneth.
+
+# Yaourt, kiwi et granola
+p2 t3+0 [breakfast,snack] (petit-déjeuner) {} #rapide #vegetarien r0 f0 d1
+- 2 yaourts
+- 2 kiwis
+- 40 g de flocons d'avoine
+- 1 c. à café de miel
+> Garnir le yaourt de kiwi en dés, de flocons et de miel.
+
+# Smoothie bowl mangue ananas
+p2 t5+0 [breakfast] (healthy) {mixeur} #vegan #froid r0 f0 d1
+- 1 mangue
+- 200 g d'ananas
+- 1 banane
+- 15 cl de boisson végétale
+- 1 c. à soupe de noix de coco râpée
+> Mixer mangue, ananas, banane et boisson végétale.
+> Verser dans des bols, parsemer de coco.
+
+# Tartines beurre de cacahuète banane
+p2 t3+0 [breakfast] (américaine) {} #rapide #vegetarien r0 f0 d1
+- 4 tranches de pain complet
+- 2 c. à soupe de beurre de cacahuète
+- 1 banane
+> Tartiner le pain de beurre de cacahuète et ajouter la banane en rondelles.
+
+# Riz au lait de coco et mangue
+p2 t5+25 [breakfast,snack] (asiatique) {plaques} #vegan r1 f0 d1
+- 80 g de riz rond
+- 40 cl de lait de coco
+- 1 c. à soupe de sucre
+- 1 mangue
+> Cuire le riz dans le lait de coco sucré 25 min en remuant.
+> Servir avec la mangue en tranches.
+
+# Crêpes de sarrasin à la compote
+p2 t5+10 [breakfast,snack] (bretonne) {plaques} #sans-gluten #vegan r0 f0 d1
+- 120 g de farine de sarrasin
+- 25 cl d'eau
+- 200 g de compote
+- cannelle
+> Préparer une pâte fine avec farine, eau et une pincée de sel ; cuire les crêpes.
+> Garnir de compote et de cannelle.
+
+# Pain perdu salé jambon fromage
+p2 t5+10 [breakfast,lunch] (française) {plaques} #anti-gaspi r0 f0 d1
+- 4 tranches de pain rassis {pain}
+- 2 œufs
+- 10 cl de lait
+- 2 tranches de jambon
+- 40 g d'emmental râpé
+- 10 g de beurre
+> Tremper le pain dans œufs et lait battus.
+> Dorer au beurre, garnir de jambon et de fromage, couvrir pour faire fondre.
+
+# Porridge chocolat noisette
+p2 t5+5 [breakfast] (petit-déjeuner) {plaques} #gourmand #vegetarien r0 f0 d1
+- 80 g de flocons d'avoine
+- 40 cl de lait
+- 1 c. à soupe de cacao
+- 20 g de noisettes
+- 1 c. à soupe de sucre
+> Cuire flocons, lait, cacao et sucre 5 min.
+> Parsemer de noisettes concassées.
+
+# Fromage blanc, fraises et menthe
+p2 t5+0 [breakfast,snack] (française) {} #printemps #vegetarien r0 f0 d1
+- 300 g de fromage blanc
+- 200 g de fraises
+- menthe
+- 1 c. à soupe de sucre
+> Couper les fraises, les sucrer légèrement.
+> Servir sur le fromage blanc avec la menthe.
+
+# Bagel-style œuf et avocat
+p2 t5+8 [breakfast,lunch] (américaine) {plaques} #vegetarien r0 f0 d1
+- 2 pains à burger
+- 2 œufs
+- 1 avocat
+- 1/2 citron
+> Cuire les œufs au plat ; écraser l'avocat avec le citron.
+> Garnir les pains toastés d'avocat et d'œuf.
+
+# Tartines ricotta, miel et figues sèches
+p2 t5+0 [breakfast,snack] (italienne) {} #vegetarien r0 f0 d1
+- 4 tranches de pain de campagne
+- 125 g de ricotta
+- 40 g de figues sèches
+- 1 c. à soupe de miel
+> Tartiner de ricotta, ajouter les figues en morceaux et le miel.
+
+# Bowl avoine, pomme cuite et noix
+p2 t5+10 [breakfast] (petit-déjeuner) {plaques} #automne #vegetarien r0 f0 d1
+- 80 g de flocons d'avoine
+- 40 cl de lait
+- 2 pommes
+- 20 g de cerneaux de noix
+- 10 g de beurre
+- cannelle
+> Cuire les flocons dans le lait. Poêler les pommes en dés au beurre et à la cannelle.
+> Servir le porridge garni de pommes et de noix.
+
+# Tofu brouillé aux légumes
+p2 t5+10 [breakfast,lunch] (healthy) {plaques} #vegan r0 f0 d1
+- 250 g de tofu
+- 1 poivron
+- 100 g d'épinards
+- 1 c. à café de curcuma
+- 1 c. à soupe d'huile d'olive
+- 2 tranches de pain complet
+> Émietter le tofu, le faire revenir avec le poivron et le curcuma.
+> Ajouter les épinards, servir avec le pain grillé.
+
+# Smoothie vert kiwi épinards
+p2 t5+0 [breakfast] (healthy) {mixeur} #vegan #rapide r0 f0 d1
+- 2 kiwis
+- 1 banane
+- 50 g d'épinards
+- 25 cl de boisson végétale
+> Mixer tous les ingrédients et servir frais.
+
+# Croque-matin jambon œuf
+p2 t5+10 [breakfast,lunch] (française) {four} #enfants r0 f0 d1
+- 4 tranches de pain de mie
+- 2 tranches de jambon
+- 2 œufs
+- 40 g d'emmental râpé
+> Garnir le pain de jambon et de fromage, creuser un nid et y casser un œuf.
+> Cuire 10 min à 200 °C.
+
+# Gaufres légères au fromage blanc
+p4 t10+15 [breakfast,snack] (belge) {gaufrier} #vegetarien r1 f1 d1
+- 200 g de farine
+- 2 œufs
+- 200 g de fromage blanc
+- 20 cl de lait
+- 1 sachet de levure chimique
+- 2 c. à soupe de sucre
+> Mélanger tous les ingrédients en une pâte lisse.
+> Cuire dans le gaufrier chaud.
+
+# Porridge salé, œuf mollet et épinards
+p2 t5+10 [breakfast,lunch] (healthy) {plaques} #vegetarien r0 f0 d1
+- 80 g de flocons d'avoine
+- 40 cl d'eau
+- 1 cube de bouillon de légumes
+- 2 œufs
+- 80 g d'épinards
+> Cuire les flocons dans le bouillon 5 min, ajouter les épinards.
+> Servir avec un œuf mollet (6 min).
+
+# Overnight oats cacao banane
+p2 t5+0 [breakfast] (petit-déjeuner) {} #vegetarien #froid r1 f0 d1
+- 80 g de flocons d'avoine
+- 25 cl de lait
+- 1 c. à soupe de cacao
+- 1 banane
+- 1 c. à soupe de miel
+> Mélanger flocons, lait, cacao et miel, réfrigérer une nuit.
+> Ajouter la banane au moment de servir.
+
+# Tartines avocat, tomate et sésame
+p2 t5+0 [breakfast,lunch] (healthy) {} #vegan #rapide r0 f0 d1
+- 4 tranches de pain complet
+- 1 avocat
+- 1 tomate
+- 1 c. à café de graines de sésame
+- 1/2 citron
+> Écraser l'avocat avec le citron, tartiner, ajouter la tomate et le sésame.
+
+# Clafoutis express aux prunes (petit-déj du week-end)
+p4 t10+30 [breakfast,snack] (française) {four} #vegetarien r2 f0 d1
+- 400 g de prunes
+- 2 œufs
+- 60 g de farine
+- 50 g de sucre
+- 25 cl de lait
+> Disposer les prunes coupées dans un plat.
+> Verser la pâte et cuire 30 min à 180 °C.
+
+# Muffins salés courgette feta
+p6 t15+25 [breakfast,snack,lunch] (méditerranéenne) {four} #pique-nique r3 f1 d1
+- 200 g de farine
+- 2 œufs
+- 15 cl de lait
+- 5 cl d'huile d'olive
+- 1 sachet de levure chimique
+- 1 courgette
+- 100 g de feta
+> Mélanger farine, levure, œufs, lait et huile.
+> Ajouter courgette râpée et feta émiettée, cuire 25 min à 180 °C.
+
+# Yaourt grec, raisin et amandes
+p2 t3+0 [breakfast,snack] (grecque) {} #automne #vegetarien r0 f0 d1
+- 2 yaourts grecs
+- 150 g de raisin
+- 20 g d'amandes effilées
+- 1 c. à café de miel
+> Garnir le yaourt de raisin coupé, d'amandes et de miel.
+
+# Galette de riz, purée d'amande et banane
+p2 t3+0 [breakfast,snack] (healthy) {} #vegan #sans-gluten r0 f0 d1
+- 6 galettes de riz
+- 2 c. à soupe de purée d'amande
+- 1 banane
+> Tartiner les galettes de purée d'amande et ajouter la banane.
+
+# Porridge poire et chocolat
+p2 t5+8 [breakfast] (petit-déjeuner) {plaques} #hiver #vegetarien r0 f0 d1
+- 80 g de flocons d'avoine
+- 40 cl de lait
+- 1 poire
+- 20 g de chocolat noir
+> Cuire les flocons dans le lait avec la poire en dés.
+> Parsemer de chocolat râpé.
+
+# Œufs au plat, tomates rôties et pain
+p2 t5+10 [breakfast,lunch] (anglaise) {plaques} #vegetarien r0 f0 d1
+- 4 œufs
+- 250 g de tomates cerises
+- 2 tranches de pain de campagne
+- 1 c. à soupe d'huile d'olive
+> Poêler les tomates cerises dans l'huile 5 min.
+> Cuire les œufs au plat, servir avec le pain grillé.
+
+# Crumble-bowl pomme cannelle (sans cuisson)
+p2 t5+0 [breakfast,snack] (petit-déjeuner) {} #vegetarien r0 f0 d1
+- 200 g de compote
+- 2 yaourts
+- 40 g de flocons d'avoine
+- 1 c. à café de cannelle
+> Superposer compote, yaourt et flocons à la cannelle.
+
+# Tartine chèvre frais, miel et poire
+p2 t5+0 [breakfast,snack] (française) {} #vegetarien r0 f0 d1
+- 4 tranches de pain de campagne
+- 100 g de chèvre frais
+- 1 poire
+- 1 c. à soupe de miel
+> Tartiner de chèvre, ajouter la poire en lamelles et le miel.
+
+# Smoothie fraise avoine
+p2 t5+0 [breakfast] (healthy) {mixeur} #vegetarien #rapide r0 f0 d1
+- 200 g de fraises
+- 30 g de flocons d'avoine
+- 1 yaourt
+- 20 cl de lait
+> Mixer jusqu'à obtenir une texture lisse.
+
+# Mini quiches sans pâte
+p4 t10+20 [breakfast,lunch,snack] (française) {four} #sans-gluten r2 f1 d1
+- 4 œufs
+- 20 cl de lait
+- 100 g de dés de jambon
+- 60 g d'emmental râpé
+> Battre œufs et lait, ajouter jambon et fromage.
+> Répartir dans des moules à muffins, cuire 20 min à 180 °C.

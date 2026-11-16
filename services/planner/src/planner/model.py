@@ -15,6 +15,7 @@ incompatibles.
 
 from __future__ import annotations
 
+import hashlib
 import time
 from dataclasses import dataclass, field
 
@@ -100,6 +101,8 @@ def build(req: PlanRequest, relaxed: bool = False) -> Model:
     for info in mdl.slots:
         if info.locked_recipe_id is not None:
             continue
+        if not req.allow_leftovers:
+            break
         for r in req.recipes:
             if r.leftover_days == 0 or info.slot not in r.slots or not is_safe(r, info):
                 continue
@@ -139,9 +142,11 @@ def build(req: PlanRequest, relaxed: bool = False) -> Model:
         m.add_exactly_one(terms)
 
     # --- Fenêtre de non-répétition ---------------------------------------------
-    k = req.repeat_window_days
-    if k > 0:
+    k_main = req.repeat_window_days
+    if k_main > 0:
         for r in req.recipes:
+            # Petit-déjeuner et collation se répètent naturellement : fenêtre plus courte.
+            k = min(k_main, 3) if set(r.slots) <= {"breakfast", "snack"} else k_main
             for start in range(0, max(1, n_days - k + 1)):
                 in_window = [(t, v) for t, v in mdl.x_by_recipe.get(r.id, []) if start <= t[0] < start + k]
                 window_vars = [v for _t, v in in_window]
@@ -229,6 +234,12 @@ def build(req: PlanRequest, relaxed: bool = False) -> Model:
     return mdl
 
 
+def _jitter(seed: int, rid: str) -> int:
+    """Entier pseudo-aléatoire stable dans [0, 100) pour (graine, recette)."""
+    h = hashlib.blake2b(f"{seed}:{rid}".encode(), digest_size=4).digest()
+    return int.from_bytes(h, "big") % 100
+
+
 def _greedy_hint(mdl: Model) -> None:
     """Indice de départ glouton (meilleur score local sans répétition).
 
@@ -236,7 +247,11 @@ def _greedy_hint(mdl: Model) -> None:
     les gros catalogues ; avec lui, la recherche démarre d'un plan complet et l'améliore.
     """
     k = max(1, mdl.req.repeat_window_days)
+    total_servings = sum(i.servings_centi for i in mdl.slots) or 1
+    # Allocation du budget au prorata des portions : l'indice de départ reste finançable.
+    allowance = {i.key: (mdl.req.budget_cents or 0) * i.servings_centi // total_servings for i in mdl.slots}
     last_day: dict[str, int] = {}
+    family_count: dict[str, int] = {}
     for info in sorted(mdl.slots, key=lambda i: (i.day, SLOT_ORDER[i.slot])):
         options = mdl.x_by_slot.get(info.key, [])
         best: tuple[int, str] | None = None
@@ -256,10 +271,14 @@ def _greedy_hint(mdl: Model) -> None:
                 for ri in r.ingredients
             )
             score = (
-                r.preference * 50
+                _jitter(mdl.req.seed, rid) * 3
+                - (60 * (9 - mdl.req.recent[rid]) if rid in mdl.req.recent else 0)
+                + r.preference * 50
                 + (r.season_score - 50) * 2
                 - len(r.ingredients) * 5
                 - cost * (2 if mdl.req.budget_cents is not None else 1)
+                - (200 if r.family and family_count.get(r.family, 0) >= 2 else 0)
+                - (2000 if mdl.req.budget_cents is not None and cost * info.servings_centi // 100 > allowance[info.key] * 8 // 10 else 0)
             )
             if best is None or score > best[0] or (score == best[0] and rid < best[1]):
                 best = (score, rid)
@@ -269,6 +288,9 @@ def _greedy_hint(mdl: Model) -> None:
             mdl.m.add_hint(v, 1 if best is not None and rid == best[1] else 0)
         if best is not None:
             last_day[best[1]] = info.day
+            fam = mdl.recipes[best[1]].family
+            if fam:
+                family_count[fam] = family_count.get(fam, 0) + 1
     for v in list(mdl.big.values()) + list(mdl.lo.values()):
         mdl.m.add_hint(v, 0)
 
@@ -303,9 +325,41 @@ def _objective(mdl: Model, n_days: int) -> None:
         obj.append(-w.seasonality * 2 * SCALE * (r.season_score - 50) * v)
         obj.append(-w.preferences * 50 * SCALE * r.preference * v)
         _ = t
-    # Restes : temps de cuisine économisé.
+    # Restes : légère pénalité (un plat répété), compensée par l'économie d'achats.
     for v in mdl.lo.values():
-        obj.append(-w.preferences * 20 * SCALE * v)
+        obj.append(w.diversity * 20 * SCALE * v)
+
+    # Variété d'une génération à l'autre : bruit déterministe dérivé de la graine
+    # (même graine ⇒ même plan, graine différente ⇒ plan différent à qualité comparable).
+    for (rid, _t), v in mdl.x.items():
+        obj.append(-(1 + w.diversity) * _jitter(req.seed, rid) * SCALE * v)
+
+    # Variété d'une semaine à l'autre : pénalité décroissante selon l'ancienneté.
+    for (rid, _t), v in mdl.x.items():
+        weeks = req.recent.get(rid)
+        if weeks is not None:
+            obj.append((1 + w.diversity) * (9 - weeks) * 25 * SCALE * v)
+
+    # Une même recette plusieurs fois dans la semaine (possible au petit-déjeuner) : pénalisée.
+    for rid, entries in mdl.x_by_recipe.items():
+        if len(entries) <= 1 or any(t in mdl.locked for t, _v in entries):
+            continue
+        extra = m.new_int_var(0, len(entries), f"repeat_excess[{rid}]")
+        m.add(extra >= sum(v for _t, v in entries) - 1)
+        obj.append((1 + w.diversity) * 60 * SCALE * extra)
+
+    # Monotonie : plus de 2 plats d'une même famille (pâtes, riz, gratin…) dans la semaine.
+    families: dict[str, list[cp_model.IntVar]] = {}
+    for (rid, _t), v in mdl.x.items():
+        fam = mdl.recipes[rid].family
+        if fam:
+            families.setdefault(fam, []).append(v)
+    for fam, vs in families.items():
+        if len(vs) <= 2:
+            continue
+        excess = m.new_int_var(0, len(vs), f"family_excess[{fam}]")
+        m.add(excess >= sum(vs) - 2)
+        obj.append((1 + w.diversity) * 80 * SCALE * excess)
 
     # Diversité : protéines/cuisines distinctes, pénalité si même protéine deux jours de suite.
     proteins = sorted({r.protein for r in req.recipes if r.protein})

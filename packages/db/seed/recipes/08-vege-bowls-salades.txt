@@ -1,0 +1,457 @@
+// Végétarien, bowls, salades complètes et soupes-repas.
+
+# Bowl patate douce, pois chiches et kale
+p4 t15+30 [lunch,dinner] (healthy) {four} #vegan r1 f0 d1
+- 600 g de patates douces
+- 530 g de pois chiches
+- 200 g de kale
+- 200 g de quinoa
+- 3 c. à soupe de tahini
+- 1 citron
+- 3 c. à soupe d'huile d'olive
+- 1 c. à café de paprika
+> Rôtir patates douces et pois chiches au paprika 30 min à 200 °C.
+> Masser le kale avec un peu d'huile et de citron ; cuire le quinoa.
+> Dresser et napper de sauce tahini-citron.
+
+# Poke bowl saumon mangue
+p4 t20+15 [lunch,dinner] (hawaïenne) {plaques} #ete r0 f0 d1
+- 300 g de riz rond
+- 400 g de saumon
+- 1 mangue
+- 1 avocat
+- 200 g d'edamame
+- 1 concombre
+- 4 c. à soupe de sauce soja
+- 1 c. à soupe de graines de sésame
+> Cuire le riz. Couper saumon, mangue, avocat et concombre en dés.
+> Dresser sur le riz avec edamame, sauce soja et sésame.
+
+# Poke bowl tofu mariné
+p4 t20+15 [lunch,dinner] (hawaïenne) {plaques} #vegan r0 f0 d1
+- 300 g de riz rond
+- 400 g de tofu
+- 1 avocat
+- 2 carottes
+- 200 g d'edamame
+- 4 c. à soupe de sauce soja
+- 1 c. à soupe d'huile de sésame
+> Mariner le tofu en dés dans soja et huile de sésame, le dorer.
+> Dresser sur le riz avec avocat, carottes râpées et edamame.
+
+# Buddha bowl lentilles, betterave et feta
+p4 t15+25 [lunch,dinner] (healthy) {plaques} #vegetarien r1 f0 d1
+- 250 g de lentilles vertes
+- 2 betteraves
+- 150 g de feta
+- 150 g de mesclun
+- 50 g de cerneaux de noix
+- 3 c. à soupe d'huile d'olive
+- 1 c. à soupe de vinaigre balsamique
+> Cuire les lentilles 25 min.
+> Dresser avec betterave en dés, feta, salade et noix ; assaisonner.
+
+# Salade de quinoa, avocat et maïs
+p4 t15+15 [lunch,dinner] (healthy) {plaques} #vegan #froid r1 f0 d1
+- 200 g de quinoa
+- 1 avocat
+- 285 g de maïs
+- 250 g de haricots noirs
+- 250 g de tomates cerises
+- 1 citron vert
+- 3 c. à soupe d'huile d'olive
+- coriandre
+> Cuire et refroidir le quinoa.
+> Mélanger avec le reste, assaisonner de citron vert et d'huile.
+
+# Salade de pâtes grecque
+p4 t15+12 [lunch,dinner] (grecque) {plaques} #froid #vegetarien r1 f0 d1
+- 300 g de pâtes
+- 200 g de feta
+- 1 concombre
+- 250 g de tomates cerises
+- 80 g d'olives noires
+- 1 oignon rouge
+- 4 c. à soupe d'huile d'olive
+> Cuire et refroidir les pâtes, mélanger avec légumes, olives et feta.
+
+# Salade de riz complète
+p4 t15+15 [lunch] (française) {plaques} #froid #ete r1 f0 d1
+- 250 g de riz
+- 140 g de thon
+- 3 œufs
+- 285 g de maïs
+- 2 tomates
+- 4 c. à soupe d'huile de colza
+- 1 c. à soupe de vinaigre
+> Cuire riz et œufs durs, refroidir.
+> Mélanger avec thon, maïs, tomates et vinaigrette.
+
+# Salade de pommes de terre, œufs et cornichons
+p4 t15+20 [lunch,dinner] (française) {plaques} #froid #vegetarien r1 f0 d1
+- 800 g de pommes de terre
+- 4 œufs
+- 80 g de cornichons
+- 1 oignon rouge
+- 3 c. à soupe de mayonnaise
+- 1 c. à soupe de moutarde
+> Cuire pommes de terre et œufs durs.
+> Mélanger avec cornichons, oignon et sauce mayonnaise-moutarde.
+
+# Salade de boulgour, halloumi et grenade-style aux raisins
+p4 t15+10 [lunch,dinner] (orientale) {plaques} #vegetarien r0 f0 d1
+- 200 g de boulgour
+- 225 g de halloumi
+- 150 g de raisin
+- persil
+- menthe
+- 1 citron
+- 3 c. à soupe d'huile d'olive
+> Faire gonfler le boulgour ; griller le halloumi.
+> Mélanger avec raisin, herbes, citron et huile.
+
+# Salade lyonnaise
+p4 t15+10 [lunch,dinner] (lyonnaise) {plaques} #classique r0 f0 d1
+- 1 salade frisée {salade}
+- 150 g de lardons
+- 4 œufs
+- 4 tranches de pain
+- 3 c. à soupe d'huile de colza
+- 1 c. à soupe de vinaigre
+- 1 c. à café de moutarde
+> Dorer lardons et croûtons ; pocher les œufs.
+> Dresser sur la salade assaisonnée.
+
+# Salade thaï au bœuf
+p4 t20+10 [lunch,dinner] (thaïe) {plaques} #ete r0 f0 d1
+- 400 g de bœuf en lanières {boeuf_steak}
+- 1 salade
+- 1 concombre
+- 2 carottes
+- 2 c. à soupe de nuoc-mâm
+- 1 citron vert
+- 1 c. à café de sucre
+- menthe
+- coriandre
+- 40 g de cacahuètes
+> Saisir le bœuf ; préparer la sauce nuoc-mâm, citron vert, sucre.
+> Mélanger avec crudités et herbes, parsemer de cacahuètes.
+
+# Gratin de patates douces, épinards et chèvre
+p4 t20+35 [lunch,dinner] (française) {four} #vegetarien r2 f0 d1
+- 800 g de patates douces
+- 300 g d'épinards
+- 150 g de bûche de chèvre
+- 20 cl de crème liquide
+> Alterner patates douces en rondelles et épinards tombés.
+> Napper de crème, couvrir de chèvre et cuire 35 min à 190 °C.
+
+# Curry de pois chiches et chou-fleur rôti
+p4 t15+30 [lunch,dinner] (indienne) {four,plaques} #vegan r2 f1 d1
+- 1 chou-fleur
+- 530 g de pois chiches
+- 40 cl de lait de coco
+- 1 oignon
+- 2 c. à soupe de curry
+- 2 c. à soupe d'huile d'olive
+- 250 g de riz basmati
+> Rôtir le chou-fleur au curry 25 min.
+> Mijoter oignon, pois chiches et lait de coco 15 min, ajouter le chou-fleur.
+
+# Lasagnes courgettes ricotta
+p6 t25+40 [lunch,dinner] (italienne) {four} #vegetarien #ete r2 f1 d2
+- 250 g de feuilles de lasagne
+- 4 courgettes
+- 250 g de ricotta
+- 700 g de coulis de tomate
+- 125 g de mozzarella
+- basilic
+> Faire revenir les courgettes en dés, mélanger à la ricotta.
+> Alterner pâtes, coulis, courgettes ; finir par la mozzarella. Cuire 40 min.
+
+# Risotto aux petits pois et citron
+p4 t10+25 [lunch,dinner] (italienne) {plaques} #printemps #vegetarien r1 f0 d2
+- 300 g de riz arborio
+- 300 g de petits pois
+- 1 oignon
+- 1 citron
+- 1 cube de bouillon de légumes
+- 50 g de parmesan
+- 20 g de beurre
+> Faire nacrer riz et oignon, mouiller de bouillon peu à peu.
+> Ajouter les petits pois à mi-cuisson, finir avec zeste de citron, beurre et parmesan.
+
+# Pâtes crémeuses aux champignons et épinards
+p4 t10+15 [lunch,dinner] (française) {plaques} #rapide #vegetarien r0 f0 d1
+- 400 g de penne
+- 300 g de champignons
+- 200 g d'épinards
+- 20 cl de crème liquide
+- 2 gousses d'ail
+- 40 g de parmesan
+> Poêler champignons et ail, ajouter épinards et crème.
+> Mélanger aux pâtes avec le parmesan.
+
+# One-pot pasta tomate basilic
+p4 t5+15 [lunch,dinner] (italienne) {plaques} #rapide #vegan #budget r0 f0 d1
+- 400 g de spaghetti
+- 400 g de tomates cerises
+- 1 oignon
+- 2 gousses d'ail
+- 90 cl d'eau
+- 3 c. à soupe d'huile d'olive
+- basilic
+> Mettre tous les ingrédients crus dans une sauteuse avec l'eau.
+> Cuire 12 min en remuant jusqu'à absorption.
+
+# Galettes de légumes, sauce yaourt
+p4 t20+20 [lunch,dinner] (healthy) {plaques} #vegetarien r1 f1 d1
+- 2 courgettes
+- 2 carottes
+- 2 œufs
+- 60 g de farine
+- 50 g de parmesan
+- 2 yaourts
+- menthe
+- 4 c. à soupe d'huile d'olive
+> Râper les légumes, les presser ; mélanger avec œufs, farine et parmesan.
+> Dorer des galettes ; servir avec le yaourt à la menthe.
+
+# Shakshuka verte
+p4 t10+20 [lunch,dinner,breakfast] (orientale) {plaques} #vegetarien r0 f0 d1
+- 6 œufs
+- 300 g d'épinards
+- 2 courgettes
+- 1 oignon
+- 100 g de feta
+- 1 c. à café de cumin
+- 2 c. à soupe d'huile d'olive
+> Faire fondre oignon et courgettes, ajouter épinards et cumin.
+> Casser les œufs dessus, couvrir 7 min, émietter la feta.
+
+# Tofu général Tao
+p4 t15+15 [lunch,dinner] (chinoise) {wok} #vegan r0 f0 d1
+- 400 g de tofu
+- 3 c. à soupe de maïzena
+- 3 c. à soupe de sauce soja
+- 2 c. à soupe de sucre
+- 1 c. à soupe de vinaigre de riz
+- 2 gousses d'ail
+- 1 brocoli
+- 250 g de riz
+> Enrober le tofu en dés de maïzena et le dorer.
+> Préparer la sauce soja-sucre-vinaigre-ail, y enrober le tofu ; servir avec brocoli et riz.
+
+# Croque-légumes au four (pain, courgette, mozzarella)
+p4 t10+15 [lunch,dinner] (italienne) {four} #rapide #vegetarien r0 f0 d1
+- 8 tranches de pain de campagne
+- 2 courgettes
+- 250 g de mozzarella
+- 2 c. à soupe de pesto
+> Tartiner le pain de pesto, ajouter courgettes en lamelles et mozzarella.
+> Gratiner 15 min.
+
+# Velouté de potimarron et lait de coco
+p4 t15+25 [lunch,dinner] (healthy) {plaques,mixeur} #automne #vegan r3 f1 d1
+- 1 kg de potimarron
+- 1 oignon
+- 20 cl de lait de coco
+- 1 morceau de gingembre {gingembre}
+- 1 cube de bouillon de légumes
+- 80 cl d'eau
+> Cuire le potimarron (avec la peau), l'oignon et le gingembre dans le bouillon.
+> Mixer avec le lait de coco.
+
+# Soupe minestrone aux haricots et kale
+p6 t20+35 [lunch,dinner] (italienne) {plaques} #hiver #vegan #batch r3 f1 d1
+- 2 carottes
+- 1 oignon
+- 200 g de kale
+- 530 g de haricots blancs
+- 400 g de tomates concassées
+- 100 g de pâtes
+- 1 cube de bouillon de légumes
+- 1,5 l d'eau
+> Faire revenir les légumes, ajouter tomates et bouillon ; cuire 20 min.
+> Ajouter haricots, kale et pâtes 10 min.
+
+# Harira (soupe marocaine)
+p6 t20+45 [lunch,dinner] (marocaine) {plaques} #hiver #batch r3 f1 d1
+- 150 g de lentilles vertes
+- 265 g de pois chiches
+- 400 g de tomates concassées
+- 1 oignon
+- 1 branche de céleri
+- 1 c. à café de cumin
+- 1 c. à café de curcuma
+- coriandre
+- 1 citron
+> Faire revenir oignon et céleri, ajouter tomates, épices, lentilles et 1,5 l d'eau.
+> Cuire 40 min, ajouter les pois chiches ; servir avec citron et coriandre.
+
+# Velouté de lentilles corail et carotte au lait de coco
+p4 t10+25 [lunch,dinner] (healthy) {plaques,mixeur} #vegan #budget r3 f1 d1
+- 200 g de lentilles corail
+- 4 carottes
+- 20 cl de lait de coco
+- 1 oignon
+- 1 c. à café de curry
+- 1 l d'eau
+> Cuire tous les ingrédients 25 min, mixer.
+
+# Soupe de petits pois à la menthe
+p4 t10+20 [lunch,dinner] (anglaise) {plaques,mixeur} #printemps #vegetarien r2 f1 d1
+- 600 g de petits pois
+- 1 oignon
+- 1 cube de bouillon de légumes
+- 80 cl d'eau
+- menthe
+- 10 cl de crème liquide
+> Cuire petits pois et oignon dans le bouillon 15 min, mixer avec la menthe et la crème.
+
+# Enchiladas végétariennes
+p4 t20+25 [lunch,dinner] (mexicaine) {four,plaques} #vegetarien r1 f1 d1
+- 8 tortillas
+- 500 g de haricots noirs
+- 1 poivron
+- 285 g de maïs
+- 500 g de coulis de tomate
+- 150 g d'emmental râpé
+- 1 c. à café de cumin
+> Faire revenir poivron, maïs, haricots et cumin.
+> Rouler dans les tortillas, napper de coulis et de fromage ; gratiner 20 min.
+
+# Chili de lentilles
+p6 t10+35 [lunch,dinner] (mexicaine) {plaques} #vegan #budget #batch r3 f1 d1
+- 300 g de lentilles vertes
+- 800 g de tomates concassées
+- 250 g de haricots rouges
+- 1 oignon
+- 2 c. à café de cumin
+- 1 c. à café de paprika fumé
+- 300 g de riz
+> Faire revenir oignon et épices, ajouter lentilles, tomates et 50 cl d'eau ; cuire 30 min.
+> Ajouter les haricots ; servir avec le riz.
+
+# Nouilles au beurre de cacahuète et légumes croquants
+p4 t15+10 [lunch,dinner] (asiatique) {plaques} #vegan #rapide r0 f0 d1
+- 250 g de nouilles de riz
+- 3 c. à soupe de beurre de cacahuète
+- 3 c. à soupe de sauce soja
+- 1 citron vert
+- 2 carottes
+- 1 concombre
+- 200 g d'edamame
+- coriandre
+> Délayer beurre de cacahuète, soja et citron vert avec un peu d'eau chaude.
+> Mélanger aux nouilles cuites et aux légumes en julienne.
+
+# Polenta grillée, ratatouille express
+p4 t15+25 [lunch,dinner] (provençale) {plaques} #vegetarien r1 f0 d1
+- 200 g de polenta
+- 1 courgette
+- 1 aubergine
+- 1 poivron
+- 400 g de tomates concassées
+- 50 g de parmesan
+- 3 c. à soupe d'huile d'olive
+> Cuire la polenta, l'étaler et la laisser prendre, puis la griller en tranches.
+> Faire mijoter les légumes en dés avec les tomates 20 min.
+
+# Pommes de terre farcies au fromage frais et ciboulette
+p4 t10+45 [lunch,dinner] (française) {four} #vegetarien r1 f0 d1
+- 4 grosses pommes de terre {pomme_de_terre}
+- 150 g de fromage frais
+- ciboulette
+- 80 g d'emmental râpé
+- 1 laitue
+> Cuire les pommes de terre entières au four 40 min, les évider.
+> Mélanger la chair au fromage frais et à la ciboulette, remplir, gratiner ; servir avec la salade.
+
+# Courgettes farcies au boulgour et feta
+p4 t20+35 [lunch,dinner] (méditerranéenne) {four} #vegetarien #ete r1 f0 d1
+- 4 courgettes
+- 150 g de boulgour
+- 150 g de feta
+- 2 tomates
+- menthe
+> Évider les courgettes, mélanger la chair hachée au boulgour gonflé, à la feta et aux tomates.
+> Farcir et cuire 35 min à 180 °C.
+
+# Poivrons farcis au riz et à la viande
+p4 t20+45 [lunch,dinner] (méditerranéenne) {four} #familial r1 f1 d1
+- 4 poivrons
+- 300 g de bœuf haché
+- 150 g de riz
+- 400 g de tomates concassées
+- 1 oignon
+> Mélanger viande, riz cru, oignon et la moitié des tomates.
+> Farcir les poivrons, verser le reste de tomates et cuire 45 min à 180 °C à couvert.
+
+# Wraps falafels, crudités et sauce tahini
+p4 t15+10 [lunch] (libanaise) {plaques} #vegan #froid r0 f0 d1
+- 4 tortillas
+- 265 g de pois chiches
+- 1 c. à café de cumin
+- 2 c. à soupe de farine
+- 2 carottes
+- 1 salade
+- 2 c. à soupe de tahini
+- 1 citron
+> Écraser pois chiches, cumin et farine, former de petites galettes et les dorer.
+> Garnir les tortillas de crudités, falafels et sauce tahini-citron.
+
+# Assiette mezze (houmous, taboulé, pita)
+p4 t25+0 [lunch,dinner] (libanaise) {mixeur} #vegan #froid r1 f0 d1
+- 530 g de pois chiches
+- 3 c. à soupe de tahini
+- 2 citrons
+- 150 g de boulgour
+- 3 tomates
+- 1 botte de persil
+- 4 pains pita
+- 5 c. à soupe d'huile d'olive
+> Mixer le houmous ; préparer le taboulé.
+> Servir avec les pitas chaudes.
+
+# Œufs cocotte aux épinards et saumon fumé
+p4 t10+15 [lunch,dinner] (française) {four} #rapide r0 f0 d1
+- 4 œufs
+- 200 g d'épinards
+- 100 g de saumon fumé
+- 4 c. à soupe de crème fraîche
+- 4 tranches de pain de campagne
+> Répartir épinards tombés, saumon et crème dans des ramequins, casser un œuf.
+> Cuire 12 min au bain-marie à 180 °C ; servir avec le pain.
+
+# Salade de lentilles corail tièdes, carottes et cumin
+p4 t10+15 [lunch,dinner] (orientale) {plaques} #vegan #budget r1 f0 d1
+- 250 g de lentilles corail
+- 3 carottes
+- 1 oignon rouge
+- 1 c. à café de cumin
+- 1 citron
+- 3 c. à soupe d'huile d'olive
+- persil
+> Cuire les lentilles 10 min (elles restent fermes), égoutter.
+> Mélanger avec carottes râpées, oignon, cumin, citron et persil.
+
+# Salade de chou rouge, pomme et noix
+p4 t15+0 [lunch,dinner] (française) {} #hiver #vegetarien #froid r1 f0 d1
+- 1/2 chou rouge {chou}
+- 2 pommes
+- 50 g de cerneaux de noix
+- 100 g de feta
+- 3 c. à soupe d'huile de colza
+- 1 c. à soupe de vinaigre de cidre
+> Émincer le chou, ajouter pommes en dés, noix et feta ; assaisonner.
+
+# Gnocchis au potiron, sauge-style au beurre
+p4 t10+20 [lunch,dinner] (italienne) {plaques,four} #automne #vegetarien r0 f0 d1
+- 500 g de gnocchis
+- 500 g de potiron
+- 40 g de beurre
+- 40 g de parmesan
+- thym
+> Rôtir le potiron en dés 20 min ; dorer les gnocchis au beurre avec le thym.
+> Mélanger et servir avec le parmesan.

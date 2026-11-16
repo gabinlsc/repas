@@ -1,0 +1,239 @@
+// Desserts et goûters.
+
+# Tiramisu classique
+p6 t25+0 [snack] (italienne) {} #weekend #vegetarien r2 f0 d2
+- 250 g de mascarpone
+- 3 œufs
+- 80 g de sucre
+- 200 g de biscuits à la cuillère {pain_mie}
+- 25 cl de café {eau}
+- 2 c. à soupe de cacao
+> Fouetter jaunes et sucre, ajouter le mascarpone puis les blancs montés.
+> Alterner biscuits trempés dans le café et crème ; saupoudrer de cacao, réfrigérer 4 h.
+
+# Panna cotta aux fruits rouges
+p4 t10+5 [snack] (italienne) {plaques} #vegetarien #froid r2 f0 d1
+- 40 cl de crème liquide
+- 50 g de sucre
+- 1 c. à soupe de maïzena
+- 250 g de fruits rouges
+> Chauffer crème, sucre et maïzena en fouettant jusqu'à épaississement ; répartir et réfrigérer 4 h.
+> Servir avec un coulis de fruits rouges écrasés.
+
+# Crumble pommes poires
+p6 t20+35 [snack] (anglaise) {four} #automne #vegetarien r2 f1 d1
+- 3 pommes
+- 3 poires
+- 150 g de farine
+- 100 g de sucre
+- 100 g de beurre
+> Couper les fruits dans un plat ; sabler farine, sucre et beurre et en couvrir les fruits.
+> Cuire 35 min à 180 °C.
+
+# Crumble rhubarbe fraises
+p6 t20+35 [snack] (anglaise) {four} #printemps #vegetarien r2 f1 d1
+- 400 g de rhubarbe
+- 250 g de fraises
+- 150 g de farine
+- 120 g de sucre
+- 100 g de beurre
+> Disposer rhubarbe et fraises en morceaux avec 20 g de sucre.
+> Couvrir de crumble et cuire 35 min à 180 °C.
+
+# Clafoutis aux cerises
+p6 t15+40 [snack] (limousine) {four} #ete #vegetarien r2 f0 d1
+- 500 g de cerises
+- 3 œufs
+- 100 g de sucre
+- 80 g de farine
+- 30 cl de lait
+- 20 g de beurre
+> Répartir les cerises dans un plat beurré, verser la pâte et cuire 40 min à 180 °C.
+
+# Far breton aux pruneaux
+p8 t15+50 [snack] (bretonne) {four} #vegetarien r3 f1 d1
+- 200 g de pruneaux
+- 4 œufs
+- 150 g de sucre
+- 200 g de farine
+- 75 cl de lait
+- 30 g de beurre
+> Mélanger farine, sucre, œufs puis le lait.
+> Verser sur les pruneaux dans un plat beurré, cuire 50 min à 180 °C.
+
+# Gâteau marbré
+p8 t20+45 [snack,breakfast] (française) {four} #enfants #vegetarien r4 f1 d1
+- 200 g de farine
+- 200 g de sucre
+- 4 œufs
+- 200 g de beurre fondu
+- 1 sachet de levure chimique
+- 2 c. à soupe de cacao
+> Préparer une pâte quatre-quarts, la séparer en deux et ajouter le cacao dans une moitié.
+> Alterner dans un moule à cake, marbrer et cuire 45 min à 170 °C.
+
+# Brownies
+p9 t15+25 [snack] (américaine) {four} #gourmand #vegetarien r4 f1 d1
+- 200 g de chocolat noir
+- 150 g de beurre
+- 150 g de sucre
+- 3 œufs
+- 80 g de farine
+- 60 g de cerneaux de noix
+> Fondre chocolat et beurre, ajouter sucre, œufs, farine et noix.
+> Cuire 25 min à 180 °C (cœur fondant).
+
+# Cookies avoine et raisins
+p12 t15+12 [snack] (américaine) {four} #vegetarien r5 f1 d1
+- 120 g de flocons d'avoine
+- 120 g de farine
+- 100 g de beurre mou
+- 100 g de sucre roux
+- 1 œuf
+- 60 g de raisins secs
+> Crémer beurre et sucre, ajouter l'œuf puis le reste.
+> Former des boules et cuire 12 min à 180 °C.
+
+# Mousse au chocolat végane (aquafaba-style au lait de coco)
+p4 t15+0 [snack] (healthy) {} #vegan #froid r2 f0 d1
+- 200 g de chocolat noir
+- 40 cl de lait de coco
+- 1 c. à soupe de sucre
+> Fondre le chocolat dans le lait de coco chaud, sucrer.
+> Réfrigérer 4 h jusqu'à prise.
+
+# Salade d'agrumes à la menthe
+p4 t15+0 [snack,breakfast] (française) {} #hiver #vegan #froid r1 f0 d1
+- 4 oranges
+- 2 kiwis
+- menthe
+- 1 c. à soupe de miel
+> Peler les oranges à vif, trancher ; ajouter kiwis et menthe, arroser de miel.
+
+# Ananas rôti à la cannelle
+p4 t10+20 [snack] (créole) {four} #vegetarien r1 f0 d1
+- 1 ananas
+- 2 c. à soupe de sucre roux
+- 20 g de beurre
+- 1 c. à café de cannelle
+> Couper l'ananas en tranches, parsemer de sucre, cannelle et beurre ; rôtir 20 min.
+
+# Banana split maison
+p4 t10+0 [snack] (américaine) {} #enfants #vegetarien r0 f0 d1
+- 4 bananes
+- 4 yaourts
+- 60 g de chocolat noir
+- 20 g d'amandes effilées
+> Fendre les bananes, garnir de yaourt, chocolat fondu et amandes.
+
+# Riz au lait coco et ananas
+p4 t5+35 [snack] (créole) {plaques} #vegan r2 f0 d1
+- 120 g de riz rond
+- 40 cl de lait de coco
+- 40 cl de boisson végétale
+- 60 g de sucre
+- 200 g d'ananas
+> Cuire le riz dans les laits sucrés 30 min en remuant.
+> Servir avec l'ananas en dés.
+
+# Muffins banane chocolat
+p12 t15+22 [snack,breakfast] (américaine) {four} #anti-gaspi #vegetarien r3 f1 d1
+- 2 bananes
+- 250 g de farine
+- 2 œufs
+- 100 g de sucre
+- 80 g de beurre fondu
+- 1 sachet de levure chimique
+- 100 g de pépites de chocolat
+> Écraser les bananes, mélanger aux œufs, sucre et beurre, puis farine et levure.
+> Ajouter les pépites, remplir des moules et cuire 22 min.
+
+# Tarte aux poires amandine-style
+p8 t20+40 [snack] (française) {four} #automne #vegetarien r2 f1 d2
+- 1 rouleau de pâte sablée {pate_brisee}
+- 4 poires
+- 100 g de poudre d'amande
+- 80 g de sucre
+- 80 g de beurre mou
+- 2 œufs
+> Mélanger poudre d'amande, sucre, beurre et œufs ; étaler sur la pâte.
+> Disposer les poires en lamelles, cuire 40 min à 180 °C.
+
+# Compote de pommes à la vanille et galettes de riz
+p4 t10+20 [snack] (goûter) {plaques} #vegan r3 f1 d1
+- 6 pommes
+- 1 sachet de sucre vanillé
+- 10 cl d'eau
+- 8 galettes de riz
+> Cuire les pommes en morceaux avec l'eau et la vanille 20 min, écraser.
+> Servir avec les galettes de riz.
+
+# Energy balls dattes cacao
+p12 t15+0 [snack] (healthy) {mixeur} #vegan #froid r7 f1 d1
+- 200 g de dattes
+- 100 g de flocons d'avoine
+- 2 c. à soupe de cacao
+- 2 c. à soupe de purée d'amande
+> Mixer tous les ingrédients, former des boules et réfrigérer.
+
+# Fromage blanc, miel et noix
+p2 t2+0 [snack] (française) {} #rapide #vegetarien r0 f0 d1
+- 200 g de fromage blanc
+- 1 c. à soupe de miel
+- 20 g de cerneaux de noix
+> Arroser le fromage blanc de miel et parsemer de noix.
+
+# Crêpes Suzette simplifiées
+p4 t15+20 [snack] (française) {plaques} #weekend #vegetarien r0 f0 d2
+- 200 g de farine
+- 3 œufs
+- 40 cl de lait
+- 2 oranges
+- 60 g de sucre
+- 40 g de beurre
+> Cuire les crêpes. Faire un caramel au beurre avec sucre, jus et zeste d'orange.
+> Y réchauffer les crêpes pliées en quatre.
+
+# Moelleux au citron
+p8 t15+30 [snack] (française) {four} #vegetarien r3 f1 d1
+- 2 citrons
+- 3 œufs
+- 150 g de sucre
+- 150 g de farine
+- 100 g de beurre fondu
+- 1/2 sachet de levure chimique
+> Mélanger œufs et sucre, ajouter zeste et jus de citron, beurre, farine et levure.
+> Cuire 30 min à 180 °C.
+
+# Smoothie mangue banane coco
+p2 t5+0 [snack,breakfast] (healthy) {mixeur} #vegan #rapide r0 f0 d1
+- 1 mangue
+- 1 banane
+- 20 cl de lait de coco
+> Mixer et servir frais.
+
+# Prunes rôties au miel et yaourt
+p4 t10+20 [snack] (française) {four} #ete #vegetarien r1 f0 d1
+- 500 g de prunes
+- 2 c. à soupe de miel
+- 4 yaourts
+> Rôtir les prunes coupées en deux avec le miel 20 min ; servir tiède sur le yaourt.
+
+# Galette des rois-style feuilletée pommes
+p6 t15+30 [snack] (française) {four} #hiver #vegetarien r2 f1 d1
+- 2 rouleaux de pâte feuilletée
+- 3 pommes
+- 200 g de compote
+- 1 œuf
+- 30 g de sucre
+> Garnir une pâte de compote et de pommes en lamelles, couvrir de la seconde.
+> Dorer à l'œuf et cuire 30 min à 200 °C.
+
+# Popcorn-style pois chiches grillés sucrés-salés
+p4 t5+30 [snack] (healthy) {four} #vegan r5 f0 d1
+- 530 g de pois chiches
+- 1 c. à soupe d'huile d'olive
+- 1 c. à café de paprika
+- 1 c. à soupe de sirop d'érable
+> Sécher les pois chiches, les mélanger avec huile, paprika et sirop.
+> Rôtir 30 min à 200 °C en remuant.

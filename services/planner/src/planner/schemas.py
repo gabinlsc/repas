@@ -89,6 +89,8 @@ class Recipe(Strict):
     leftover_days: Annotated[int, Field(ge=0, le=7)]
     freezes: bool
     ingredients: list[RecipeIngredient]
+    # Famille de plat (pâtes, riz, soupe…) : au-delà de 2 par semaine, pénalité de monotonie.
+    family: str | None = None
 
 
 class PantryLot(Strict):
@@ -119,6 +121,10 @@ class PlanRequest(Strict):
     days: list[Day]
     recipes: list[Recipe]
     ingredients: list[Ingredient]
+    # Restes (cuisiner double) : optionnels, désactivés par défaut car ils répètent un plat.
+    allow_leftovers: bool = False
+    # Recettes servies les semaines précédentes → nombre de semaines écoulées (1 = la semaine dernière).
+    recent: dict[str, Annotated[int, Field(ge=1, le=8)]] = Field(default_factory=dict)
 
     @model_validator(mode="after")
     def _references(self) -> PlanRequest:

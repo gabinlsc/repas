@@ -107,6 +107,8 @@ def plan(req: PlanRequest, workers: int = 8) -> PlanResponse:
         return out.model_copy(
             update={"wall_time_ms": res.wall_ms + rres.wall_ms, "deterministic": res.deterministic and rres.deterministic}
         )
+    # Le plan relâché est le « meilleur compromis » : il est renvoyé avec le statut
+    # « infeasible » et les diagnostics, l'application décide de l'appliquer en avertissant.
     out = _response(relaxed, rres, diags)
     return out.model_copy(update={"status": "infeasible", "wall_time_ms": res.wall_ms + rres.wall_ms})
 

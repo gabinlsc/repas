@@ -1,6 +1,6 @@
 import fc from "fast-check";
 import { describe, expect, it } from "vitest";
-import { buildPlanRequest, DEFAULT_WEIGHTS, EU_ALLERGENS, planResponseSchema, rat, recipeIsSafeFor, type SnapshotInput, type SnapshotRecipe } from "../src/index.js";
+import { buildPlanRequest, recipeFamily, DEFAULT_WEIGHTS, EU_ALLERGENS, planResponseSchema, rat, recipeIsSafeFor, type SnapshotInput, type SnapshotRecipe } from "../src/index.js";
 import { ingredientMap } from "./fixtures.js";
 
 const recipe = (id: string, ings: Array<[string | null, number, string]>, extra: Partial<SnapshotRecipe> = {}): SnapshotRecipe => ({
@@ -72,6 +72,10 @@ describe("snapshot du solveur", () => {
     expect(req.recipes.find((r) => r.id === "ratatouille")!.season_score).toBeGreaterThan(50);
   });
   it("valide la réponse du solveur", () => {
+    expect(buildPlanRequest(input()).recipes.find((r) => r.id === "pates")!.family).toBe("pates");
+    expect(buildPlanRequest(input({ recent: { pates: 1, inconnue: 2 }, allowLeftovers: true })).recent).toEqual({ pates: 1 });
+    expect(recipeFamily(["riz"], ["breakfast"])).toBeNull();
+    expect(recipeFamily(["oeuf"], ["dinner"])).toBeNull();
     expect(planResponseSchema.safeParse({ version: "1", status: "optimal", deterministic: true, wall_time_ms: 10, estimated_cost_cents: 0, score: null, meals: [], diagnostics: [] }).success).toBe(true);
   });
   it("propriété : chaque recette du snapshot porte au moins les allergènes de ses ingrédients", () => {

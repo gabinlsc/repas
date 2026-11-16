@@ -1,7 +1,14 @@
 import {
   buildPlanRequest, DEFAULT_WEIGHTS, parseRational, planResponseSchema, weightsSchema, type MealSlot, type PlanRequest, type PlanResponse, type PlanWeights,
 } from "@mise/domain";
-import { and, eq } from "drizzle-orm";
+import { and, eq, gte, inArray, lt } from "drizzle-orm";
+
+function shiftDays(iso: string, days: number): string {
+  return new Date(Date.parse(`${iso}T00:00:00Z`) + days * 86400_000).toISOString().slice(0, 10);
+}
+
+/** Diagnostics « assouplissables » : on applique quand même le meilleur compromis. */
+const SOFT = new Set(["budget_too_low", "repeat_window", "perishable", "timeout", "partial_prices"]);
 import type { Db } from "../client.js";
 import { decryptJson, type Keyring } from "../crypto.js";
 import * as s from "../schema.js";
@@ -45,6 +52,20 @@ export async function prepareGeneration(db: Db, ring: Keyring, opts: GenerationO
   const members = await db.select().from(s.householdMembers).where(eq(s.householdMembers.householdId, opts.householdId));
   if (members.length === 0) throw new PlanError("NO_MEMBERS", "Ajoutez au moins un membre au foyer");
   const existing = await db.select().from(s.plannedMeals).where(eq(s.plannedMeals.mealPlanId, plan.id));
+
+  // Recettes des 3 semaines précédentes : pénalisées pour varier d'une semaine à l'autre.
+  const pastPlans = await db
+    .select({ id: s.mealPlans.id, weekStart: s.mealPlans.weekStart })
+    .from(s.mealPlans)
+    .where(and(eq(s.mealPlans.householdId, opts.householdId), lt(s.mealPlans.weekStart, opts.weekStart), gte(s.mealPlans.weekStart, shiftDays(opts.weekStart, -21))));
+  const recent: Record<string, number> = {};
+  if (pastPlans.length) {
+    const past = await db.select({ recipeId: s.plannedMeals.recipeId, mealPlanId: s.plannedMeals.mealPlanId }).from(s.plannedMeals).where(inArray(s.plannedMeals.mealPlanId, pastPlans.map((p) => p.id)));
+    for (const m of past) {
+      const wk = Math.round((Date.parse(opts.weekStart) - Date.parse(pastPlans.find((p) => p.id === m.mealPlanId)!.weekStart)) / (7 * 86400_000));
+      recent[m.recipeId] = Math.min(recent[m.recipeId] ?? 8, Math.max(1, wk));
+    }
+  }
 
   const [ingredients, recipes, products, pantry] = await Promise.all([
     loadIngredients(db),
@@ -96,6 +117,8 @@ export async function prepareGeneration(db: Db, ring: Keyring, opts: GenerationO
     ingredients,
     products,
     pantry,
+    allowLeftovers: household.batchCooking,
+    recent,
   });
   const [job] = await db
     .insert(s.generationJobs)
@@ -137,7 +160,8 @@ export async function runGenerationJob(db: Db, jobId: string, callPlanner: Plann
  */
 export async function applyPlanResponse(db: Db, mealPlanId: string, req: PlanRequest, res: PlanResponse): Promise<void> {
   await db.transaction(async (tx) => {
-    if (res.status === "infeasible" || res.status === "invalid" || res.meals.length === 0) {
+    const soft = res.diagnostics.every((d) => SOFT.has(d.code));
+    if (res.status === "invalid" || res.meals.length === 0 || (res.status === "infeasible" && !soft)) {
       await tx.update(s.mealPlans).set({ status: "failed", diagnostics: res.diagnostics, updatedAt: new Date() }).where(eq(s.mealPlans.id, mealPlanId));
       return;
     }
