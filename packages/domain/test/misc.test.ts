@@ -25,16 +25,16 @@ describe("nutrition", () => {
     expect(missing).toBe(3);
   });
   it("score hebdomadaire et alertes", () => {
-    const low = weeklyNutritionScore({ days: 7, people: 2, total: EMPTY_NUTRITION, distinctVegetables: 1, kcalTargetPerPersonDay: 2000 });
+    const low = weeklyNutritionScore({ days: 7, people: rat(2), total: EMPTY_NUTRITION, distinctVegetables: 1, kcalTargetPerPersonDay: 2000 });
     expect(low.alerts).toEqual(["nutrition.lowEnergy", "nutrition.lowFiber", "nutrition.lowProtein", "nutrition.lowVegetableDiversity"]);
     const good = weeklyNutritionScore({
-      days: 1, people: 1, distinctVegetables: 12, kcalTargetPerPersonDay: 2000,
+      days: 1, people: rat(1), distinctVegetables: 12, kcalTargetPerPersonDay: 2000,
       total: { ...EMPTY_NUTRITION, kcal: rat(2000), fiber: rat(35), protein: rat(70) },
     });
     expect(good.score).toBe(100);
-    const high = weeklyNutritionScore({ days: 1, people: 1, distinctVegetables: 12, kcalTargetPerPersonDay: 0, total: { ...EMPTY_NUTRITION, kcal: rat(5000) } });
+    const high = weeklyNutritionScore({ days: 1, people: rat(1), distinctVegetables: 12, kcalTargetPerPersonDay: 0, total: { ...EMPTY_NUTRITION, kcal: rat(5000) } });
     expect(high.alerts).not.toContain("nutrition.highEnergy");
-    expect(weeklyNutritionScore({ days: 1, people: 1, distinctVegetables: 12, kcalTargetPerPersonDay: 1000, total: { ...EMPTY_NUTRITION, kcal: rat(2000) } }).alerts).toContain("nutrition.highEnergy");
+    expect(weeklyNutritionScore({ days: 1, people: rat(1), distinctVegetables: 12, kcalTargetPerPersonDay: 1000, total: { ...EMPTY_NUTRITION, kcal: rat(2000) } }).alerts).toContain("nutrition.highEnergy");
   });
 });
 

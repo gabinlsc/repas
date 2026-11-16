@@ -51,7 +51,8 @@ export function recipeNutritionPerServing(lines: readonly NutritionLine[], baseS
 
 export interface WeeklyNutritionInput {
   readonly days: number;
-  readonly people: number;
+  /** somme des facteurs de portion (un enfant à 0,5 compte pour une demi-personne). */
+  readonly people: Rational;
   readonly total: Nutrition100g;
   readonly distinctVegetables: number;
   readonly kcalTargetPerPersonDay: number;
@@ -72,7 +73,8 @@ export interface WeeklyNutritionScore {
  * Il éclaire, il ne prescrit pas : pas de conseil médical.
  */
 export function weeklyNutritionScore(i: WeeklyNutritionInput): WeeklyNutritionScore {
-  const denom = rat(Math.max(1, i.days * i.people));
+  const raw = mul(rat(Math.max(1, i.days)), i.people);
+  const denom = raw.n > 0n ? raw : rat(1);
   const kcal = toNumberForDisplay(div(i.total.kcal, denom));
   const fiber = toNumberForDisplay(div(i.total.fiber, denom));
   const protein = toNumberForDisplay(div(i.total.protein, denom));
